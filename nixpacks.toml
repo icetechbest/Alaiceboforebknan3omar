@@ -1,6 +1,5 @@
-
 [phases.setup]
 nixPkgs = ["nodejs_20", "ffmpeg", "yt-dlp"]
 
 [phases.install]
-cmds = ["npm install -g npm@latest", "npm ci"]
+cmds = ["npm install -g npm@10", "npm ci"]
