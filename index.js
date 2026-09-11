@@ -62,7 +62,7 @@ const OWNER_NUMBER = "201220800288@s.whatsapp.net";
 const OWNER_IDS = ["201220800288", "232620008976456"];
 // المالك الحقيقي الوحيد بتاع البوت (انت) — ده اللي بياخد صلاحيات كاملة حتى جوه البوتات الفرعية (تنصيب)
 const MASTER_OWNER_ID = "201220800288";
-const phoneNumber = "972569041789";
+const phoneNumber = "201220800288";
 
 // --- [ تحضير وتأمين قواعد البيانات ] ---
 if (!fs.existsSync(path.join(__dirname, "database.json"))) {
