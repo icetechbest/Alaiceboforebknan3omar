@@ -37,6 +37,25 @@
   ];
   const state = { section: "control", connected: false, ws: null, wsRetry: null, logs: [], cache: {} };
   const $ = (selector, root = document) => root.querySelector(selector);
+
+  // بيرسم QR Code بالكامل جوه المتصفح (عن طريق مكتبة qrcodejs المحمّلة من CDN)
+  // بدل ما نستقبل صورة جاهزة من السيرفر - كده السيرفر مش محتاج أي مكتبة QR
+  // وده بيحل مشاكل التثبيت على Termux/Railway.
+  function renderQrInto(slot, text) {
+    if (!slot) return;
+    slot.innerHTML = "";
+    if (!text) { slot.innerHTML = `<div class="qr-box">جاري التوليد</div>`; return; }
+    if (typeof window.QRCode === "function") {
+      const holder = document.createElement("div");
+      holder.className = "qr-image";
+      slot.appendChild(holder);
+      try {
+        new window.QRCode(holder, { text, width: 220, height: 220, correctLevel: window.QRCode.CorrectLevel.M });
+        return;
+      } catch (_) { /* هنعمل fallback تحت */ }
+    }
+    slot.innerHTML = `<div class="qr-box">${esc(text)}</div>`;
+  }
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
   const esc = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;" }[char]));
   const first = (obj, keys, fallback = "") => keys.reduce((value, key) => value !== undefined && value !== null && value !== "" ? value : obj?.[key], undefined) ?? fallback;
@@ -285,7 +304,7 @@
     if (action === "bot-stop") return mutate(API.bot.stop, "POST", {}, "تم إيقاف البوت.");
     if (action === "bot-restart") return mutate(API.bot.restart, "POST", {}, "تم طلب إعادة التشغيل.");
     if (action === "disconnect") return mutate(API.session.disconnect, "POST", {}, "تم فصل الجلسة.");
-    if (action === "request-qr") { const slot = $("#pairing-slot"); const data = await safeApi(API.session.qr, { method: "POST" }, {}); const qr = first(data, ["dataUrl", "qr", "code"], ""); slot.innerHTML = qr.startsWith("data:image/") ? `<img class="qr-image" src="${esc(qr)}" alt="QR Code">` : `<div class="qr-box">${esc(qr || "جاري التوليد")}</div>`; slot.innerHTML += `<p class="muted" style="text-align:center;font-size:10px">افتح واتساب ← الأجهزة المرتبطة ← ربط جهاز</p>`; return; }
+    if (action === "request-qr") { const slot = $("#pairing-slot"); const data = await safeApi(API.session.qr, { method: "POST" }, {}); const qr = first(data, ["qr", "dataUrl", "code"], ""); renderQrInto(slot, qr); slot.innerHTML += `<p class="muted" style="text-align:center;font-size:10px">افتح واتساب ← الأجهزة المرتبطة ← ربط جهاز</p>`; return; }
     if (action === "request-pair") { const phone = prompt("اكتب رقم الهاتف مع كود الدولة:"); if (!phone) return; const data = await safeApi(API.session.pair, { method: "POST", body: JSON.stringify({ phone }) }, {}); $("#pairing-slot").innerHTML = `<div class="code-display">${esc(first(data, ["pairingCode", "code"], "—"))}</div><p class="muted" style="text-align:center;font-size:10px">اكتب الكود داخل واتساب لإتمام الربط.</p>`; return; }
     if (action === "create-backup") return mutate(API.backups.create, "POST", {}, "تم إنشاء نسخة احتياطية.");
     if (action === "download-backup") {
@@ -374,7 +393,7 @@
       state.ws.onerror = () => updateConnectionUi(false);
       state.ws.onmessage = (event) => {
         try { const message = JSON.parse(event.data); const type = message.event || message.type; const payload = message.data ?? message.payload ?? message;
-          if (type === "qr") { const slot = $("#pairing-slot"); const qr = first(payload, ["dataUrl", "qr", "code"], ""); if (slot) slot.innerHTML = qr.startsWith("data:image/") ? `<img class="qr-image" src="${esc(qr)}" alt="QR Code">` : `<div class="qr-box">${esc(qr)}</div>`; }
+          if (type === "qr") { const slot = $("#pairing-slot"); const qr = first(payload, ["qr", "dataUrl", "code"], ""); renderQrInto(slot, qr); }
           if (type === "log:line" || type === "log") { state.logs.push(payload); if (state.section === "logs") { const consoleEl = $("#console"); if (consoleEl) { consoleEl.innerHTML = logRows(); consoleEl.scrollTop = consoleEl.scrollHeight; } } }
           if (type === "session:update" || type === "connection:update" || type === "connection") { state.connected = Boolean(first(payload, ["connected", "status"], false) === true || first(payload, ["status"], "") === "open"); updateConnectionUi(state.connected); }
           if (type === "metrics:update") { state.cache.overview = payload; }

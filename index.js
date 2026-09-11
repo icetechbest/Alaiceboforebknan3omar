@@ -33,7 +33,6 @@ const { getCurrentWaVersion } = require("./core/waVersion.js");
 const { startScheduler } = require("./core/scheduler.js");
 const { createDashboardServer } = require("./dashboard-server");
 const { atomicWriteJsonSync } = require("./dashboard-server/storage.js");
-const QRCode = require("qrcode");
 
 // تحميل .env بدون فرض اعتماد إضافي على البوت الأساسي. لا يوجد مفتاح افتراضي:
 // لو DASHBOARD_KEY غير موجود في أول تشغيل، يتم توليد قيمة عشوائية مرة واحدة
@@ -334,12 +333,10 @@ async function startBot() {
     sock.ev.on('connection.update', async (update) => {
         const { connection, lastDisconnect } = update;
         if (update.qr && dashboardRuntime.linkMode === "qr") {
-            try {
-                dashboardRuntime.latestQr = await QRCode.toDataURL(update.qr);
-                dashboardServer?.publish("qr", { dataUrl: dashboardRuntime.latestQr });
-            } catch (error) {
-                console.error("❌ تعذر تحويل QR إلى data URL:", error.message);
-            }
+            // بنبعت نص الـ QR الخام زي ما هو - التحويل لصورة بيحصل في المتصفح
+            // (dashboard-ui) عشان السيرفر مايحتاجش أي مكتبة QR تعمل مشاكل على Termux/Railway.
+            dashboardRuntime.latestQr = update.qr;
+            dashboardServer?.publish("qr", { qr: update.qr });
         }
         if (connection === 'close') {
             if (dashboardRuntime.sock === sock) dashboardRuntime.sock = null;

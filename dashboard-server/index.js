@@ -4,7 +4,6 @@ const path = require("path");
 const fs = require("fs");
 const util = require("util");
 const crypto = require("crypto");
-const QRCode = require("qrcode");
 const { WebSocketServer } = require("ws");
 const { createApp, serveStatic, jsonBody, urlencodedBody, multipartSingle } = require("./mini-http");
 const {

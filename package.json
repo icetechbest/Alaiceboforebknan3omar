@@ -10,7 +10,6 @@
     "@whiskeysockets/baileys": "^6.7.24",
     "axios": "^1.7.7",
     "pino": "^9.4.0",
-    "qrcode": "^1.5.4",
     "ws": "^8.18.0"
   },
   "engines": {
