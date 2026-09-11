@@ -4,7 +4,7 @@ module.exports = {
         try {
             const groupID = m.key.remoteJid;
             const gangName = args.join(" ").trim(); 
-            const cost = 1000000000; // تكلفة إنشاء العصابة
+            const cost = 25000000; // تكلفة إنشاء العصابة
 
             // تأكد من وجود كائن العصابات في قاعدة البيانات
             if (!db.gangs) {
