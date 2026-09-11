@@ -1,5 +1,4 @@
 [phases.setup]
+# Baileys 6.7.x محتاجة Node 20 أو أعلى، فبنثبّتها صراحة عشان Railway ميجيبش
+# نسخة أقدم (زي 18) حتى لو كانت متاحة كافتراضي.
 nixPkgs = ["nodejs_20", "ffmpeg", "yt-dlp"]
-
-[phases.install]
-cmds = ["npm install --no-audit --no-fund"]

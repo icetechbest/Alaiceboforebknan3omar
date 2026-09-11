@@ -1,13 +1,12 @@
-const express = require("express");
 const http = require("http");
 const os = require("os");
 const path = require("path");
 const fs = require("fs");
 const util = require("util");
 const crypto = require("crypto");
-const multer = require("multer");
 const QRCode = require("qrcode");
 const { WebSocketServer } = require("ws");
+const { createApp, serveStatic, jsonBody, urlencodedBody, multipartSingle } = require("./mini-http");
 const {
     atomicWriteFileSync,
     atomicWriteJsonSync,
@@ -134,13 +133,12 @@ function createDashboardServer(options = {}) {
     const logLines = [];
     const errorLines = [];
     const clients = new Set();
-    const app = express();
-    const server = http.createServer(app);
+    const app = createApp();
+    const server = http.createServer((req, res) => app.handle(req, res));
     const wss = new WebSocketServer({ noServer: true });
-    const upload = multer({
-        storage: multer.memoryStorage(),
-        limits: { fileSize: 25 * 1024 * 1024 }
-    });
+    const upload = {
+        single: (fieldName) => multipartSingle(fieldName, { limits: { fileSize: 25 * 1024 * 1024 } })
+    };
 
     let listening = false;
     let originalConsole;
@@ -352,10 +350,10 @@ function createDashboardServer(options = {}) {
 
     // ملفات الواجهة يجب أن تُقدّم قبل المصادقة حتى تظهر شاشة إدخال المفتاح
     // أول مرة. الحماية تطبق على API فقط وعلى ترقية WebSocket بالأسفل.
-    if (fs.existsSync(publicDir)) app.use(express.static(publicDir));
+    if (fs.existsSync(publicDir)) app.use(serveStatic(publicDir));
     app.use(authMiddleware);
-    app.use(express.json({ limit: "5mb" }));
-    app.use(express.urlencoded({ extended: true }));
+    app.use(jsonBody({ limit: "5mb" }));
+    app.use(urlencodedBody());
 
     app.get("/api/session/status", (req, res) => res.json(sessionStatus()));
     app.post("/api/session/link/qr", async (req, res) => {
