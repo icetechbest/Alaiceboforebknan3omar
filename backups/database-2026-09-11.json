@@ -1,0 +1,4280 @@
+{
+  "232620008976456@lid": {
+    "name": "✦𝑰ـᬼ❄️⑅⃝ـᬼ𝒄𝒆✦",
+    "level": 36,
+    "gold": 1147479,
+    "xp": 48,
+    "hp": 1000,
+    "maxHp": 100,
+    "atk": 517235,
+    "def": 5,
+    "defense": 811345,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "الْمُطَوِّرِ سُونغ 👑",
+    "class": "محارب",
+    "pvpWins": 0,
+    "boughtPoisonDagger": false,
+    "assassinReq": {
+      "wins": false,
+      "gold": true,
+      "itemId": false
+    },
+    "huntCount": 4,
+    "boughtLongBow": false,
+    "archerReq": {
+      "hunts": false,
+      "gold": true,
+      "itemId": false
+    },
+    "registeredAt": 0,
+    "ambushWins": 0,
+    "revealed": false,
+    "deflectActive": false,
+    "deflectExpiresAt": 0,
+    "lastDeflectUsed": null,
+    "lastRevealAttempt": null,
+    "recentlyAmbushedUntil": 0,
+    "dailyAmbushLog": {
+      "date": "2026-07-27",
+      "targets": {}
+    },
+    "weeklyAmbush": {
+      "week": "2026-W31",
+      "count": 0,
+      "claimed": false
+    },
+    "allyJid": null,
+    "lastAmbushTarget": null,
+    "weakenedUntil": 0,
+    "lastVolley": null,
+    "defMilestones": {
+      "50": true,
+      "150": true,
+      "300": true
+    },
+    "lastHunt": 1786025563691,
+    "lastSpin": 1785267466649,
+    "lastMonsterBattle": 1788905324374,
+    "lastSteal": 1785202732779
+  },
+  "217523366699114@lid": {
+    "name": "✧❄𝐓𝐀𝐄𝐇𝐀❄✧",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "256521854283867@lid": {
+    "name": "🕸║𝐤𝐨𝐤𝐨𝐧𝐢║🕷",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "167405410099299@lid": {
+    "name": "كيرا",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "221719314825230@lid": {
+    "name": "مادارا",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "banned": [
+    "79148294869182@lid",
+    "39355339002038@lid",
+    "143371075108976@lid"
+  ],
+  "owners": [
+    "201220800288@s.whatsapp.net",
+    "201010495644@s.whatsapp.net"
+  ],
+  "120603403112511@lid": {
+    "name": "سونغ²",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "161843578413256@lid": {
+    "name": "توجي",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "customReplies": {
+    "120363403523753424@g.us": {
+      "سلام عليكم": "عليكم السلام ورحمه الله وبركاته",
+      "السلام عليكم": "و عليكم السلام ورحمه الله وبركاته"
+    },
+    "120363423560034644@g.us": {
+      "تست": "تستين",
+      "سونغ": "سونغ عمك",
+      "السلام عليكم": "وعليكم السلام ورحمه الله وبركاته"
+    },
+    "120363419948690347@g.us": {
+      "السلام عليكم": "وعليكم السلام ورحمه الله وبركاته",
+      "سونغ": "سونغ عمك",
+      "تست": "تستين"
+    }
+  },
+  "puzzles": {
+    "120363427243542317@g.us": {
+      "answer": "زينيتسو",
+      "type": "تفكيك",
+      "time": 1784473336586
+    },
+    "120363410499557638@g.us": {
+      "answer": "البرازيل",
+      "startTime": 1784993236450,
+      "reward": 200
+    }
+  },
+  "bannedGroups": [
+    "120363404820815095@g.us",
+    "120363408644646157@g.us",
+    "120363410616687310@g.us",
+    "120363401892285150@g.us",
+    "120363427534239435@g.us"
+  ],
+  "201220800288@s.whatsapp.net": {
+    "name": "ايس",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "91371838898292@lid": {
+    "name": "لاعب",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "253321952673860@lid": {
+    "name": "𝐤𝐚𝐤𝐚𝐫𝐨𝐭𝐨",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "199802449055749@lid": {
+    "name": "رين",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "settings": {
+    "cooldowns": {
+      "عجلة": 150000,
+      "عجله": 180000,
+      "صيد": 60000,
+      "وحش": 120000,
+      "الوحش": 60000,
+      "سرقة": 300000,
+      "العجلة": 180000,
+      "السرقة": 60000,
+      "الصيد": 60000,
+      "الدفاع": 0
+    },
+    "commandsMessage": "✦━───━ 📜 SONG BOT MENU 📜 ━───━✦\n✨ قائمة أوامر الفعاليات والترفيه ✨\n✦━──── ❖ ────━✦\n🔹 [.علم] ↫ خمن الدولة من العلم 🚩\n🔹 [.تفكيك] ↫ فكك اسم الشخصية المعروضة 🧩\n🔹 [.تخمين] ↫ تعرف على الشخصية في الصورة 🖼️\n🔹 [.فاكهه] ↫ خمن اسم الفاكهة من الإيموجي 🍎\n🔹 [.استيكر] ↫ تحويل صور/فيديو لملصق ✨\n🔹 [.تزوج] ↫ طلب الزواج من شخص (منشن) 💍\n🔹 [.طلاق] ↫ لإنهاء علاقة الزواج 💔\n🔹 [.كت] ↫ أسئلة صراحة محرجة وعشوائية 🎤\n🔹 [.صراحة] ↫ اسأل بصراحة تامة 🗣️\n🔹 [.اقتباس] ↫ حكم وأقوال تلمس القلب 🖋️\n🔹 [.اعتراف] ↫ واجه الحقيقة وأجب على السؤال 🔥\n🔹 [.ايديت] ↫ فيديوهات إيديت لشخصيتك المفضلة 🎬\n🔹 [.غباء] ↫ مقياس نسبة الغباء الحالية 🧠\n🔹 [.عصبية] ↫ مقياس نسبة الغضب لديك 💢\n🔹 [.المطور] ↫ معلومات عن صانع البوت 👑\n\n✦━──── ❖ ────━✦\n🏰 قائمة أوامر نظام المملكة 🏰\n✦━──── ❖ ────━✦\n🔹 [.لاعب جديد] ↫ ابدأ رحلتك وأنشئ ملفك 🛡️\n🔹 [.مملكتي / .مملكة] ↫ عرض إحصائياتك وإنجازاتك 📊\n🔹 [.متجر] ↫ شراء الأسلحة والرفقاء النادرين 🛒\n🔹 [.شراء] ↫ شراء عنصر برقمه من المتجر 💰\n🔹 [.عجلة الحظ] ↫ جرب حظك مع عجلة الجوائز 🎡\n🔹 [.صيد] ↫ اصطد وحوش الغابة لزيادة ذهبك 🏹\n🔹 [.تطور] ↫ ارفع مستواك (Level Up) لتقوى 🆙\n🔹 [.وحش] ↫ تحدى وحوش الممالك لفل محدد 🐉\n🔹 [.مواجهة] ↫ تحدي مواجهة قتالية ضد لاعب ⚔️\n🔹 [.ذهبي] ↫ عرض رصيد ذهبك 💰\n🔹 [.خزينة] ↫ عرض رصيد خزينة المملكة 🏛️\n🔹 [.ترتيب] ↫ أقوى اللاعبين في المملكة 🏆\n\n✦━──── ❖ ────━✦\n🥷 قائمة أوامر الفئات الخاصة 🥷\n✦━──── ❖ ────━✦\n🔹 [.مغتال] ↫ اعرف طريقك للتحول السري لمغتال 🥷\n🔹 [.اغتيال] ↫ كمين مباغت حصري للمغتال 🗡️\n🔹 [.تحالف] ↫ تحالف ظل سري بين مغتالَين 🌑\n🔹 [.كشف-مغتال] ↫ اتهم حداً بأنه مغتال (مكافأة أو غرامة) 🕵️\n🔹 [.ترتيب_مغتالين] ↫ أخطر المغتالين المكشوفين 💀\n🔹 [.رامي] ↫ اتقن الرماية وتحول لرامي 🏹\n🔹 [.رشق] ↫ رشقة سهام حصرية للرامي توهن الخصم 🎯\n🔹 [.صد] ↫ تصدٍّ حصري للمحارب ضد الاغتيال 🛡️\n🔹 [.توبة] ↫ ارجع محارباً عادياً من جديد 🕊️\n\n✦━──── ❖ ────━✦\n🛡️ قائمة أوامر الإدارة والنقابة 🛡️\n✦━──── ❖ ────━✦\n🔹 [.منشن] ↫ استدعاء جماعي لجميع الأعضاء 📢\n🔹 [.ترقية] ↫ منح رتبة مشرف لعضو جديد 🍷\n🔹 [.اعفاء] ↫ سحب رتبة الإشراف من العضو ⚠️\n🔹 [.طرد] ↫ إقصاء عضو خارج أسوار النقابة 🚪\n🔹 [.كتم / .فك_كتم] ↫ كتم عضو أو فك كتمه 🔇\n🔹 [.حظر / .فك_الحظر] ↫ حظر عضو أو فك حظره ⛔\n🔹 [.الجروب] (فتح/غلق) ↫ التحكم في المحادثة 🔐\n🔹 [.حماية] ↫ تفعيل حماية الجروب من الروابط 🛡️\n\n✦━──── ❖ ────━✦\n👑 قائمة أوامر المطور 👑\n✦━──── ❖ ────━✦\n🔹 [.لقب] ↫ تغيير اسم أي لاعب في المملكة 🏷️\n🔹 [.عدل-الاوامر] ↫ تعديل نص قائمة الأوامر دي 📝\n🔹 [.رسترت] ↫ إعادة تشغيل البوت 🔄\n\n✦━──── ❖ ────━✦\n『 SONG BOT v2.0 』\n✦━──── ❖ ────━✦",
+    "steal": {
+      "enabled": true,
+      "successRate": 46,
+      "stealPct": 15,
+      "failPenaltyPct": 8,
+      "cooldownMs": 7200000
+    },
+    "installEnabled": true
+  },
+  "marryRequests": {
+    "120603403112511@lid": {
+      "from": "275685830602904@lid",
+      "time": 1767185675232
+    },
+    "132783947129058@lid": {
+      "from": "181677452210315@lid",
+      "time": 1767187219654
+    },
+    "97101258170468@lid": {
+      "from": "201919800864871@lid",
+      "time": 1767187495846
+    },
+    "203281439658110@lid": {
+      "from": "237598010269872@lid",
+      "time": 1767201350930
+    },
+    "120384191987830@lid": {
+      "from": "261576728813793@lid",
+      "time": 1767993014022
+    }
+  },
+  "132783947129058@lid": {
+    "name": "كايزر",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "123055527477439@lid": {
+    "name": "𝒁𝒂𝒄𝒌 𝑳𝒆𝒆",
+    "level": 507,
+    "gold": 0,
+    "xp": 0,
+    "hp": 12775,
+    "maxHp": 100,
+    "atk": 1908005,
+    "def": 5,
+    "defense": 0,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "سيد الوقت ⏳",
+    "class": "محارب",
+    "pvpWins": 0,
+    "boughtPoisonDagger": false,
+    "assassinReq": {
+      "wins": false,
+      "gold": false,
+      "itemId": false
+    },
+    "huntCount": 1,
+    "boughtLongBow": false,
+    "archerReq": {
+      "hunts": false,
+      "gold": false,
+      "itemId": false
+    },
+    "registeredAt": 0,
+    "ambushWins": 0,
+    "revealed": false,
+    "deflectActive": false,
+    "deflectExpiresAt": 0,
+    "lastDeflectUsed": null,
+    "lastRevealAttempt": null,
+    "recentlyAmbushedUntil": 0,
+    "dailyAmbushLog": {
+      "date": "2026-07-28",
+      "targets": {}
+    },
+    "weeklyAmbush": {
+      "week": "2026-W31",
+      "count": 0,
+      "claimed": false
+    },
+    "allyJid": null,
+    "lastAmbushTarget": null,
+    "weakenedUntil": 0,
+    "lastVolley": null,
+    "defMilestones": {
+      "50": true,
+      "150": true,
+      "300": true
+    },
+    "lastMonsterBattle": 1785248469540,
+    "lastHunt": 1785247980929,
+    "lastSpin": 1785247986089
+  },
+  "168521866731560@lid": {
+    "name": "غارو",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "248631982596124@lid": {
+    "name": "ساكاموتو",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "126783793922054@lid": {
+    "name": "محمد عبدالرحمن",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "161065686057131@lid": {
+    "name": "Khaled",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "142601822957655@lid": {
+    "name": "بودا",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "39286703452360@lid": {
+    "name": "A6g A6 6",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "86587094364400@lid": {
+    "name": "ليفاي",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "58184576331859@lid": {
+    "name": "كانيكي",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "93639548137556@lid": {
+    "name": "زورو",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "86471264489654@lid": {
+    "name": "زورو",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "181677452210315@lid": {
+    "name": "Isagi",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "246415829770334@lid": {
+    "name": "𓆩𝐃𝐈𝕷𝐌𝐀 𝐋𝐎𝐍𝐀𓆪⁩⁩",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "99381969698908@lid": {
+    "name": "XXXTENTSCION",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "231250166054921@lid": {
+    "name": "ناروتو",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "237598010269872@lid": {
+    "name": "ايتاشي",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "201919800864871@lid": {
+    "name": "ڤاليريا",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "67427329155233@lid": {
+    "name": "باتمان",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "muted": {
+    "120363419948690347@g.us": [
+      "232620008976456@lid",
+      "82159184404714@lid",
+      "237598010269872@lid"
+    ],
+    "120363423560034644@g.us": [
+      "217523366699114@lid"
+    ],
+    "120363403173017907@g.us": [],
+    "120363403523753424@g.us": [
+      "241833099669527@lid",
+      "217523366699114@lid"
+    ],
+    "120363404705770102@g.us": [
+      "59378560430224@lid",
+      "86277890265110@lid",
+      "248893690388481@lid"
+    ],
+    "120363422304316866@g.us": [
+      "175956606087311@lid"
+    ],
+    "120363422175230476@g.us": [],
+    "120363410616687310@g.us": [],
+    "120363401892285150@g.us": [],
+    "120363410499557638@g.us": [],
+    "120363424206324544@g.us": [
+      "212128719990987@lid",
+      "232620008976456@lid",
+      "40197421035570@lid",
+      "167405410099299@lid",
+      "67393053278310@lid"
+    ]
+  },
+  "welcome": {
+    "120363423560034644@g.us": {
+      "status": "open",
+      "message": "اهلا يا $user في $groupname\nنورتنا"
+    },
+    "120363419948690347@g.us": {
+      "status": "open",
+      "message": "`◞نـقـابـة شـاريـنـغـان تــفـتـح لـك أبـوابـهـا • 夜╎🌀◜`\n*◈═════⊹⊱🌀⊰⊹═════◈*\n✦╎نـار تـحـت الـرمـاد، تـدل عـلـى أن الـقـوة لا تـكـمـن فـقـط فـي الـظـهـور، بـل فـي الـعـمـق و الـصـلابـة الـداخـلـيـة. 🌟💪\n✦╎هـنـا، حـيـث الـرمـاد يـلـتـقـي بـالـلـهـب، نـتـمـنـى لـك رحـلـة مـمـتـعـة، و عـمـيـقـة كـأسـرار الـنـار.\n*◈═════⊹⊱🌀⊰⊹═════◈*\n*◉┆الـمَرْجُــو دُخُــول الإِعْـلَـانَـات 📻⇓*\n*【 https://chat.whatsapp.com/GE6TTZuYmZp4oHwVDvgS1b 】*\n*◉┆الـمَرْجُــو دُخُــول الصحيفة المملكة ⇓*\n*【 https://chat.whatsapp.com/BAjnKUY9ITSLOas1LAjzXW 】*\n*◈═════⊹⊱🌀⊰⊹═════◈*\n_*~⌬ تــ✍︎ــوقــيــع ⟱~*_\n_~*⟅ 𝑽.𝑮.𝑻╻🌀╹𝑺𝑯𝑨𝑹𝑬𝑵𝑮𝑨𝑵 ⟆*~_\n*◈═════⊹⊱🌀⊰⊹═════◈*"
+    }
+  },
+  "156715286827222@lid": {
+    "name": "𝓐𝓗𝓜𝓔𝓓",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "224266616340506@lid": {
+    "name": "كريس",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "278555103625464@lid": {
+    "name": "عقروب",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "pvpRequests": {
+    "93639548137556@lid": {
+      "challenger": "82159184404714@lid",
+      "time": 1767232951136
+    },
+    "231250166054921@lid": {
+      "challenger": "82159184404714@lid",
+      "time": 1767258804827
+    },
+    "99381969698908@lid": {
+      "challenger": "82159184404714@lid",
+      "time": 1767394376152
+    },
+    "19675664670879@lid": {
+      "challenger": "138238471708807@lid",
+      "time": 1767463793734
+    },
+    "223540850724921@lid": {
+      "challenger": "181990733140121@lid",
+      "time": 1767663040496
+    },
+    "35752029229301@lid": {
+      "challenger": "141953232564255@lid",
+      "time": 1767533900515
+    },
+    "15479565488311@lid": {
+      "challenger": "181990733140121@lid",
+      "time": 1767688612140
+    },
+    "141953232564255@lid": {
+      "challenger": "82159184404714@lid",
+      "time": 1767726361581
+    },
+    "256002230370553@lid": {
+      "challenger": "156766860005570@lid",
+      "time": 1767906413960
+    },
+    "271051745423497@lid": {
+      "challenger": "156766860005570@lid",
+      "time": 1767981195959
+    },
+    "59378560430224@lid": {
+      "challenger": "86277890265110@lid",
+      "time": 1767984704185
+    },
+    "78680109908022@lid": {
+      "challenger": "156766860005570@lid",
+      "time": 1767987568200
+    },
+    "243872890392691@lid": {
+      "challenger": "147476795408601@lid",
+      "time": 1768171892230
+    },
+    "147476795408601@lid": {
+      "challenger": "243872890392691@lid",
+      "time": 1768171948167
+    },
+    "63003546406995@lid": {
+      "challenger": "138238471708807@lid",
+      "time": 1768250859420
+    }
+  },
+  "32874266894507@lid": {
+    "name": "لوكي",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "57346990543036@lid": {
+    "name": "آيوشة",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "118850888663270@lid": {
+    "name": "زورو",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "64717154439285@lid": {
+    "name": "زعتر",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "192642453389361@lid": {
+    "name": "الاستور المز",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "133792593375262@lid": {
+    "name": "𝐎𝐧𝐢𝐳𝐮𝐤𝐚",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "91951508496464@lid": {
+    "name": "~.",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "170171553599742@lid": {
+    "name": "うちは イタチ",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "201223038677@s.whatsapp.net": {
+    "name": "✯ 彡 𝐘𝐎𝐒✥𝐇𝐈𝐃𝐀 彡 ✯",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "181990733140121@lid": {
+    "name": "ثورفين",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "165133624062040@lid": {
+    "name": "ريبيكا",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "221036549247043@lid": {
+    "name": "✦𝑨𝒓ـᬼ🐉⑅⃝ـᬼ𝑻𝒉𝒖𝒓✦",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "138238471708807@lid": {
+    "name": "✦𝑨ـᬼ🌑⑅⃝ـᬼ𝑳✦",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "82159184404714@lid": {
+    "name": "𓆩𝒀𝒐𝒓𝒊𓆪",
+    "level": 1,
+    "gold": 1600,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد",
+    "weakenedUntil": 1785079410234
+  },
+  "120508863492200@lid": {
+    "name": "تلميذ الايام",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "180255935471800@lid": {
+    "name": "كمباتشي زاراكي",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "35752029229301@lid": {
+    "name": "بيغاموري",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "219112638824647@lid": {
+    "name": "مايكي",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "179233548681244@lid": {
+    "name": "سوكونا",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "172984874590246@lid": {
+    "name": "✦𝑬𝒎ـᬼ🌸⑅⃝ـᬼ𝑰𝒍𝒊𝒂✦",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "devModeEmoji": false,
+  "125916193759382@lid": {
+    "name": "رزق",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "228565878575244@lid": {
+    "name": "استا",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "19675664670879@lid": {
+    "name": "✦𝑮𝒖𝒂𝒕𝒔ـᬼ🔱⑅⃝ـᬼ𝑺𝒂𝒏𝒔𝒊✦",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "281338141794381@lid": {
+    "name": "باكي",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "141953232564255@lid": {
+    "name": "سون",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "14779485782099@lid": {
+    "name": "𝕴𝖙𝖆𝖈𝖍𝖎",
+    "level": 13,
+    "gold": 1914,
+    "xp": 0,
+    "hp": 425,
+    "maxHp": 100,
+    "atk": 147,
+    "def": 10,
+    "defense": 12100,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد",
+    "class": "محارب",
+    "pvpWins": 0,
+    "boughtPoisonDagger": false,
+    "assassinReq": {
+      "wins": false,
+      "gold": true,
+      "itemId": false
+    },
+    "huntCount": 0,
+    "boughtLongBow": false,
+    "archerReq": {
+      "hunts": false,
+      "gold": true,
+      "itemId": false
+    },
+    "registeredAt": 0,
+    "ambushWins": 0,
+    "revealed": false,
+    "deflectActive": false,
+    "deflectExpiresAt": 0,
+    "lastDeflectUsed": null,
+    "lastRevealAttempt": null,
+    "recentlyAmbushedUntil": 0,
+    "dailyAmbushLog": {
+      "date": "2026-07-25",
+      "targets": {}
+    },
+    "weeklyAmbush": {
+      "week": "2026-W30",
+      "count": 0,
+      "claimed": false
+    },
+    "allyJid": null,
+    "lastAmbushTarget": null,
+    "weakenedUntil": 1785220815416,
+    "lastVolley": null,
+    "defMilestones": {
+      "50": true,
+      "150": true,
+      "300": true
+    },
+    "lastMonsterBattle": 1785093222661,
+    "lastUpgrade": 1785091484392
+  },
+  "223540850724921@lid": {
+    "name": "ميكاسا",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "14972641915085@lid": {
+    "name": "بطاطا",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "40794253734132@lid": {
+    "name": "𝑴𝑰𝑲𝑨𝑺𝑨˚‧୧🎀˚",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "99879800021073@lid": {
+    "name": "كيت",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "15479565488311@lid": {
+    "name": "✦𝑳𝒆ـᬼ⑅⃝亗ـᬼ𝑶✦",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "223669632630795@lid": {
+    "name": "لاعب",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "256002230370553@lid": {
+    "name": "S",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "12640357236775@lid": {
+    "name": "✦𝑩𝒂𝒏ـᬼ🐶⑅⃝ـᬼ𝑫𝒆𝒓✦",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "265687297695943@lid": {
+    "name": "✦𝑩𝒆𝒐ـᬼ♦️⑅⃝ـᬼ𝒎✦",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "120363423560034644@g.us": {
+    "protection": true,
+    "lastMonsterBattle": 1788904191948,
+    "hp": 0
+  },
+  "120363419948690347@g.us": {
+    "protection": false
+  },
+  "120363401892285150@g.us": {
+    "protection": false,
+    "gold": null,
+    "lastMonsterBattle": 1784584571484,
+    "hp": 0
+  },
+  "users": {
+    "141953232564255@lid": {
+      "gold": 9500,
+      "married": "246415829770334@lid"
+    },
+    "246415829770334@lid": {
+      "gold": 2700,
+      "married": "141953232564255@lid"
+    },
+    "231250166054921@lid": {
+      "gold": 9000
+    },
+    "82159184404714@lid": {
+      "gold": 1500,
+      "married": "271051745423497@lid"
+    },
+    "181990733140121@lid": {
+      "gold": 0
+    },
+    "123055527477439@lid": {
+      "gold": 1000,
+      "married": "82159184404714@lid"
+    },
+    "86587094364400@lid": {
+      "gold": 800
+    },
+    "271051745423497@lid": {
+      "gold": 6800,
+      "married": "82159184404714@lid"
+    },
+    "248893690388481@lid": {
+      "gold": 11100,
+      "married": "86277890265110@lid"
+    },
+    "224253580472434@lid": {
+      "gold": 200
+    },
+    "86277890265110@lid": {
+      "gold": 925,
+      "married": "232620008976456@lid"
+    },
+    "18567512756225@lid": {
+      "gold": 200
+    },
+    "138238471708807@lid": {
+      "gold": 3500
+    },
+    "147476795408601@lid": {
+      "gold": 8450
+    },
+    "160409009016932@lid": {
+      "gold": 25000
+    },
+    "156766860005570@lid": {
+      "gold": 5475,
+      "married": "86277890265110@lid"
+    },
+    "59378560430224@lid": {
+      "gold": 250
+    },
+    "232620008976456@lid": {
+      "gold": 85001300,
+      "married": "86277890265110@lid"
+    },
+    "275844912173240@lid": {
+      "gold": 2200
+    },
+    "55216787431595@lid": {
+      "gold": 600
+    },
+    "268079544197198@lid": {
+      "gold": 2800
+    },
+    "268882736607487@lid": {
+      "gold": 2200
+    },
+    "63003546406995@lid": {
+      "gold": 10200
+    },
+    "16008014241912@lid": {
+      "gold": 200
+    },
+    "21819155321078@lid": {
+      "gold": 6000
+    },
+    "217523366699114@lid": {
+      "gold": 200
+    },
+    "221900156469402@lid": {
+      "gold": 11200
+    },
+    "77146454274158@lid": {
+      "gold": 200
+    },
+    "84821896339549@lid": {
+      "gold": 200
+    },
+    "278555103625464@lid": {
+      "gold": 1800
+    },
+    "243872890392691@lid": {
+      "gold": 3000
+    },
+    "246256463044702@lid": {
+      "gold": 600
+    },
+    "275685830602904@lid": {
+      "gold": 200
+    },
+    "176656937427097@lid": {
+      "gold": 200
+    },
+    "101477326544904@lid": {
+      "gold": 800
+    },
+    "223089895956591@lid": {
+      "gold": 87000100
+    }
+  },
+  "gangs": {
+    "المترشمين": {
+      "name": "",
+      "owner": "86277890265110@lid",
+      "members": [],
+      "gold": 0,
+      "level": 2,
+      "time": 1767570331079
+    },
+    "الشينيغامي": {
+      "name": "الشينيغامي",
+      "description": "لا يوجد وصف حالياً",
+      "owner": "86277890265110@lid",
+      "members": [
+        "86277890265110@lid",
+        "156766860005570@lid"
+      ],
+      "gold": 1010100202,
+      "level": 1,
+      "time": 1768088408202
+    },
+    "الشحاتيييين": {
+      "name": "الشحاتيييين",
+      "description": "لا يوجد وصف حالياً",
+      "owner": "181990733140121@lid",
+      "members": [
+        "181990733140121@lid",
+        "221036549247043@lid",
+        "138238471708807@lid"
+      ],
+      "gold": 669400000,
+      "level": 58,
+      "time": 1768088816692
+    },
+    "الملوك😈": {
+      "name": "الملوك😈",
+      "description": "لا يوجد وصف حالياً",
+      "owner": "16008014241912@lid",
+      "members": [
+        "16008014241912@lid",
+        "63003546406995@lid",
+        "268079544197198@lid",
+        "113203073810505@lid",
+        "160409009016932@lid",
+        "22991530402039@lid"
+      ],
+      "gold": 0,
+      "level": 1,
+      "time": 1768154005653
+    },
+    "big deal": {
+      "name": "big deal",
+      "description": "لا يوجد وصف حالياً",
+      "owner": "223089895956591@lid",
+      "members": [
+        "223089895956591@lid",
+        "232894752649335@lid",
+        "15479565488311@lid",
+        "39355339002038@lid",
+        "82159184404714@lid",
+        "277468426588215@lid",
+        "120139378864177@lid",
+        "83215796727822@lid",
+        "6284225052733@lid",
+        "143371075108976@lid",
+        "123055527477439@lid",
+        "182953460166908@lid"
+      ],
+      "gold": 67,
+      "level": 1,
+      "time": 1784637674129
+    },
+    "𝑂𝑁𝐸 𝑃𝐼𝐸𝐶𝐸": {
+      "name": "𝑂𝑁𝐸 𝑃𝐼𝐸𝐶𝐸",
+      "description": "لا يوجد وصف حالياً",
+      "owner": "241609560092689@lid",
+      "members": [
+        "241609560092689@lid"
+      ],
+      "gold": 9750000010,
+      "level": 1,
+      "time": 1784831622358
+    },
+    "S": {
+      "name": "S",
+      "description": "لا يوجد وصف حالياً",
+      "owner": "28020551213303@lid",
+      "members": [
+        "28020551213303@lid",
+        "232620008976456@lid",
+        "232620008976456@lid",
+        "130301405741219@lid",
+        "54787324280888@lid"
+      ],
+      "gold": 4000,
+      "level": 1,
+      "time": 1784857409018
+    },
+    "𝑴.𝒀𝑼𝑲𝑰": {
+      "name": "𝑴.𝒀𝑼𝑲𝑰",
+      "description": "لا يوجد وصف حالياً",
+      "owner": "40197421035570@lid",
+      "members": [
+        "40197421035570@lid"
+      ],
+      "gold": 0,
+      "level": 1,
+      "time": 1784944979131
+    }
+  },
+  "gangInvites": {
+    "246415829770334@lid": {
+      "gangName": "عنقاء الاولمب",
+      "from": "82159184404714@lid",
+      "time": 1767570467855
+    },
+    "141953232564255@lid": {
+      "gangName": "عنقاء الاولمب",
+      "from": "82159184404714@lid",
+      "time": 1767617544269
+    },
+    "56732944437410@lid": {
+      "gangName": "عنقاء الاولمب",
+      "from": "123055527477439@lid",
+      "time": 1767762652861
+    },
+    "181990733140121@lid": {
+      "gangName": "الشينيغامي",
+      "from": "86277890265110@lid",
+      "time": 1768088667532
+    },
+    "221900156469402@lid": {
+      "gangName": "الملوك😈",
+      "from": "16008014241912@lid",
+      "time": 1768154254958
+    },
+    "16008014241912@lid": {
+      "gangName": "الشينيغامي",
+      "from": "86277890265110@lid",
+      "time": 1768153854693
+    },
+    "248893690388481@lid": {
+      "gangName": "الشينيغامي",
+      "from": "86277890265110@lid",
+      "time": 1768154321906
+    },
+    "113203073810505@lid": {
+      "gangName": "الملوك😈",
+      "from": "16008014241912@lid",
+      "time": 1768155644889
+    },
+    "232942450270252@lid": {
+      "gangName": "الملوك😈",
+      "from": "16008014241912@lid",
+      "time": 1768229142610
+    }
+  },
+  "260920018239741@lid": {
+    "name": "⃝⃕🍪𝆺𝅥𝆹𝅥𓍯𝐷𖦹Do",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "84826157748351@lid": {
+    "name": "✦𝑩𝒐𝒓ـᬼ💮⑅⃝ـᬼ𝑶𝒕𝒐✦",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "170847474081878@lid": {
+    "name": "MOHAMED AMIR",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "192054378426614@lid": {
+    "name": "L",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "277468426588215@lid": {
+    "name": "تاكي",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "224678933192716@lid": {
+    "name": "Seif",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "59378560430224@lid": {
+    "name": "~𝓝𝓲𝓰𝓱𝓽𝓶𝓪𝓻𝓮~",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "23051559293104@lid": {
+    "name": "لاعب",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "9157491064961@lid": {
+    "name": "KHADIJA 🌹",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "204037320396902@lid": {
+    "name": "父 KÖNIG 父",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "271051745423497@lid": {
+    "name": "𝒉𝒂𝒋𝒂𝒓",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "56732944437410@lid": {
+    "name": "𝑮𝒂𝒃𝒊𝒎𝒂𝒓𝒖",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "248893690388481@lid": {
+    "name": "✦𝑻𝑯𝑶𝑹ـᬼ🌻⑅⃝ـᬼ𝑭𝑰𝑵✦",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "86277890265110@lid": {
+    "name": "✦𝑰𝒄𝒉𝒊𝒈𝒐ـᬼ⚜️⑅⃝ـᬼ𝑪𝒐𝒓𝒐𝒔𝒂𝒌𝒊✦",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "261606625796132@lid": {
+    "name": "❄︎𝖒𝖆𝖑𝖏𝖐❦︎❄️",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "104291117310041@lid": {
+    "name": "ShadowXxx",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "224253580472434@lid": {
+    "name": "فتـﮱ | 𝖆𝖓𝖎𝖒𝖊",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "147476795408601@lid": {
+    "name": "Monkey D. Luffy",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "120363408319083475@g.us": {
+    "welcome": {
+      "message": "❄️┇ أهلاً بك يا $user في $group 💎 برحاء ملء الاستمارة عن طريق أمر: .استقبال"
+    }
+  },
+  "75531982753872@lid": {
+    "name": "موزان",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "24705306251426@lid": {
+    "name": "✦𝑵𝑰ـᬼ🌻⑅⃝ـᬼ𝑵𝑨✦",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "124309892808891@lid": {
+    "name": "Belez",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "156766860005570@lid": {
+    "name": "😈💥JAMIE🦅_🦅الكارف💥😈",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "55010528387203@lid": {
+    "name": "A",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "78680109908022@lid": {
+    "name": "يوسف الخواجه",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "55216787431595@lid": {
+    "name": "ؤُحـ༈ۖ҉ـيـ༈ۖ҉ـدكـ༈ۖ҉ـآلَقـ༈ۖ҉ـمـ༈ۖ҉ـر",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "268079544197198@lid": {
+    "name": "𝓡𝓪𝓱𝓶𝓪",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "63003546406995@lid": {
+    "name": "_ - _ M_G _ - _",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "221900156469402@lid": {
+    "name": "wiam ✿",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "275844912173240@lid": {
+    "name": "💞Queen Victoria😻",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "160409009016932@lid": {
+    "name": "💎👑[REPA♾️NZEL]💎👑",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "268882736607487@lid": {
+    "name": "☯️🅔︎🅥︎🅐︎♦️",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "tempGroups": {
+    "1": "120363419456552272@g.us",
+    "2": "120363391817135591@g.us",
+    "3": "120363424586028158@g.us",
+    "4": "120363422499112279@g.us",
+    "5": "120363407184476845@g.us",
+    "6": "120363406994770085@g.us",
+    "7": "120363408407920407@g.us",
+    "8": "120363423740549009@g.us",
+    "9": "120363406718406412@g.us",
+    "10": "120363422435977039@g.us",
+    "11": "120363407487106249@g.us",
+    "12": "120363407337374565@g.us",
+    "13": "120363405345057782@g.us",
+    "14": "120363422337835009@g.us",
+    "15": "120363405711498981@g.us",
+    "16": "120363423560034644@g.us",
+    "17": "120363423632929096@g.us",
+    "18": "120363424273563211@g.us",
+    "19": "120363425263367337@g.us",
+    "20": "120363405139720043@g.us",
+    "21": "120363406841939434@g.us",
+    "22": "120363416976062002@g.us",
+    "23": "120363403858471057@g.us",
+    "24": "120363424676679024@g.us",
+    "25": "120363426114136310@g.us",
+    "26": "120363423628682705@g.us",
+    "27": "120363420560508369@g.us",
+    "28": "120363419286032286@g.us",
+    "29": "120363425403013225@g.us",
+    "30": "120363407617564308@g.us",
+    "31": "120363425114646711@g.us",
+    "32": "120363408247680739@g.us",
+    "33": "120363419782999239@g.us",
+    "34": "120363427256346068@g.us",
+    "35": "120363403118094327@g.us",
+    "36": "120363405567643296@g.us",
+    "37": "120363418508303014@g.us",
+    "38": "120363406022221168@g.us",
+    "39": "120363421762967981@g.us",
+    "40": "120363423094450345@g.us",
+    "41": "120363409034875824@g.us",
+    "42": "120363424644131073@g.us",
+    "43": "120363423940117255@g.us",
+    "44": "120363406660565261@g.us",
+    "45": "120363421739279458@g.us",
+    "46": "120363344122949028@g.us",
+    "47": "120363409914559536@g.us",
+    "48": "120363047425616143@g.us",
+    "49": "120363206114326703@g.us",
+    "50": "120363424206324544@g.us",
+    "51": "120363402258737249@g.us",
+    "52": "120363419641435285@g.us",
+    "53": "120363412278737354@g.us",
+    "54": "120363424696490876@g.us",
+    "55": "120363426739012785@g.us",
+    "56": "120363420821233493@g.us",
+    "57": "120363405125264419@g.us",
+    "58": "120363401266496425@g.us",
+    "59": "120363418884024595@g.us",
+    "60": "120363426197548578@g.us",
+    "61": "120363421625795997@g.us",
+    "62": "970569543372-1613410406@g.us",
+    "63": "120363424735170272@g.us",
+    "64": "201123269590-1466026027@g.us",
+    "65": "120363420046820314@g.us",
+    "66": "120363400509016815@g.us",
+    "67": "120363404745497819@g.us",
+    "68": "120363410616687310@g.us",
+    "69": "120363425967207155@g.us",
+    "70": "120363425425587551@g.us",
+    "71": "201008787933-1584714218@g.us",
+    "72": "120363428169553887@g.us",
+    "73": "120363423456902449@g.us",
+    "74": "120363196394016272@g.us",
+    "75": "201220907113-1504989901@g.us",
+    "76": "120363400972861456@g.us",
+    "77": "120363405715035487@g.us",
+    "78": "120363421325032276@g.us",
+    "79": "120363404370466246@g.us",
+    "80": "120363408437989204@g.us",
+    "81": "120363424895380303@g.us",
+    "82": "120363420051589982@g.us",
+    "83": "120363391527672241@g.us",
+    "84": "120363422067295138@g.us",
+    "85": "120363421286657265@g.us",
+    "86": "120363356119252456@g.us",
+    "87": "120363403558832679@g.us",
+    "88": "120363402699712998@g.us",
+    "89": "120363405684004475@g.us",
+    "90": "120363416669342130@g.us",
+    "91": "120363402293761714@g.us",
+    "92": "201010179604-1533370685@g.us",
+    "93": "120363129689690995@g.us",
+    "94": "120363319474221132@g.us"
+  },
+  "241515288903732@lid": {
+    "name": "ؤُحـ༈ۖ҉ـيـ༈ۖ҉ـدكـ༈ۖ҉ـآلَقـ༈ۖ҉ـمـ༈ۖ҉ـر",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "16008014241912@lid": {
+    "name": "طنشت الدنيا▄︻̷̿┻̿═━一",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "21819155321078@lid": {
+    "name": "🧸ྀི",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "22991530402039@lid": {
+    "name": "𝒁. 𝐒 𝐏 𝐈 𝐃 𝐄 𝐘",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "273302241181921@lid": {
+    "name": "𝒌𝒏𝒐𝒐𝒛 ⊀𝟑؍ 🌸♡゙ ُ𓂁",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "191221188280402@lid": {
+    "name": "𝒮𝒶𝓂🥰",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "15118855356641@lid": {
+    "name": "Ahmed",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "77146454274158@lid": {
+    "name": "ناغومو",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "101477326544904@lid": {
+    "name": "شانغمي",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "40433375793191@lid": {
+    "name": "~ Reta 🕊️🤍❄️",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "60422237470741@lid": {
+    "name": "𝓠𝓾𝓲𝓮𝓽 𝓦𝓱𝓲𝓼𝓹𝓮𝓻",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "113203073810505@lid": {
+    "name": "🌸﴾Sara﴿🌸",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "27595668213825@lid": {
+    "name": "🔝آلَمـ♥̨̥̬̩ـحـ♕ـآربـ░ـ™",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "243872890392691@lid": {
+    "name": "~°~~ ✦",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "246256463044702@lid": {
+    "name": "Ethan",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "232942450270252@lid": {
+    "name": "fati_x_10 😍✨️🎀",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "120363403918804690@g.us": {
+    "protection": true
+  },
+  "120363404820815095@g.us": {
+    "protection": true
+  },
+  "188343543431372@lid": {
+    "name": "ice",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "223089895956591@lid": {
+    "name": "shiro oni",
+    "level": 2,
+    "gold": 4656,
+    "xp": 168,
+    "hp": 149,
+    "maxHp": 100,
+    "atk": 135,
+    "def": 5,
+    "defense": 95,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد",
+    "class": "محارب",
+    "pvpWins": 0,
+    "boughtPoisonDagger": false,
+    "assassinReq": {
+      "wins": false,
+      "gold": false,
+      "itemId": false
+    },
+    "huntCount": 2,
+    "boughtLongBow": false,
+    "archerReq": {
+      "hunts": false,
+      "gold": false,
+      "itemId": false
+    },
+    "registeredAt": 0,
+    "ambushWins": 0,
+    "revealed": false,
+    "deflectActive": false,
+    "deflectExpiresAt": 0,
+    "lastDeflectUsed": null,
+    "lastRevealAttempt": null,
+    "recentlyAmbushedUntil": 0,
+    "dailyAmbushLog": {
+      "date": "2026-07-26",
+      "targets": {}
+    },
+    "weeklyAmbush": {
+      "week": "2026-W30",
+      "count": 0,
+      "claimed": false
+    },
+    "allyJid": null,
+    "lastAmbushTarget": null,
+    "weakenedUntil": 0,
+    "lastVolley": null,
+    "defMilestones": {
+      "50": true
+    },
+    "lastHunt": 1785043594644,
+    "lastSpin": 1785043626522,
+    "lastMonsterBattle": 1785043406048
+  },
+  "165545940922462@lid": {
+    "name": "⋆⁺₊⋆ 𝐸𝑣𝑎⋆⁺₊⋆",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "41292386062338@lid": {
+    "name": "❦ 𝓩𝓲𝓷𝓮𝓫 ❦",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "79148294869182@lid": {
+    "name": "么𝐴.𝐾𝐸𝑁𝑂𝑈20么",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "77877034938462@lid": {
+    "name": "كيريتو",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "120363410616687310@g.us": {
+    "protection": true,
+    "def": 65,
+    "gold": null,
+    "lastMonsterBattle": 1784643487415,
+    "hp": 0
+  },
+  "80690238488757@lid": {
+    "name": "『🕸𝑨𝑴𝒀⃟𝑹𝑶𝑺𝑬🕸』",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "128055020376113@lid": {
+    "name": "آنسـ سـآمـيـﮯ",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "260782461821163@lid": {
+    "name": "❄ICED TEA❄",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "226220893544679@lid": {
+    "name": "𝕴𝖇𝖗𝖆𝖍𝖎𝖒",
+    "level": 118,
+    "gold": 213039,
+    "xp": 18,
+    "hp": 3050,
+    "maxHp": 100,
+    "atk": 6597,
+    "def": 5,
+    "defense": 56575,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "حارس أبدي 🛡️",
+    "class": "رامي",
+    "pvpWins": 1,
+    "boughtPoisonDagger": false,
+    "assassinReq": {
+      "wins": false,
+      "gold": true,
+      "itemId": false
+    },
+    "huntCount": 131,
+    "boughtLongBow": true,
+    "archerReq": {
+      "hunts": true,
+      "gold": true,
+      "itemId": true
+    },
+    "registeredAt": 0,
+    "ambushWins": 0,
+    "revealed": false,
+    "deflectActive": false,
+    "deflectExpiresAt": 0,
+    "lastDeflectUsed": null,
+    "lastRevealAttempt": null,
+    "recentlyAmbushedUntil": 0,
+    "dailyAmbushLog": {
+      "date": "2026-07-26",
+      "targets": {}
+    },
+    "weeklyAmbush": {
+      "week": "2026-W30",
+      "count": 0,
+      "claimed": false
+    },
+    "allyJid": null,
+    "lastAmbushTarget": null,
+    "weakenedUntil": 0,
+    "lastVolley": 1785239826436,
+    "defMilestones": {
+      "50": true,
+      "150": true,
+      "300": true
+    },
+    "lastHunt": 1785761861037,
+    "lastSpin": 1785761858693,
+    "lastMonsterBattle": 1785761840140,
+    "lastSteal": 1785239813363
+  },
+  "21260742447109@lid": {
+    "name": "⛓️⚡كش ملك⚡⛓️@",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "120139378864177@lid": {
+    "name": "𝑲𝑨𝑹𝑴𝑨",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "22334366826619@lid": {
+    "name": "لاعب",
+    "level": 1,
+    "gold": 1,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "217755211022391@lid": {
+    "name": "♔✊  ήÃⓨⒺᖴ  ☹♚",
+    "level": 121,
+    "gold": 2283522,
+    "xp": 0,
+    "hp": 3125,
+    "maxHp": 100,
+    "atk": 935,
+    "def": 5,
+    "defense": 38657,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "دب 🐻",
+    "lastSpin": 1785184998388,
+    "class": "رامي",
+    "pvpWins": 1,
+    "boughtPoisonDagger": false,
+    "assassinReq": {
+      "wins": false,
+      "gold": true,
+      "itemId": false
+    },
+    "huntCount": 54,
+    "boughtLongBow": true,
+    "archerReq": {
+      "hunts": true,
+      "gold": true,
+      "itemId": true
+    },
+    "registeredAt": 0,
+    "ambushWins": 0,
+    "revealed": false,
+    "deflectActive": false,
+    "deflectExpiresAt": 0,
+    "lastDeflectUsed": null,
+    "lastRevealAttempt": null,
+    "recentlyAmbushedUntil": 0,
+    "dailyAmbushLog": {
+      "date": "2026-07-26",
+      "targets": {}
+    },
+    "weeklyAmbush": {
+      "week": "2026-W30",
+      "count": 0,
+      "claimed": false
+    },
+    "allyJid": null,
+    "lastAmbushTarget": null,
+    "weakenedUntil": 0,
+    "lastVolley": 1785078210217,
+    "defMilestones": {
+      "50": true,
+      "150": true,
+      "300": true
+    },
+    "lastHunt": 1785184994542,
+    "lastMonsterBattle": 1785233962866
+  },
+  "232894752649335@lid": {
+    "name": "✨🖤Fung_Yuan🖤✨",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "264682376028214@lid": {
+    "name": "𝑺. 𝑯. 𝑨. 𝑵. 𝑲. 𝑺",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "85762578096200@lid": {
+    "name": "Lol",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "278902811443362@lid": {
+    "name": "𝓢𝓮𝓵𝓿𝓪𝓽𝓸𝓻",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "192754357432464@lid": {
+    "name": "لاعب",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "65782373449771@lid": {
+    "name": "𝐴𝑛𝑎𝑡ℎ𝑎𝑠𝑖𝑎 𝑆𝑖 𝐴𝑟𝑡ℎ𝑢𝑟 𝑁𝑖𝑡𝑟𝑜",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "39355339002038@lid": {
+    "name": "⏤͟͟͞͞✦➤⇣𝑵𝑨𝑪✺⃝𝑯𝑻↵♠️",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "47992736354442@lid": {
+    "name": "𝙕𝘼𝘼𝙏𝘼𝙍",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "54787324280888@lid": {
+    "name": "𝕬𝕳𝕸𝕰𝕯",
+    "level": 5,
+    "gold": 700,
+    "xp": 13,
+    "hp": 225,
+    "maxHp": 100,
+    "atk": 512,
+    "def": 5,
+    "defense": 12735,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد",
+    "class": "محارب",
+    "pvpWins": 0,
+    "boughtPoisonDagger": false,
+    "assassinReq": {
+      "wins": false,
+      "gold": false,
+      "itemId": false
+    },
+    "huntCount": 7,
+    "boughtLongBow": false,
+    "archerReq": {
+      "hunts": false,
+      "gold": true,
+      "itemId": false
+    },
+    "registeredAt": 0,
+    "ambushWins": 0,
+    "revealed": false,
+    "deflectActive": false,
+    "deflectExpiresAt": 0,
+    "lastDeflectUsed": null,
+    "lastRevealAttempt": null,
+    "recentlyAmbushedUntil": 0,
+    "dailyAmbushLog": {
+      "date": "2026-07-25",
+      "targets": {}
+    },
+    "weeklyAmbush": {
+      "week": "2026-W30",
+      "count": 0,
+      "claimed": false
+    },
+    "allyJid": null,
+    "lastAmbushTarget": null,
+    "weakenedUntil": 0,
+    "lastVolley": null,
+    "defMilestones": {
+      "50": true,
+      "150": true,
+      "300": true
+    },
+    "lastHunt": 1785759491410,
+    "lastSpin": 1785759477911,
+    "lastMonsterBattle": 1785759462304
+  },
+  "110965462986900@lid": {
+    "name": "سيلفاتور",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "118172367757452@lid": {
+    "name": "Angel",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "135712879976575@lid": {
+    "name": "Kokochibo",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "35283374481463@lid": {
+    "name": "𝑺𝒕𝒐𝒊𝒄𝒊𝒔𝒎🎀✨",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "allianceRequests": {
+    "77877034938462@lid": {
+      "target": "14779485782099@lid",
+      "time": 1784756428712
+    }
+  },
+  "treasury": 290194195140,
+  "67393053278310@lid": {
+    "name": "qtq",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "151458297163846@lid": {
+    "name": "𝓑𝓪𝓷𝓭𝓸𝓻𝓪",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "3634347643036@lid": {
+    "name": "The Askeladd",
+    "level": 16,
+    "gold": 38596,
+    "xp": 28,
+    "hp": 500,
+    "maxHp": 100,
+    "atk": 10310,
+    "def": 5,
+    "defense": 13775,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "شيطان 👿",
+    "class": "محارب",
+    "pvpWins": 0,
+    "boughtPoisonDagger": false,
+    "assassinReq": {
+      "wins": false,
+      "gold": true,
+      "itemId": false
+    },
+    "huntCount": 11,
+    "boughtLongBow": false,
+    "archerReq": {
+      "hunts": false,
+      "gold": true,
+      "itemId": false
+    },
+    "registeredAt": 0,
+    "ambushWins": 0,
+    "revealed": false,
+    "deflectActive": false,
+    "deflectExpiresAt": 0,
+    "lastDeflectUsed": null,
+    "lastRevealAttempt": null,
+    "recentlyAmbushedUntil": 0,
+    "dailyAmbushLog": {
+      "date": "2026-07-28",
+      "targets": {}
+    },
+    "weeklyAmbush": {
+      "week": "2026-W31",
+      "count": 0,
+      "claimed": false
+    },
+    "allyJid": null,
+    "lastAmbushTarget": null,
+    "weakenedUntil": 0,
+    "lastVolley": null,
+    "defMilestones": {
+      "50": true,
+      "150": true,
+      "300": true
+    },
+    "lastSteal": 1785259015953,
+    "lastHunt": 1785275249197,
+    "lastMonsterBattle": 1785275241892,
+    "lastSpin": 1785260764300
+  },
+  "241609560092689@lid": {
+    "name": "اشيلاد",
+    "level": 1,
+    "gold": 1540,
+    "xp": 28,
+    "hp": 0,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 655,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد",
+    "class": "محارب",
+    "pvpWins": 0,
+    "boughtPoisonDagger": false,
+    "assassinReq": {
+      "wins": false,
+      "gold": false,
+      "itemId": false
+    },
+    "huntCount": 1,
+    "boughtLongBow": false,
+    "archerReq": {
+      "hunts": false,
+      "gold": true,
+      "itemId": false
+    },
+    "registeredAt": 0,
+    "ambushWins": 0,
+    "revealed": false,
+    "deflectActive": false,
+    "deflectExpiresAt": 0,
+    "lastDeflectUsed": null,
+    "lastRevealAttempt": null,
+    "recentlyAmbushedUntil": 0,
+    "dailyAmbushLog": {
+      "date": "2026-07-26",
+      "targets": {}
+    },
+    "weeklyAmbush": {
+      "week": "2026-W30",
+      "count": 0,
+      "claimed": false
+    },
+    "allyJid": null,
+    "lastAmbushTarget": null,
+    "weakenedUntil": 0,
+    "lastVolley": null,
+    "defMilestones": {
+      "50": true,
+      "150": true,
+      "300": true
+    },
+    "lastSteal": 1785081893297,
+    "lastMonsterBattle": 1785081913714,
+    "lastHunt": 1785082010877
+  },
+  "263084396568588@lid": {
+    "name": "『𝑰'𝒎 𝒉𝒂𝒑𝒑𝒚....?』",
+    "level": 1,
+    "gold": 1,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "242253788377272@lid": {
+    "name": "Ahmïa💤",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "28020551213303@lid": {
+    "name": "𝑆",
+    "level": 17,
+    "gold": 2075,
+    "xp": 1200,
+    "hp": 0,
+    "maxHp": 100,
+    "atk": 90,
+    "def": 5,
+    "defense": 6810,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد",
+    "lastSpin": 1785128982676,
+    "class": "محارب",
+    "pvpWins": 0,
+    "boughtPoisonDagger": false,
+    "assassinReq": {
+      "wins": false,
+      "gold": false,
+      "itemId": false
+    },
+    "huntCount": 7,
+    "boughtLongBow": false,
+    "archerReq": {
+      "hunts": false,
+      "gold": true,
+      "itemId": false
+    },
+    "registeredAt": 0,
+    "ambushWins": 0,
+    "revealed": false,
+    "deflectActive": false,
+    "deflectExpiresAt": 0,
+    "lastDeflectUsed": null,
+    "lastRevealAttempt": null,
+    "recentlyAmbushedUntil": 0,
+    "dailyAmbushLog": {
+      "date": "2026-07-26",
+      "targets": {}
+    },
+    "weeklyAmbush": {
+      "week": "2026-W30",
+      "count": 0,
+      "claimed": false
+    },
+    "allyJid": null,
+    "lastAmbushTarget": null,
+    "weakenedUntil": 0,
+    "lastVolley": null,
+    "defMilestones": {
+      "50": true,
+      "150": true,
+      "300": true
+    },
+    "lastMonsterBattle": 1785129041252,
+    "lastHunt": 1785095968358
+  },
+  "138878539292926@lid": {
+    "name": "𝑲𝑰𝑳𝑳𝑼𝑨𐙚",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "106485895946438@lid": {
+    "name": "♪ 𝙼𝚊𝚛𝚒𝚊 洁",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "130301405741219@lid": {
+    "name": "غابيمارو",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 0,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد",
+    "lastMonsterBattle": 1785015915562
+  },
+  "212689925939@s.whatsapp.net": {
+    "name": "𓆩𝒀𝒐𝒓𝒊𓆪",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "167723422240911@lid": {
+    "name": "𝑨𝑹𝑺𝑬𝑵 ｜ آرســن",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "120363414730279368@g.us": {
+    "gold": 740,
+    "level": 1,
+    "xp": 55,
+    "name": "ملك مجهول",
+    "class": "محارب",
+    "atk": 10,
+    "defense": 5,
+    "hp": 0,
+    "pvpWins": 0,
+    "boughtPoisonDagger": false,
+    "assassinReq": {
+      "wins": false,
+      "gold": false,
+      "itemId": false
+    },
+    "huntCount": 1,
+    "boughtLongBow": false,
+    "archerReq": {
+      "hunts": false,
+      "gold": false,
+      "itemId": false
+    },
+    "registeredAt": 0,
+    "ambushWins": 0,
+    "revealed": false,
+    "deflectActive": false,
+    "deflectExpiresAt": 0,
+    "lastDeflectUsed": null,
+    "lastRevealAttempt": null,
+    "recentlyAmbushedUntil": 0,
+    "dailyAmbushLog": {
+      "date": "2026-07-22",
+      "targets": {}
+    },
+    "weeklyAmbush": {
+      "week": "2026-W30",
+      "count": 0,
+      "claimed": false
+    },
+    "allyJid": null,
+    "lastAmbushTarget": null,
+    "weakenedUntil": 0,
+    "lastVolley": null,
+    "defMilestones": {},
+    "lastHunt": 1784739823422,
+    "lastMonsterBattle": 1784739847694
+  },
+  "196899202179282@lid": {
+    "name": "✨🌻SunFlower 🌻✨",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "143371075108976@lid": {
+    "name": "Ayanokoji",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "82773347930287@lid": {
+    "name": "𝑨𝒍𝒆𝒙",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "83215796727822@lid": {
+    "name": "أبو أمنية",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد",
+    "class": "محارب",
+    "pvpWins": 0,
+    "boughtPoisonDagger": false,
+    "assassinReq": {
+      "wins": false,
+      "gold": false,
+      "itemId": false
+    },
+    "huntCount": 0,
+    "boughtLongBow": false,
+    "archerReq": {
+      "hunts": false,
+      "gold": false,
+      "itemId": false
+    },
+    "registeredAt": 0,
+    "ambushWins": 0,
+    "revealed": false,
+    "deflectActive": false,
+    "deflectExpiresAt": 0,
+    "lastDeflectUsed": null,
+    "lastRevealAttempt": null,
+    "recentlyAmbushedUntil": 0,
+    "dailyAmbushLog": {
+      "date": "2026-07-26",
+      "targets": {}
+    },
+    "weeklyAmbush": {
+      "week": "2026-W30",
+      "count": 0,
+      "claimed": false
+    },
+    "allyJid": null,
+    "lastAmbushTarget": null,
+    "weakenedUntil": 0,
+    "lastVolley": null,
+    "defMilestones": {}
+  },
+  "6284225052733@lid": {
+    "name": "✧𝓓𝓻𝓮𝓪𝓶✧",
+    "level": 251,
+    "gold": 5909123,
+    "xp": 0,
+    "hp": 6375,
+    "maxHp": 100,
+    "atk": 156916,
+    "def": 5,
+    "defense": 604015,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "دريـم 🌹",
+    "class": "رامي",
+    "pvpWins": 0,
+    "boughtPoisonDagger": true,
+    "assassinReq": {
+      "wins": false,
+      "gold": true,
+      "itemId": true
+    },
+    "huntCount": 123,
+    "boughtLongBow": true,
+    "archerReq": {
+      "hunts": true,
+      "gold": true,
+      "itemId": true
+    },
+    "registeredAt": 0,
+    "ambushWins": 0,
+    "revealed": false,
+    "deflectActive": false,
+    "deflectExpiresAt": 0,
+    "lastDeflectUsed": null,
+    "lastRevealAttempt": null,
+    "recentlyAmbushedUntil": 0,
+    "dailyAmbushLog": {
+      "date": "2026-07-25",
+      "targets": {}
+    },
+    "weeklyAmbush": {
+      "week": "2026-W30",
+      "count": 0,
+      "claimed": false
+    },
+    "allyJid": null,
+    "lastAmbushTarget": null,
+    "weakenedUntil": 0,
+    "lastVolley": null,
+    "defMilestones": {
+      "50": true,
+      "150": true,
+      "300": true
+    },
+    "lastMonsterBattle": 1785780821349,
+    "lastHunt": 1785499021585,
+    "lastSpin": 1785271577626
+  },
+  "260296895643746@lid": {
+    "name": "𝑹𝑬𝑮𝑼𝑳𝑼𝑺 ♢",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "12997309276160@lid": {
+    "name": "شادو",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "81300123861236@lid": {
+    "name": "𝓚𝓲𝓻𝓲𝓰𝓪𝔂𝓪",
+    "level": 7,
+    "gold": 3179,
+    "xp": 608,
+    "hp": 250,
+    "maxHp": 100,
+    "atk": 30,
+    "def": 5,
+    "defense": 275,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد",
+    "class": "محارب",
+    "pvpWins": 0,
+    "boughtPoisonDagger": true,
+    "assassinReq": {
+      "wins": false,
+      "gold": false,
+      "itemId": true
+    },
+    "huntCount": 9,
+    "boughtLongBow": false,
+    "archerReq": {
+      "hunts": false,
+      "gold": false,
+      "itemId": false
+    },
+    "registeredAt": 0,
+    "ambushWins": 0,
+    "revealed": false,
+    "deflectActive": false,
+    "deflectExpiresAt": 0,
+    "lastDeflectUsed": null,
+    "lastRevealAttempt": null,
+    "recentlyAmbushedUntil": 0,
+    "dailyAmbushLog": {
+      "date": "2026-07-26",
+      "targets": {}
+    },
+    "weeklyAmbush": {
+      "week": "2026-W30",
+      "count": 0,
+      "claimed": false
+    },
+    "allyJid": null,
+    "lastAmbushTarget": null,
+    "weakenedUntil": 0,
+    "lastVolley": null,
+    "defMilestones": {
+      "50": true,
+      "150": true
+    },
+    "lastHunt": 1785491303773,
+    "lastSpin": 1785491465468,
+    "lastMonsterBattle": 1785491409535
+  },
+  "49130734887114@lid": {
+    "name": "ريان",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "120363410499557638@g.us": {
+    "gold": 1200,
+    "level": 1,
+    "xp": 85,
+    "name": "ملك مجهول",
+    "class": "محارب",
+    "atk": 10,
+    "defense": 5,
+    "hp": 0,
+    "pvpWins": 0,
+    "boughtPoisonDagger": false,
+    "assassinReq": {
+      "wins": false,
+      "gold": false,
+      "itemId": false
+    },
+    "huntCount": 1,
+    "boughtLongBow": false,
+    "archerReq": {
+      "hunts": false,
+      "gold": false,
+      "itemId": false
+    },
+    "registeredAt": 0,
+    "ambushWins": 0,
+    "revealed": false,
+    "deflectActive": false,
+    "deflectExpiresAt": 0,
+    "lastDeflectUsed": null,
+    "lastRevealAttempt": null,
+    "recentlyAmbushedUntil": 0,
+    "dailyAmbushLog": {
+      "date": "2026-07-23",
+      "targets": {}
+    },
+    "weeklyAmbush": {
+      "week": "2026-W30",
+      "count": 0,
+      "claimed": false
+    },
+    "allyJid": null,
+    "lastAmbushTarget": null,
+    "weakenedUntil": 0,
+    "lastVolley": null,
+    "defMilestones": {},
+    "lastHunt": 1784848493294,
+    "lastMonsterBattle": 1784858526883,
+    "filter": {
+      "words": [
+        "كسمك"
+      ],
+      "enabled": true,
+      "warnings": {
+        "201010495644@s.whatsapp.net": 1
+      }
+    },
+    "welcome": {
+      "enabled": true,
+      "message": "*_نورت جروب بوت سونع_*\n\n\n*_القوانين_*\n\n\n1- *ممنوع البوتات غير بوت المؤسس ايس*\n\n2- *ممنوع السب*\n\n3- *ممنوع التكلم في مواضيع 18+*\n\n4- *ممنوع الدخول بنيه التخريب*\n\n5- *صنم = اخرجججججج*\n$user"
+    },
+    "farewell": {
+      "enabled": true,
+      "message": "مع السلامه $user مش هتوحشنا 😝"
+    },
+    "weeklyStats": {
+      "enabled": true
+    },
+    "linkProtection": {
+      "enabled": true
+    },
+    "activityTitles": {
+      "201010495644@s.whatsapp.net": "⭐ نجم الجروب",
+      "201156247697@s.whatsapp.net": "🔥 عضو نشيط"
+    },
+    "adminGuard": {
+      "enabled": true
+    }
+  },
+  "255808990351492@lid": {
+    "name": "🖤☯︎𝕊𝕠𝕦𝕗𝕚𝕒𝕟 𝕂𝕒𝕣𝕚𝕞❄︎🤍⁩",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "182953460166908@lid": {
+    "name": "𝐒𝐇𝐀𝐃𝐎𝐖",
+    "level": 96,
+    "gold": 37648,
+    "xp": 33,
+    "hp": 2500,
+    "maxHp": 100,
+    "atk": 687,
+    "def": 5,
+    "defense": 25503,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد",
+    "class": "مغتال",
+    "pvpWins": 6,
+    "boughtPoisonDagger": true,
+    "assassinReq": {
+      "wins": true,
+      "gold": true,
+      "itemId": true
+    },
+    "huntCount": 125,
+    "boughtLongBow": true,
+    "archerReq": {
+      "hunts": true,
+      "gold": true,
+      "itemId": true
+    },
+    "registeredAt": 0,
+    "ambushWins": 0,
+    "revealed": false,
+    "deflectActive": true,
+    "deflectExpiresAt": 1785058227916,
+    "lastDeflectUsed": 1785056427916,
+    "lastRevealAttempt": null,
+    "recentlyAmbushedUntil": 0,
+    "dailyAmbushLog": {
+      "date": "2026-07-26",
+      "targets": {
+        "83215796727822@lid": 1
+      }
+    },
+    "weeklyAmbush": {
+      "week": "2026-W30",
+      "count": 0,
+      "claimed": false
+    },
+    "allyJid": null,
+    "lastAmbushTarget": null,
+    "weakenedUntil": 0,
+    "lastVolley": null,
+    "defMilestones": {
+      "50": true,
+      "150": true,
+      "300": true
+    },
+    "lastHunt": 1785137757038,
+    "lastSpin": 1785137759566,
+    "lastMonsterBattle": 1785137744938,
+    "lastSteal": 1785062187249,
+    "lastAmbush": 1785070206882
+  },
+  "140557619847357@lid": {
+    "name": "𝒥𝒾𝒶𝓃  ⋆˚𝜗𝜚˚⋆",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "174904372650019@lid": {
+    "name": "𝑴𝒊𝒓𝒂",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "28622400315504@lid": {
+    "name": ". 𝑸𝑰𝑵 .",
+    "level": 1,
+    "gold": 1,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "58712806961302@lid": {
+    "name": "Noor",
+    "level": 1,
+    "gold": 2000,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 525,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد",
+    "assassinReq": {
+      "wins": false,
+      "gold": false,
+      "itemId": false
+    },
+    "archerReq": {
+      "hunts": false,
+      "gold": false,
+      "itemId": false
+    },
+    "defMilestones": {
+      "50": true,
+      "150": true,
+      "300": true
+    }
+  },
+  "254456008577245@lid": {
+    "name": "مش طايق حد اوفيكال",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "116600376189074@lid": {
+    "name": "𖤐𝙽𝑎𝓰𝒖м𝓸.🎲𖣂",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "47816676229120@lid": {
+    "gold": 9271,
+    "level": 5,
+    "xp": 34,
+    "name": "ᏰᎯᎠᎡ ᏁᎯᎠᎥᎦ",
+    "class": "رامي",
+    "atk": 211,
+    "defense": 486,
+    "hp": 225,
+    "pvpWins": 0,
+    "boughtPoisonDagger": true,
+    "assassinReq": {
+      "wins": false,
+      "gold": false,
+      "itemId": true
+    },
+    "huntCount": 31,
+    "boughtLongBow": true,
+    "archerReq": {
+      "hunts": true,
+      "gold": true,
+      "itemId": true
+    },
+    "registeredAt": 0,
+    "ambushWins": 0,
+    "revealed": false,
+    "deflectActive": false,
+    "deflectExpiresAt": 0,
+    "lastDeflectUsed": null,
+    "lastRevealAttempt": null,
+    "recentlyAmbushedUntil": 0,
+    "dailyAmbushLog": {
+      "date": "2026-07-26",
+      "targets": {}
+    },
+    "weeklyAmbush": {
+      "week": "2026-W30",
+      "count": 0,
+      "claimed": false
+    },
+    "allyJid": null,
+    "lastAmbushTarget": null,
+    "weakenedUntil": 0,
+    "lastVolley": 1785075461216,
+    "defMilestones": {
+      "50": true,
+      "150": true,
+      "300": true
+    },
+    "lastHunt": 1785199143987,
+    "lastSpin": 1785199147828,
+    "lastMonsterBattle": 1785196145780
+  },
+  "267070260392062@lid": {
+    "name": "𝓦𝓘𝓛𝓛𝓘𝓐𝓜",
+    "level": 45,
+    "gold": 1288462,
+    "hp": 1225,
+    "atk": 7065,
+    "defense": 167085,
+    "xp": 8,
+    "class": "محارب",
+    "pvpWins": 0,
+    "boughtPoisonDagger": false,
+    "assassinReq": {
+      "wins": false,
+      "gold": true,
+      "itemId": false
+    },
+    "huntCount": 48,
+    "boughtLongBow": false,
+    "archerReq": {
+      "hunts": true,
+      "gold": true,
+      "itemId": false
+    },
+    "registeredAt": 1785139622156,
+    "ambushWins": 0,
+    "revealed": false,
+    "deflectActive": false,
+    "deflectExpiresAt": 0,
+    "lastDeflectUsed": null,
+    "lastRevealAttempt": null,
+    "recentlyAmbushedUntil": 0,
+    "dailyAmbushLog": {
+      "date": "2026-07-27",
+      "targets": {}
+    },
+    "weeklyAmbush": {
+      "week": null,
+      "count": 0,
+      "claimed": false
+    },
+    "allyJid": null,
+    "lastAmbushTarget": null,
+    "weakenedUntil": 0,
+    "lastVolley": null,
+    "defMilestones": {
+      "50": true,
+      "150": true,
+      "300": true
+    },
+    "lastMonsterBattle": 1787406404391,
+    "lastUpgrade": 1785264924848,
+    "def": 21,
+    "lastHunt": 1787406415262,
+    "lastSpin": 1786029088465,
+    "lastSteal": 1785253962268
+  },
+  "232740687454354@lid": {
+    "name": "Law",
+    "level": 37,
+    "gold": 1012184,
+    "hp": 1025,
+    "atk": 18696,
+    "defense": 83073,
+    "xp": 0,
+    "class": "رامي",
+    "pvpWins": 0,
+    "boughtPoisonDagger": true,
+    "assassinReq": {
+      "wins": false,
+      "gold": true,
+      "itemId": true
+    },
+    "huntCount": 19,
+    "boughtLongBow": true,
+    "archerReq": {
+      "hunts": true,
+      "gold": true,
+      "itemId": true
+    },
+    "registeredAt": 1785199073985,
+    "ambushWins": 0,
+    "revealed": false,
+    "deflectActive": false,
+    "deflectExpiresAt": 0,
+    "lastDeflectUsed": null,
+    "lastRevealAttempt": null,
+    "recentlyAmbushedUntil": 0,
+    "dailyAmbushLog": {
+      "date": "2026-07-28",
+      "targets": {}
+    },
+    "weeklyAmbush": {
+      "week": null,
+      "count": 0,
+      "claimed": false
+    },
+    "allyJid": null,
+    "lastAmbushTarget": null,
+    "weakenedUntil": 0,
+    "lastVolley": 1785778803377,
+    "defMilestones": {
+      "50": true,
+      "150": true,
+      "300": true
+    },
+    "lastMonsterBattle": 1785779985255,
+    "lastHunt": 1785779342245,
+    "lastSteal": 1785778837407,
+    "lastSpin": 1785779348921,
+    "lastUpgrade": 1785255344551,
+    "def": 30,
+    "currentPet": "تنين 🐉"
+  },
+  "222076384362528@lid": {
+    "gold": 1931,
+    "level": 1,
+    "xp": 18,
+    "name": "𝘠𝘢𝘮𝘪 🌑",
+    "class": "محارب",
+    "atk": 10,
+    "defense": 5,
+    "hp": 100,
+    "pvpWins": 0,
+    "boughtPoisonDagger": false,
+    "assassinReq": {
+      "wins": false,
+      "gold": false,
+      "itemId": false
+    },
+    "huntCount": 1,
+    "boughtLongBow": false,
+    "archerReq": {
+      "hunts": false,
+      "gold": false,
+      "itemId": false
+    },
+    "registeredAt": 0,
+    "ambushWins": 0,
+    "revealed": false,
+    "deflectActive": false,
+    "deflectExpiresAt": 0,
+    "lastDeflectUsed": null,
+    "lastRevealAttempt": null,
+    "recentlyAmbushedUntil": 0,
+    "dailyAmbushLog": {
+      "date": "2026-08-01",
+      "targets": {}
+    },
+    "weeklyAmbush": {
+      "week": "2026-W31",
+      "count": 0,
+      "claimed": false
+    },
+    "allyJid": null,
+    "lastAmbushTarget": null,
+    "weakenedUntil": 0,
+    "lastVolley": null,
+    "defMilestones": {},
+    "lastHunt": 1785556029184,
+    "lastSpin": 1785556031690
+  },
+  "subbots": {},
+  "201010495644@s.whatsapp.net": {
+    "name": "𝑲𝑶𝑼",
+    "level": 505,
+    "gold": 203421099,
+    "xp": 0,
+    "hp": 12725,
+    "maxHp": 100,
+    "atk": 1061099,
+    "def": 5,
+    "defense": 8927540,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "المبرمج 💻",
+    "lastSpin": 1788903245911,
+    "class": "رامي",
+    "pvpWins": 5,
+    "boughtPoisonDagger": false,
+    "assassinReq": {
+      "wins": false,
+      "gold": true,
+      "itemId": false
+    },
+    "huntCount": 78,
+    "boughtLongBow": true,
+    "archerReq": {
+      "hunts": true,
+      "gold": true,
+      "itemId": true
+    },
+    "registeredAt": 0,
+    "ambushWins": 0,
+    "revealed": false,
+    "deflectActive": false,
+    "deflectExpiresAt": 0,
+    "lastDeflectUsed": null,
+    "lastRevealAttempt": null,
+    "recentlyAmbushedUntil": 0,
+    "dailyAmbushLog": {
+      "date": "2026-07-26",
+      "targets": {}
+    },
+    "weeklyAmbush": {
+      "week": "2026-W30",
+      "count": 0,
+      "claimed": false
+    },
+    "allyJid": null,
+    "lastAmbushTarget": null,
+    "weakenedUntil": 0,
+    "lastVolley": 1788909376740,
+    "defMilestones": {
+      "50": true,
+      "150": true,
+      "300": true
+    },
+    "lastHunt": 1788903236283,
+    "lastSteal": 1788909363866,
+    "lastMonsterBattle": 1788945039765
+  },
+  "201118863334@s.whatsapp.net": {
+    "name": "زينيتسو",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "201141222928@s.whatsapp.net": {
+    "name": "سوكونا",
+    "level": 1,
+    "gold": 340,
+    "xp": 28,
+    "hp": 0,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد",
+    "lastMonsterBattle": 1785460034393,
+    "class": "محارب",
+    "pvpWins": 0,
+    "boughtPoisonDagger": false,
+    "assassinReq": {
+      "wins": false,
+      "gold": false,
+      "itemId": false
+    },
+    "huntCount": 1,
+    "boughtLongBow": false,
+    "archerReq": {
+      "hunts": false,
+      "gold": false,
+      "itemId": false
+    },
+    "registeredAt": 0,
+    "ambushWins": 0,
+    "revealed": false,
+    "deflectActive": false,
+    "deflectExpiresAt": 0,
+    "lastDeflectUsed": null,
+    "lastRevealAttempt": null,
+    "recentlyAmbushedUntil": 0,
+    "dailyAmbushLog": {
+      "date": "2026-08-03",
+      "targets": {}
+    },
+    "weeklyAmbush": {
+      "week": "2026-W32",
+      "count": 0,
+      "claimed": false
+    },
+    "allyJid": null,
+    "lastAmbushTarget": null,
+    "weakenedUntil": 0,
+    "lastVolley": null,
+    "defMilestones": {},
+    "lastHunt": 1785778452423
+  },
+  "lidMap": {
+    "40197421035570@lid": "201010495644@s.whatsapp.net",
+    "217523366699114@lid": "201223038677@s.whatsapp.net",
+    "15230021193735@lid": "201156247697@s.whatsapp.net",
+    "67650617094244@lid": "201284737130@s.whatsapp.net",
+    "212128719990987@lid": "201118863334@s.whatsapp.net",
+    "18567512756225@lid": "201277610377@s.whatsapp.net",
+    "278348676771864@lid": "201019325181@s.whatsapp.net"
+  },
+  "201156247697@s.whatsapp.net": {
+    "name": "𝐀𝐫𝐭𝐡𝐮𝐫",
+    "level": 1,
+    "gold": 500,
+    "hp": 0,
+    "atk": 10,
+    "defense": 5,
+    "xp": 0,
+    "class": "محارب",
+    "pvpWins": 0,
+    "boughtPoisonDagger": false,
+    "assassinReq": {
+      "wins": false,
+      "gold": false,
+      "itemId": false
+    },
+    "huntCount": 0,
+    "boughtLongBow": false,
+    "archerReq": {
+      "hunts": false,
+      "gold": false,
+      "itemId": false
+    },
+    "registeredAt": 1788912113894,
+    "ambushWins": 0,
+    "revealed": false,
+    "deflectActive": false,
+    "deflectExpiresAt": 0,
+    "lastDeflectUsed": null,
+    "lastRevealAttempt": null,
+    "recentlyAmbushedUntil": 0,
+    "dailyAmbushLog": {
+      "date": "2026-09-09",
+      "targets": {}
+    },
+    "weeklyAmbush": {
+      "week": null,
+      "count": 0,
+      "claimed": false
+    },
+    "allyJid": null,
+    "lastAmbushTarget": null,
+    "weakenedUntil": 0,
+    "lastVolley": null,
+    "defMilestones": {},
+    "lastMonsterBattle": 1788912132328
+  },
+  "complaints": {
+    "nextId": 3,
+    "list": {
+      "1": {
+        "id": 1,
+        "from": "201010495644@s.whatsapp.net",
+        "group": "120363410499557638@g.us",
+        "groupName": "𖦹 𝑺𝑼𝑵𝑮 ⏤͟͟͞͞🌀 𝑩𝑶𝑻 ˚⭒",
+        "text": "بدي ايس يشتري لي iphone 17 pro max",
+        "date": "2026-09-09T00:05:54.539Z",
+        "status": "open"
+      },
+      "2": {
+        "id": 2,
+        "from": "201156247697@s.whatsapp.net",
+        "group": "120363410499557638@g.us",
+        "groupName": "𖦹 𝑺𝑼𝑵𝑮 ⏤͟͟͞͞🌀 𝑩𝑶𝑻 ˚⭒",
+        "text": "ابغى rtx 5090",
+        "date": "2026-09-09T00:06:27.040Z",
+        "status": "open"
+      }
+    },
+    "cooldown": {
+      "201010495644@s.whatsapp.net": 1788912354554,
+      "201156247697@s.whatsapp.net": 1788912387041
+    }
+  },
+  "marketplace": [],
+  "inviteIntents": {},
+  "scheduledMessages": [],
+  "201277610377@s.whatsapp.net": {
+    "name": "لويد فرونتيرا",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  },
+  "120363408236211830@g.us": {
+    "auditLog": [
+      {
+        "action": "تنزيل أدمن",
+        "by": "201010495644@s.whatsapp.net",
+        "target": "201277610377@s.whatsapp.net",
+        "at": 1788977141750
+      },
+      {
+        "action": "ترقية أدمن",
+        "by": "232620008976456@lid",
+        "target": "78066047054041@lid",
+        "at": 1788977150279
+      },
+      {
+        "action": "طرد عضو",
+        "by": "201223038677@s.whatsapp.net",
+        "target": "201010495644@s.whatsapp.net",
+        "at": 1788977169571
+      },
+      {
+        "action": "ترقية أدمن",
+        "by": "201223038677@s.whatsapp.net",
+        "target": "201010495644@s.whatsapp.net",
+        "at": 1788977171657
+      },
+      {
+        "action": "تنزيل أدمن",
+        "by": "232620008976456@lid",
+        "target": "201118863334@s.whatsapp.net",
+        "at": 1788977410969
+      },
+      {
+        "action": "ترقية أدمن",
+        "by": "78066047054041@lid",
+        "target": "201118863334@s.whatsapp.net",
+        "at": 1788977424178
+      },
+      {
+        "action": "تنزيل أدمن",
+        "by": "201118863334@s.whatsapp.net",
+        "target": "232620008976456@lid",
+        "at": 1788977488458
+      },
+      {
+        "action": "ترقية أدمن",
+        "by": "201118863334@s.whatsapp.net",
+        "target": "232620008976456@lid",
+        "at": 1788977543256
+      },
+      {
+        "action": "تنزيل أدمن",
+        "by": "78066047054041@lid",
+        "target": "201118863334@s.whatsapp.net",
+        "at": 1788977563377
+      },
+      {
+        "action": "ترقية أدمن",
+        "by": "78066047054041@lid",
+        "target": "201118863334@s.whatsapp.net",
+        "at": 1788977592909
+      }
+    ],
+    "adminGuard": {
+      "enabled": true
+    }
+  },
+  "201019325181@s.whatsapp.net": {
+    "name": "✦𝑳𝒊ـᬼ💮⑅⃝ـᬼ𝑳𝒊✦",
+    "level": 1,
+    "gold": 0,
+    "xp": 0,
+    "hp": 100,
+    "maxHp": 100,
+    "atk": 10,
+    "def": 5,
+    "defense": 5,
+    "inventory": [],
+    "pets": [],
+    "currentPet": "لا يوجد"
+  }
+}

@@ -1,0 +1,43 @@
+module.exports = {
+    name: "طرد-عصابة",
+    category: "العصابات",
+    execute: async (sock, m, args, db, sender) => {
+        const groupID = m.key.remoteJid;
+
+        // 1. التأكد إن اللي بيبعت الأمر هو قائد عصابة
+        const gang = Object.values(db.gangs || {}).find(g => g.owner === sender);
+        if (!gang) {
+            return sock.sendMessage(groupID, { text: "⚠️ هذا الأمر مخصص لقادة العصابات فقط!" }, { quoted: m });
+        }
+
+        // 2. الحصول على الشخص المطلوب طرده (عن طريق المنشن)
+        const target = m.message.extendedTextMessage?.contextInfo?.mentionedJid?.[0];
+        if (!target) {
+            return sock.sendMessage(groupID, { text: "⚠️ منشن العضو اللي عايز تطرده من العصابة!\nمثال: .طرد-عصابة @المنشن" }, { quoted: m });
+        }
+
+        // 3. التأكد إن الشخص ده عضو في عصابة القائد
+        if (!gang.members.includes(target)) {
+            return sock.sendMessage(groupID, { text: "⚠️ هذا الشخص ليس عضواً في عصابتك أصلاً!" }, { quoted: m });
+        }
+
+        // 4. منع القائد من طرد نفسه (لو عايز يحذف العصابة فيه أمر .احذف-عصابتي)
+        if (target === sender) {
+            return sock.sendMessage(groupID, { text: "⚠️ لا يمكنك طرد نفسك! استخدم .احذف-عصابتي إذا كنت تريد حل العصابة." }, { quoted: m });
+        }
+
+        // 5. تنفيذ الطرد
+        // حذف العضو من قائمة الأعضاء
+        gang.members = gang.members.filter(id => id !== target);
+        
+        // حذف رتبته لو كان ليه رتبة
+        if (gang.ranks && gang.ranks[target]) {
+            delete gang.ranks[target];
+        }
+
+        return sock.sendMessage(groupID, { 
+            text: `👞 *تم الطرد!*\n\nقام الزعيم بطرد @${target.split('@')[0]} من عصابة [ ${gang.name} ].\nالباب يفوت جمل!`,
+            mentions: [target]
+        }, { quoted: m });
+    }
+};

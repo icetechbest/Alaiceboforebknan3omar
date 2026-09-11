@@ -1,0 +1,30 @@
+module.exports = {
+    name: 'joingroup',
+    category: 'owner',
+    async execute(sock, m, args, db, sender, isOwner) {
+        if (!isOwner) return;
+
+        const num = args[0];
+        if (!num || !db.tempGroups || !db.tempGroups[num]) {
+            return sock.sendMessage(m.key.remoteJid, { text: "❌ يرجى كتابة رقم صحيح من قائمة المجموعات." });
+        }
+
+        const groupID = db.tempGroups[num];
+
+        try {
+            // محاولة جلب رابط المجموعة
+            const code = await sock.groupInviteCode(groupID);
+            const inviteLink = `https://chat.whatsapp.com/${code}`;
+            
+            await sock.sendMessage(sender, { 
+                text: `✅ *تفضل يا ماستر ايس، رابط المجموعة:* \n\n${inviteLink}\n\n⚠️ ملاحظة: يجب أن يكون البوت أدمن لجلب الرابط.` 
+            });
+
+            // تفاعل صغير
+            await sock.sendMessage(m.key.remoteJid, { react: { text: "🚪", key: m.key } });
+
+        } catch (e) {
+            await sock.sendMessage(m.key.remoteJid, { text: "❌ فشلت في جلب الرابط. تأكد أنني *أدمن* في تلك المجموعة." });
+        }
+    }
+};

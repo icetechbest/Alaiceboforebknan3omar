@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <title>لوحة تحكم بوت واتساب</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" defer></script>
+  </head>
+  <body>
+    <div id="toast-root" class="toast-root" aria-live="polite"></div>
+
+    <section id="auth-screen" class="auth-screen">
+      <div class="auth-card">
+        <div class="brand-mark large">◈</div>
+        <p class="eyebrow">لوحة الإدارة</p>
+        <h1>أهلاً بك في لوحة البوت</h1>
+        <p class="muted">أدخل مفتاح لوحة التحكم للاتصال الآمن بالـ Backend API.</p>
+        <form id="auth-form" class="stack gap-16">
+          <label class="field">
+            <span>مفتاح لوحة التحكم</span>
+            <input id="auth-key" type="password" autocomplete="off" required placeholder="أدخل المفتاح هنا" />
+          </label>
+          <button class="btn primary full" type="submit">دخول آمن <span>←</span></button>
+          <p id="auth-error" class="form-error" hidden></p>
+        </form>
+      </div>
+      <div class="auth-orb orb-one"></div>
+      <div class="auth-orb orb-two"></div>
+    </section>
+
+    <div id="app-shell" class="app-shell" hidden>
+      <aside id="sidebar" class="sidebar">
+        <div class="sidebar-head">
+          <div class="brand-mark">◈</div>
+          <div>
+            <strong>سَـمْج</strong>
+            <small>WhatsApp Bot</small>
+          </div>
+          <button id="close-sidebar" class="icon-btn mobile-only" aria-label="إغلاق القائمة">×</button>
+        </div>
+        <div class="connection-chip"><i id="nav-status-dot"></i><span id="nav-status-text">جارٍ التحقق</span></div>
+        <nav id="main-nav" class="main-nav" aria-label="أقسام لوحة التحكم"></nav>
+        <div class="sidebar-foot">
+          <button id="theme-toggle" class="sidebar-action"><span id="theme-icon">☼</span><span>تبديل المظهر</span></button>
+          <button id="logout-btn" class="sidebar-action danger-text"><span>⇥</span><span>تسجيل الخروج</span></button>
+        </div>
+      </aside>
+
+      <main class="main-shell">
+        <header class="topbar">
+          <button id="open-sidebar" class="icon-btn mobile-only" aria-label="فتح القائمة">☰</button>
+          <div>
+            <p class="eyebrow" id="breadcrumb">نظرة عامة</p>
+            <h2 id="page-title">التحكم العام</h2>
+          </div>
+          <div class="topbar-actions">
+            <div class="live-pill"><i id="live-dot"></i><span id="live-label">متصل مباشر</span></div>
+            <button class="icon-btn" id="refresh-btn" title="تحديث البيانات">↻</button>
+            <div class="avatar">م</div>
+          </div>
+        </header>
+        <section id="page-content" class="page-content"></section>
+      </main>
+    </div>
+    <div id="modal-root"></div>
+    <script src="app.js"></script>
+  </body>
+</html>

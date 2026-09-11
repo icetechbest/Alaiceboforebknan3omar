@@ -1,0 +1,75 @@
+module.exports = {
+    name: "انشاء-عصابة",
+    execute: async (sock, m, args, db, sender) => {
+        try {
+            const groupID = m.key.remoteJid;
+            const gangName = args.join(" ").trim(); 
+            const cost = 1000; // تكلفة إنشاء العصابة
+
+            // تأكد من وجود كائن العصابات في قاعدة البيانات
+            if (!db.gangs) {
+                db.gangs = {};
+            }
+
+            // 1. التحقق من كتابة اسم
+            if (!gangName) {
+                return sock.sendMessage(groupID, { 
+                    text: "⚠️ لازم تكتب اسم للعصابة بعد الأمر.\nمثال: .انشاء-عصابة المترشمين" 
+                });
+            }
+
+            // 2. التحقق من أن المستخدم ليس في عصابة بالفعل
+            const inGang = Object.values(db.gangs).find(g => g.members && g.members.includes(sender));
+            if (inGang) {
+                return sock.sendMessage(groupID, { 
+                    text: "⚠️ أنت بالفعل عضو أو زعيم في عصابة أخرى! يجب عليك مغادرتها أولاً." 
+                });
+            }
+
+            // 3. التحقق من وجود حساب ذهب كافي للمستخدم
+            // ملاحظة: تأكد أن db[sender] موجود حسب هيكل الـ JSON الذي أرسلته سابقاً
+            if (!db[sender] || typeof db[sender].gold === 'undefined') {
+                return sock.sendMessage(groupID, { text: "❌ بياناتك غير مسجلة في اللعبة." });
+            }
+
+            if (db[sender].gold < cost) {
+                return sock.sendMessage(groupID, { 
+                    text: `❌ رصيدك غير كافٍ. تحتاج إلى ${cost} ذهبة، ورصيدك الحالي هو ${db[sender].gold} 💰` 
+                });
+            }
+
+            // 4. التحقق من أن الاسم غير مكرر
+            if (db.gangs[gangName]) {
+                return sock.sendMessage(groupID, { text: "❌ هذا الاسم مستخدم بالفعل من قبل عصابة أخرى!" });
+            }
+
+            // 5. خصم الذهب وإنشاء العصابة
+            db[sender].gold -= cost;
+
+            db.gangs[gangName] = {
+                name: gangName,
+                description: "لا يوجد وصف حالياً",
+                owner: sender,
+                members: [sender],
+                gold: 0,
+                level: 1,
+                time: Date.now()
+            };
+
+            let successMsg = `🎉 *تـهـانـيـنـا يـا يـوري!* 🎉\n\n`;
+            successMsg += `🏰 *تم إنشاء عصابة:* 【 ${gangName} 】\n`;
+            successMsg += `💰 *الخصم:* ${cost} ذهبة\n`;
+            successMsg += `👑 *الزعيم:* @${sender.split('@')[0]}\n\n`;
+            successMsg += `استخدم أمر *.عصابتي* لرؤية التفاصيل.`;
+
+            return sock.sendMessage(groupID, { 
+                text: successMsg, 
+                mentions: [sender] 
+            });
+
+        } catch (error) {
+            console.error(error);
+            return sock.sendMessage(m.key.remoteJid, { text: "حدث خطأ أثناء إنشاء العصابة." });
+        }
+    }
+};

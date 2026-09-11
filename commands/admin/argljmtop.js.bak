@@ -1,0 +1,66 @@
+const fs = require('fs');
+
+module.exports = {
+    name: 'توب-الرسائل',
+    aliases: ['توب', 'متفاعلين'],
+    async execute(sock, m, args, db, sender) {
+        const groupID = m.key.remoteJid;
+        
+        // التأكد من وجود ملف الإحصائيات أو البيانات في الذاكرة
+        let stats = JSON.parse(fs.readFileSync('./stats.json', 'utf-8'));
+        
+        if (!stats[groupID]) {
+            return sock.sendMessage(groupID, { text: "❌ لا توجد بيانات مسجلة لهذا الجروب بعد." });
+        }
+
+        const type = args[0]; // (يوم / شهر / سنة)
+        const now = new Date();
+        let key = "";
+        let typeName = "";
+
+        // تحديد المفتاح الزمني
+        if (type === 'يوم') {
+            key = `${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()}`;
+            typeName = "اليوم";
+        } else if (type === 'شهر') {
+            key = `${now.getFullYear()}-${now.getMonth()+1}`;
+            typeName = "الشهر";
+        } else {
+            key = `${now.getFullYear()}`; // الافتراضي سنة
+            typeName = "السنة";
+        }
+
+        // جلب مستخدمي الجروب الحالي فقط وترتيبهم
+        let groupUsers = stats[groupID];
+        let sorted = Object.keys(groupUsers)
+            .map(user => {
+                let count = 0;
+                if (type === 'يوم') count = groupUsers[user].daily?.[key] || 0;
+                else if (type === 'شهر') count = groupUsers[user].monthly?.[key] || 0;
+                else count = groupUsers[user].yearly?.[key] || 0;
+
+                return { user, count };
+            })
+            .filter(u => u.count > 0)
+            .sort((a, b) => b.count - a.count)
+            .slice(0, 10);
+
+        if (sorted.length === 0) {
+            return sock.sendMessage(groupID, { text: `❌ لا توجد إحصائيات مسجلة لـ ${typeName} في هذا الجروب.` });
+        }
+
+        let txt = `🏆 *توب المتفاعلين (${typeName})*\n`;
+        txt += `📍 الجروب: ${ (await sock.groupMetadata(groupID)).subject }\n`;
+        txt += `━━━━━━━━━━━━━━\n`;
+        
+        sorted.forEach((u, i) => {
+            let medal = i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : `${i + 1} -`;
+            txt += `${medal} @${u.user.split('@')[0]} ➜ [ ${u.count} ]\n`;
+        });
+
+        await sock.sendMessage(groupID, { 
+            text: txt, 
+            mentions: sorted.map(u => u.user) 
+        }, { quoted: m });
+    }
+};

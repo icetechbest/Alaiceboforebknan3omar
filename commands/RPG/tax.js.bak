@@ -1,0 +1,30 @@
+module.exports = {
+    name: 'ضريبة',
+    aliases: ['حساب_ضريبة', 'الضريبة'],
+    async execute(sock, m, args, db, sender) {
+        const id = m.key.remoteJid;
+
+        // 1. التحقق من إدخال المبلغ
+        const amount = parseInt(args[0]);
+        if (!amount || isNaN(amount) || amount <= 0) {
+            return sock.sendMessage(id, { text: "⚠️ يرجى كتابة المبلغ الذي تريد حساب ضريبته.\nمثال: *.ضريبة 1000*" }, { quoted: m });
+        }
+
+        // 2. حساب الضريبة (6.5%) والصافي
+        const taxRate = 0.065;
+        const tax = Math.floor(amount * taxRate);
+        const finalAmount = amount - tax;
+
+        // 3. تنسيق الرسالة
+        let msg = `🏛️ *مكتب حسابات المملكة* 🏛️\n`;
+        msg += `━━━━━━━━━━━━━━━━━━\n`;
+        msg += `💰 المبلغ الأساسي: *${amount.toLocaleString()}*\n`;
+        msg += `📉 ضريبة التحويل (6.5%): *${tax.toLocaleString()}*\n`;
+        msg += `━━━━━━━━━━━━━━━━━━\n`;
+        msg += `✅ الصافي الذي سيصل للطرف الآخر:\n ⇠ *${finalAmount.toLocaleString()}* ذهب\n`;
+        msg += `━━━━━━━━━━━━━━━━━━\n`;
+        msg += `📝 *ملاحظة:* استخدم أمر *.تحويل @منشن ${amount}* لإتمام العملية.`;
+
+        await sock.sendMessage(id, { text: msg }, { quoted: m });
+    }
+};

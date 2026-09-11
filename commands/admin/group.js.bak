@@ -1,0 +1,14 @@
+module.exports = {
+    name: 'الجروب',
+    async execute(sock, m, args) {
+        const id = m.key.remoteJid;
+        if (args[0] === 'قفل') {
+            await sock.groupSettingUpdate(id, 'announcement');
+            await sock.sendMessage(id, { text: "🔒 تم قفل الجروب (للأدمن فقط)." });
+        } else if (args[0] === 'فتح') {
+            await sock.groupSettingUpdate(id, 'not_announcement');
+            await sock.sendMessage(id, { text: "🔓 تم فتح الجروب للجميع." });
+        }
+    }
+};
+

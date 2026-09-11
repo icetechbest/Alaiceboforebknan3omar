@@ -1,0 +1,23 @@
+module.exports = {
+    name: "سحب-خزنة",
+    execute: async (sock, m, args, db, sender) => {
+        const groupID = m.key.remoteJid;
+        const amount = parseInt(args[0]);
+
+        // البحث عن العصابة التي يملكها الشخص
+        const gang = Object.values(db.gangs || {}).find(g => g.owner === sender);
+        if (!gang) return sock.sendMessage(groupID, { text: "⚠️ هذا الأمر للمؤسسين فقط!" });
+
+        if (!amount || isNaN(amount) || amount <= 0) return sock.sendMessage(groupID, { text: "⚠️ اكتب مبلغ السحب! مثال: .سحب-خزنة 1000" });
+
+        if (Number(gang.gold || 0) < amount) return sock.sendMessage(groupID, { text: "⚠️ الخزينة لا تملك هذا المبلغ!" });
+
+        // تنفيذ السحب
+        gang.gold -= amount;
+        db[sender].gold = (Number(db[sender].gold) || 0) + amount;
+
+        return sock.sendMessage(groupID, { 
+            text: `💸 تم سحب ${amount.toLocaleString()} ذهبة من الخزينة إلى جيب القائد بنجاح!` 
+        });
+    }
+};
