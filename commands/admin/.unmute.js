@@ -1,4 +1,4 @@
-const { resolveRealJid } = require('../../core/messageHandler.js');
+const { resolveRealJid, isParticipantAdmin, logAudit } = require('../../core/messageHandler.js');
 
 module.exports = {
     name: 'فك_كتم',
@@ -8,9 +8,9 @@ module.exports = {
         if (!id.endsWith('@g.us')) return;
 
         // التحقق من الصلاحيات (مشرف أو مالك)
+        // ⚠️ نفس ملاحظة .كتم: بنستخدم isParticipantAdmin عشان يتعامل صح مع حالة الـ @lid
         const groupMetadata = await sock.groupMetadata(id);
-        const participantInfo = groupMetadata.participants.find(p => p.id === sender);
-        const isAdmin = participantInfo?.admin === 'admin' || participantInfo?.admin === 'superadmin';
+        const isAdmin = isParticipantAdmin(groupMetadata, sender, db);
 
         if (!isAdmin && !isOwner) {
             return sock.sendMessage(id, { text: "🚫 هذا الأمر للمشرفين فقط!" });
@@ -33,7 +33,8 @@ module.exports = {
 
         // إزالة الشخص من قائمة المكتومين
         db.muted[id] = db.muted[id].filter(user => user !== victim);
-        
+        logAudit(db, id, "فك كتم", sender, victim);
+
         await sock.sendMessage(id, { 
             text: `✅ تم فك الكتم عن @${victim.split('@')[0]} بنجاح. يمكنك التحدث الآن.`,
             mentions: [victim]

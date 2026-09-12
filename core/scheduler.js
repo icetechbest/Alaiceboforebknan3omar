@@ -313,6 +313,82 @@ async function tickBirthdays(db) {
     }
 }
 
+// ⚔️ كل دقيقة بنفحص لو أي حرب عصابات (.حرب_عصابات) خلص وقتها، ونحسم النتيجة حسب
+// النقط المتراكمة من .مساهمة: العصابة الأعلى نقط بتنهب 15% من خزنة الخصم.
+async function tickGangWars(db) {
+    for (const warId of Object.keys(db.gangWars || {})) {
+        const war = db.gangWars[warId];
+        if (Date.now() < war.endsAt) continue;
+
+        const gangA = db.gangs?.[war.gangA];
+        const gangB = db.gangs?.[war.gangB];
+        const sock = getSockForGroup(war.groupID);
+
+        if (gangA?.activeWarId === warId) delete gangA.activeWarId;
+        if (gangB?.activeWarId === warId) delete gangB.activeWarId;
+        delete db.gangWars[warId];
+
+        if (!gangA || !gangB) continue; // إحدى العصابتين اتحلت أثناء الحرب
+
+        const scoreA = war.score[war.gangA] || 0;
+        const scoreB = war.score[war.gangB] || 0;
+
+        let resultText;
+        if (scoreA === scoreB) {
+            resultText = `⚔️ *انتهت حرب [ ${war.gangA} ] × [ ${war.gangB} ]* بالتعادل (${scoreA} نقطة لكل عصابة)! مفيش غنائم.`;
+        } else {
+            const winner = scoreA > scoreB ? gangA : gangB;
+            const loser = scoreA > scoreB ? gangB : gangA;
+            const loot = Math.floor(Number(loser.gold || 0) * 0.15);
+            loser.gold = Number(loser.gold || 0) - loot;
+            winner.gold = Number(winner.gold || 0) + loot;
+            resultText = `⚔️ *انتهت الحرب!* ⚔️\n🏆 الفائز: [ ${winner.name} ] (${Math.max(scoreA, scoreB)} نقطة)\n💀 الخاسر: [ ${loser.name} ] (${Math.min(scoreA, scoreB)} نقطة)\n💰 الغنيمة: ${loot.toLocaleString()} ذهبة انتقلت لخزنة [ ${winner.name} ].`;
+        }
+
+        if (sock) {
+            try { await sock.sendMessage(war.groupID, { text: resultText }); }
+            catch (e) { console.error(`❌ تعذر إعلان نتيجة حرب العصابات في ${war.groupID}:`, e.message); }
+        }
+    }
+}
+
+// 🏺 كل دقيقة بنفحص لو أي مزاد عصابة (.مزاد_عصابة) خلص وقته، وبنحسم الفائز:
+// المزايد الأعلى بيدفع مزايدته لخزنة عصابته (لو رصيده كفاية وقت الحسم، وإلا
+// بيتفوّت المزاد من غير فايز عشان منخصمش أكتر من اللي معاه فعلاً).
+async function tickGangAuctions(db) {
+    for (const auctionId of Object.keys(db.gangAuctions || {})) {
+        const auction = db.gangAuctions[auctionId];
+        if (Date.now() < auction.endsAt) continue;
+
+        const gang = db.gangs?.[auction.gangName];
+        const sock = getSockForGroup(auction.groupID);
+        if (gang?.activeAuctionId === auctionId) delete gang.activeAuctionId;
+        delete db.gangAuctions[auctionId];
+        if (!gang) continue; // العصابة اتحلت أثناء المزاد
+
+        let resultText;
+        const winner = auction.currentBidder ? db[auction.currentBidder] : null;
+        if (winner && (winner.gold || 0) >= auction.currentBid) {
+            winner.gold -= auction.currentBid;
+            gang.gold = (Number(gang.gold) || 0) + auction.currentBid;
+            resultText = `🏺 *انتهى مزاد [ ${auction.item} ]!* 🏺\n🏆 الفائز: @${auction.currentBidder.split('@')[0]}\n💰 المبلغ (دخل خزنة العصابة): ${auction.currentBid.toLocaleString()}`;
+        } else if (auction.currentBidder) {
+            resultText = `🏺 *انتهى مزاد [ ${auction.item} ]* بدون فايز — رصيد آخر مزايد ما كانش كافي وقت الحسم.`;
+        } else {
+            resultText = `🏺 *انتهى مزاد [ ${auction.item} ]* من غير أي مزايدات.`;
+        }
+
+        if (sock) {
+            try {
+                await sock.sendMessage(auction.groupID, {
+                    text: resultText,
+                    mentions: auction.currentBidder ? [auction.currentBidder] : []
+                });
+            } catch (e) { console.error(`❌ تعذر إعلان نتيجة مزاد العصابة في ${auction.groupID}:`, e.message); }
+        }
+    }
+}
+
 // بتتنادى مرة واحدة بس (من index.js) عشان تشغّل التيكات الدورية. آمنة تتنادى أكتر من
 // مرة بالغلط بفضل الـ started flag.
 function startScheduler(db, stats, options = {}) {
@@ -323,6 +399,8 @@ function startScheduler(db, stats, options = {}) {
     setInterval(() => {
         tickLockSchedule(db).catch(e => console.error("❌ خطأ في تيك جدولة القفل/الفتح:", e.message));
         tickScheduledMessages(db).catch(e => console.error("❌ خطأ في تيك الرسائل المجدولة:", e.message));
+        tickGangWars(db).catch(e => console.error("❌ خطأ في تيك حروب العصابات:", e.message));
+        tickGangAuctions(db).catch(e => console.error("❌ خطأ في تيك مزادات العصابات:", e.message));
     }, 60 * 1000);
 
     // كل ساعة: نفحص هل وقت الإحصائيات الأسبوعية/بطولة PVP/تنبيه النشاط/أعياد الميلاد جه
@@ -342,7 +420,7 @@ function startScheduler(db, stats, options = {}) {
         tickBackup(db, stats, options).catch(e => console.error("❌ خطأ في تيك النسخ الاحتياطي:", e.message));
     }, 60 * 1000);
 
-    console.log("⏰ نظام الجدولة (قفل/فتح، إحصائيات أسبوعية، بطولة PVP، نسخ احتياطي، رسائل مجدولة، أعياد ميلاد) شغال.");
+    console.log("⏰ نظام الجدولة (قفل/فتح، إحصائيات أسبوعية، بطولة PVP، نسخ احتياطي، رسائل مجدولة، أعياد ميلاد، حروب ومزادات العصابات) شغال.");
 }
 
 module.exports = {

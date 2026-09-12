@@ -83,6 +83,10 @@ const ensureDBFields = () => {
     db.inviteIntents ??= {}; // 4.2 نظام تتبع الدعوات
     db.scheduledMessages ??= []; // 4.3 رسائل مجدولة
     db.pendingMenu ??= {}; // 4.4 حالة اختيار قسم في القائمة التفاعلية (.اوامر)
+    db.allianceRequests ??= {}; // 4.5 طلبات تحالف بين العصابات (.تحالف) بانتظار رد قائد العصابة التانية
+    db.gangWars ??= {}; // 4.6 حروب العصابات النشطة (.حرب_عصابات) بنتيجة تراكمية على مدار اليوم
+    db.gangAuctions ??= {}; // 4.7 مزادات داخلية للعصابات (.مزاد_عصابة)
+    db.loans ??= []; // 4.8 قروض بين اللاعبين (.قرض / .سداد)
 };
 ensureDBFields();
 
@@ -342,8 +346,32 @@ async function startBot() {
             if (dashboardRuntime.sock === sock) dashboardRuntime.sock = null;
             dashboardRuntime.connected = false;
             dashboardRuntime.latestQr = null;
+
+            const statusCode = lastDisconnect?.error?.output?.statusCode;
+            const reasonName = Object.keys(DisconnectReason).find(k => DisconnectReason[k] === statusCode) || statusCode || "غير معروف";
+            // ⚠️ من غير اللوج ده، أي قطع اتصال (تسجيل خروج إجباري من واتساب، حظر مؤقت،
+            // تعارض جهاز تاني...) كان بيحصل بصمت تام (logger: pino silent) ومفيش أي أثر
+            // في اللوج يوضح ليه البوت وقف بعد فترة — ده كان بيصعّب تشخيص مشاكل زي "البوت
+            // بيوقف ويعمل تسجيل خروج لوحده بعد يوم".
+            console.log(`\n🔌 انقطع الاتصال. السبب: ${reasonName} (كود: ${statusCode ?? "-"})`);
+
+            if (statusCode === DisconnectReason.loggedOut) {
+                // 🚨 تسجيل الخروج ده نهائي من ناحية واتساب — الـ creds المحفوظة بقت ميتة
+                // تمامًا ومفيش فايدة من الاحتفاظ بيها. لو سبناها زي ما هي في auth_info،
+                // أي محاولة ربط جديدة (كود أو QR) هتلاقي creds.registered لسه true على
+                // القرص، فـ requestPairingCode() هيفتكر إن في جلسة مربوطة بالفعل ويرفض
+                // يطلب كود جديد (ورغم إن واجهة الموقع بتفتح مكان الكود، الكود نفسه
+                // مش هيظهر لأن الطلب بيفشل بصمت). فبنمسح auth_info فورًا هنا عشان أي
+                // محاولة ربط جديدة تبدأ نضيفة من غير تدخل يدوي.
+                console.log("🚪 تسجيل خروج نهائي من واتساب — جاري مسح بيانات الجلسة القديمة عشان تقدر تربط تاني بكود/QR جديد.");
+                try { fs.rmSync(path.join(__dirname, "auth_info"), { recursive: true, force: true }); }
+                catch (e) { console.error("❌ تعذر مسح auth_info بعد تسجيل الخروج:", e.message); }
+                dashboardRuntime.sessionPhone = null;
+                dashboardRuntime.sessionName = null;
+            }
+
             sessionUpdate();
-            const shouldRestart = lastDisconnect?.error?.output?.statusCode !== DisconnectReason.loggedOut;
+            const shouldRestart = statusCode !== DisconnectReason.loggedOut;
             if (shouldRestart && !dashboardRuntime.stopped) startBot();
         } else if (connection === 'open') {
             dashboardRuntime.connected = true;

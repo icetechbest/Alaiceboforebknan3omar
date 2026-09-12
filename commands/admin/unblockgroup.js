@@ -1,3 +1,5 @@
+const { logAudit } = require('../../core/messageHandler.js');
+
 module.exports = {
     name: 'فك_حظر_جروب',
     aliases: ['تفعيل_جروب', 'unblockgc', 'تكلم'],
@@ -17,6 +19,7 @@ module.exports = {
 
         // 4. إزالة المجموعة من قائمة الحظر وتحديث البيانات
         db.bannedGroups = db.bannedGroups.filter(g => g !== targetGC);
+        logAudit(db, targetGC, "تفعيل جروب", sender);
 
         // 5. رسالة التأكيد الملكية بعودة الحياة
         let msg = `📢 *﹝ مَرْسُومُ فَكِّ الصَّمْت ﹞* 📢\n`;

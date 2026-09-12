@@ -1,4 +1,4 @@
-const { resolveRealJid } = require('../../core/messageHandler.js');
+const { resolveRealJid, logAudit } = require('../../core/messageHandler.js');
 
 module.exports = {
     name: 'فك_الحظر',
@@ -32,16 +32,21 @@ module.exports = {
         }
 
         // 3. التحقق من وجود قائمة المحظورين
-        if (!db.banned || !db.banned.includes(target)) {
-            // فحص إضافي في حالة كان الشخص محظوراً بالـ LID
-            const lidIndex = db.banned ? db.banned.indexOf(target) : -1;
-            if (lidIndex === -1) {
-                return sock.sendMessage(id, { text: "❌ هذا المستخدم ليس محظوراً بالفعل." }, { quoted: m });
-            }
+        // ⚠️ الفحص القديم هنا كان بيعمل db.banned.indexOf(target) بعد ما includes(target)
+        // رجعت false أصلاً — يعني نتيجة واحدة اتكررت من غير أي فايدة حقيقية، وأي حظر
+        // اتسجل بصيغة @lid مختلفة عن target المحلول كان مستحيل يتلاقى. هنا بندور كمان
+        // على أي صيغة @lid في db.lidMap بتترجم لنفس target.
+        const banned = db.banned || [];
+        const bannedMatch = banned.find(entry =>
+            entry === target || (entry?.endsWith("@lid") && db.lidMap?.[entry] === target)
+        );
+        if (!bannedMatch) {
+            return sock.sendMessage(id, { text: "❌ هذا المستخدم ليس محظوراً بالفعل." }, { quoted: m });
         }
 
         // 4. إزالة الحظر
-        db.banned = db.banned.filter(user => user !== target);
+        db.banned = banned.filter(user => user !== bannedMatch);
+        logAudit(db, id.endsWith("@g.us") ? id : "عام", "فك حظر", sender, target);
         
         // 5. رسالة التأكيد
         await sock.sendMessage(id, { 
@@ -50,5 +55,4 @@ module.exports = {
         }, { quoted: m });
     }
 };
-;
 

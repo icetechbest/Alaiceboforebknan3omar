@@ -1,4 +1,4 @@
-const { resolveRealJid, logAudit } = require('../../core/messageHandler.js');
+const { resolveRealJid, logAudit, isParticipantAdmin } = require('../../core/messageHandler.js');
 
 module.exports = {
     name: 'كتم',
@@ -8,10 +8,11 @@ module.exports = {
         if (!id.endsWith('@g.us')) return sock.sendMessage(id, { text: "🚫 في المجموعات فقط!" });
 
         // جلب معلومات المشرفين
+        // ⚠️ بنستخدم isParticipantAdmin بدل مقارنة p.id === sender المباشرة، لأن
+        // العضو ممكن يكون مسجل في groupMetadata بصيغة @lid بينما sender وصلنا محلول
+        // لرقمه الحقيقي (أو العكس)، وده كان بيخلي أدمن حقيقي ياخد رسالة "للمشرفين فقط".
         const groupMetadata = await sock.groupMetadata(id);
-        const participants = groupMetadata.participants;
-        const participantInfo = participants.find(p => p.id === sender);
-        const isAdmin = participantInfo?.admin === 'admin' || participantInfo?.admin === 'superadmin';
+        const isAdmin = isParticipantAdmin(groupMetadata, sender, db);
 
         if (!isAdmin && !isOwner) {
             return sock.sendMessage(id, { text: "🚫 هذا الأمر للمشرفين فقط!" });

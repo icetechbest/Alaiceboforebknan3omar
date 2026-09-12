@@ -28,6 +28,11 @@ module.exports = {
         if (!targetGang) return sock.sendMessage(groupID, { text: "⚠️ العصابة دي مش موجودة في سجلاتنا!" });
         if (targetGang.name === myGang.name) return sock.sendMessage(groupID, { text: "⚠️ عايز تهجم على رجالتك؟ بلاش جنون!" });
 
+        // 🤝 ممنوع الغارة على عصابة متحالفة معاك (.تحالف)
+        if (myGang.allies?.includes(targetGang.name)) {
+            return sock.sendMessage(groupID, { text: "🤝 دي عصابة حليفة! مينفعش تهجم عليها طول ما التحالف قايم." });
+        }
+
         // 4. حساب القوة الاحتمالية للفوز
         // القوة = (المستوى * 15) + (عدد الأعضاء * 2)
         const myPower = (myGang.level * 15) + (myGang.members.length * 2);

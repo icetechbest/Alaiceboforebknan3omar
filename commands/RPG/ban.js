@@ -1,4 +1,4 @@
-const { resolveTargetJid } = require('../../core/messageHandler.js');
+const { resolveTargetJid, logAudit } = require('../../core/messageHandler.js');
 module.exports = {
     name: 'حظر',
     async execute(sock, m, args, db, sender, isOwner) {
@@ -13,6 +13,7 @@ module.exports = {
         
         if (!db.banned.includes(target)) {
             db.banned.push(target);
+            logAudit(db, id.endsWith("@g.us") ? id : "عام", "حظر", sender, target);
             await sock.sendMessage(id, { text: `🚫 تم نفي @${target.split('@')[0]} وحظره من استخدام البوت.`, mentions: [target] });
         } else {
             await sock.sendMessage(id, { text: "👤 الشخص محظور مسبقاً." });

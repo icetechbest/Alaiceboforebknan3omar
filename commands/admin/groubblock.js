@@ -1,3 +1,5 @@
+const { logAudit } = require('../../core/messageHandler.js');
+
 module.exports = {
     name: 'حظر_جروب',
     aliases: ['تعطيل_جروب', 'blockgc'],
@@ -24,6 +26,7 @@ module.exports = {
         }
 
         db.bannedGroups.push(targetGC);
+        logAudit(db, targetGC, "تعطيل جروب", sender);
 
         // 4. رسالة تأكيد (البوت لن يغادر، سيصمت فقط)
         await sock.sendMessage(id, { 

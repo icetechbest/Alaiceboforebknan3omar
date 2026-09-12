@@ -773,6 +773,38 @@ function createMessageHandler(sock, { db, stats, commands, ownerIds, masterOwner
             return;
         }
 
+        // 3.5 نظام ردود التحالف بين العصابات (.تحالف) — بكلمات مخصصة (مش موافق/رفض
+        // العامة) عشان ميتلخبطش مع طلبات الزواج/المواجهات لو حد عنده أكتر من طلب.
+        if (db.allianceRequests?.[sender] && (text === "قبول_تحالف" || text === "رفض_تحالف")) {
+            const request = db.allianceRequests[sender];
+            delete db.allianceRequests[sender];
+
+            const fromGang = db.gangs?.[request.fromGang];
+            const toGang = db.gangs?.[request.toGang];
+
+            if (text === "رفض_تحالف") {
+                await sock.sendMessage(groupID, {
+                    text: `❌ عصابة [ ${request.toGang} ] رفضت عرض التحالف من [ ${request.fromGang} ].`
+                }, { quoted: m });
+                return;
+            }
+
+            if (!fromGang || !toGang) {
+                await sock.sendMessage(groupID, { text: "⚠️ إحدى العصابتين اتحلت قبل ما الطلب يتقبل." }, { quoted: m });
+                return;
+            }
+
+            fromGang.allies ??= [];
+            toGang.allies ??= [];
+            if (!fromGang.allies.includes(toGang.name)) fromGang.allies.push(toGang.name);
+            if (!toGang.allies.includes(fromGang.name)) toGang.allies.push(fromGang.name);
+
+            await sock.sendMessage(groupID, {
+                text: `🤝 *تحالف رسمي جديد!* 🤝\nعصابة [ ${fromGang.name} ] وعصابة [ ${toGang.name} ] بقوا حلفاء الآن.\n🛡️ ممنوع الغارات أو إعلان الحرب بين العصابتين طول ما التحالف قايم.`
+            }, { quoted: m });
+            return;
+        }
+
         // 4. تنفيذ الأوامر التي تبدأ بـ (.)
         if (text.startsWith(".")) {
             const args = text.slice(1).trim().split(/ +/);
