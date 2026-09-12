@@ -167,6 +167,23 @@ function sessionUpdate() {
     });
 }
 
+// 🗑️ بيمسح فولدر auth_info مسح كامل وحقيقي، حتى لو كان symlink.
+// ⚠️ على Railway، railway-bootstrap.js بيحوّل auth_info لـ symlink بيشاور على
+// نسخة حقيقية جوه الـ Volume الدائم (RAILWAY_VOLUME_MOUNT_PATH). fs.rmSync
+// العادي على مسار symlink بيمسح اللينك نفسه بس - مش المحتوى الحقيقي اللي هو
+// بيشاور عليه - فالجلسة "القديمة" كانت بترجع تظهر تاني لوحدها بمجرد ما
+// railway-bootstrap.js يشتغل تاني في أول تشغيل جديد ويعيد عمل نفس اللينك
+// (لأنه بيلاقي فولدر الـ Volume لسه موجود زي ما هو ومايعملش حاجة). هنا بنحل
+// المسار الحقيقي (realpath) الأول ونمسح المحتوى الفعلي، وبعدين نمسح اللينك نفسه.
+function wipeAuthInfo() {
+    const authPath = path.join(__dirname, "auth_info");
+    try {
+        const real = fs.realpathSync(authPath);
+        if (real !== authPath) fs.rmSync(real, { recursive: true, force: true });
+    } catch (_) {}
+    try { fs.rmSync(authPath, { recursive: true, force: true }); } catch (_) {}
+}
+
 async function stopBotProcess() {
     dashboardRuntime.stopped = true;
     dashboardRuntime.connected = false;
@@ -182,7 +199,7 @@ async function stopBotProcess() {
 
 async function resetAuthFiles() {
     await stopBotProcess();
-    fs.rmSync(path.join(__dirname, "auth_info"), { recursive: true, force: true });
+    wipeAuthInfo();
     dashboardRuntime.sessionPhone = null;
     dashboardRuntime.sessionName = null;
     dashboardRuntime.latestQr = null;
@@ -201,14 +218,26 @@ async function requestPairingCode(phone) {
     dashboardRuntime.linkMode = "pairing";
     dashboardRuntime.requestedPairingPhone = phone;
     dashboardRuntime.pairingRequested = true;
-    let sock = dashboardRuntime.sock;
-    if (sock?.authState?.creds?.registered) {
-        await resetAuthFiles();
-        dashboardRuntime.stopped = false;
-        dashboardRuntime.linkMode = "pairing";
-        sock = null;
+
+    // ⚠️ الفحص القديم هنا كان بيعتمد على وجود sock حي (dashboardRuntime.sock) عشان
+    // يقرر لو محتاج يمسح الجلسة القديمة الأول. المشكلة: بعد أي قطع اتصال (تسجيل
+    // خروج إجباري من واتساب مثلاً)، dashboardRuntime.sock بيبقى null فورًا — فالشرط
+    // ده كان بيتفوت تمامًا، وبعدين startBot() كان بيحمّل auth_info القديم (اللي
+    // لسه فيه creds.registered:true حتى لو الجلسة ميتة فعليًا)، فالدالة كانت
+    // بترمي "Session is already linked" من غير ما تطلب كود خالص. الفحص الصح هو
+    // هل فيه اتصال حي وشغال دلوقتي فعلاً (dashboardRuntime.connected)، مش مجرد
+    // وجود كائن sock.
+    if (dashboardRuntime.connected && dashboardRuntime.sock?.authState?.creds?.registered) {
+        throw new Error("Session is already linked");
     }
-    if (!sock) sock = await startBot();
+
+    // مش موصولين دلوقتي (حتى لو auth_info القديم على القرص لسه شايل registered:true
+    // من جلسة ميتة) — نمسح أي بيانات جلسة قديمة فعليًا ونبدأ نضيف قبل ما نطلب كود.
+    await resetAuthFiles();
+    dashboardRuntime.stopped = false;
+    dashboardRuntime.linkMode = "pairing";
+
+    const sock = await startBot();
     if (!sock?.authState?.creds?.registered) {
         const code = await sock.requestPairingCode(phone);
         const formatted = code?.match(/.{1,4}/g)?.join("-") || code;
@@ -227,7 +256,7 @@ async function logoutBot() {
         try { sock.end?.(); } catch (_) {}
     }
     dashboardRuntime.sock = null;
-    fs.rmSync(path.join(__dirname, "auth_info"), { recursive: true, force: true });
+    wipeAuthInfo();
     dashboardRuntime.latestQr = null;
     sessionUpdate();
 }
@@ -364,7 +393,7 @@ async function startBot() {
                 // مش هيظهر لأن الطلب بيفشل بصمت). فبنمسح auth_info فورًا هنا عشان أي
                 // محاولة ربط جديدة تبدأ نضيفة من غير تدخل يدوي.
                 console.log("🚪 تسجيل خروج نهائي من واتساب — جاري مسح بيانات الجلسة القديمة عشان تقدر تربط تاني بكود/QR جديد.");
-                try { fs.rmSync(path.join(__dirname, "auth_info"), { recursive: true, force: true }); }
+                try { wipeAuthInfo(); }
                 catch (e) { console.error("❌ تعذر مسح auth_info بعد تسجيل الخروج:", e.message); }
                 dashboardRuntime.sessionPhone = null;
                 dashboardRuntime.sessionName = null;

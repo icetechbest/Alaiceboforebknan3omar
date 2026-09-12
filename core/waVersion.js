@@ -37,20 +37,27 @@ async function getCurrentWaVersion() {
     if (cached && (now - cachedAt) < CACHE_TTL_MS) return cached;
 
     let version;
+    let source = "Baileys الافتراضية (fallback ثابت جوه الكود)";
     try {
         version = (await fetchLatestBaileysVersion()).version;
+        source = "كاش مكتبة Baileys";
     } catch (e) {
         version = [2, 3000, 1015901307]; // fallback أخير جدًا لو كل حاجة فشلت
     }
 
     try {
         const real = await fetchRealWaWebVersion();
-        if (real) version = real;
+        if (real) { version = real; source = "واتساب ويب مباشرة (الأحدث فعلياً)"; }
     } catch (e) {
-        // مفيش نت لـ web.whatsapp.com دلوقتي (شبكة موبايل متقطعة مثلاً) — هنكتفي بالنسخة اللي عندنا
-        console.log("⚠️ تعذر جلب نسخة واتساب ويب الحقيقية، هنستخدم نسخة Baileys الافتراضية.");
+        // ⚠️ مهم: بنطبع سبب الفشل الحقيقي (e.message) هنا مش رسالة عامة بس — لو السبب
+        // فعلاً مشكلة شبكة/حظر Egress على Railway لـ web.whatsapp.com، النسخة المستخدمة
+        // هتفضل قديمة، وواتساب بيميل يعمل قطع اتصال إجباري (401) للجلسات اللي بتستخدم
+        // نسخة واتساب ويب قديمة بعد فترة قصيرة — ده سبب شائع جداً لمشكلة "البوت بيتقطع
+        // بعد ساعات/يوم لوحده" فضلاً عن أي مشكلة تانية في auth_info.
+        console.log(`⚠️ تعذر جلب نسخة واتساب ويب الحقيقية (${e.message || e})، هنستخدم ${source}.`);
     }
 
+    console.log(`📦 نسخة واتساب ويب المستخدمة الآن: [${version.join(", ")}] (المصدر: ${source})`);
     cached = version;
     cachedAt = now;
     return version;
