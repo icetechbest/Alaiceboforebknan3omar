@@ -10,7 +10,8 @@
     "@whiskeysockets/baileys": "^6.7.24",
     "axios": "^1.7.7",
     "pino": "^9.4.0",
-    "ws": "^8.18.0"
+    "ws": "^8.18.0",
+    "youtube-search-without-api-key": "^1.0.0"
   },
   "engines": {
     "node": ">=20"
