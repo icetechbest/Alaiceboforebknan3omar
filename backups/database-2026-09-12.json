@@ -1,14 +1,14 @@
 {
   "232620008976456@lid": {
     "name": "✦𝑰ـᬼ❄️⑅⃝ـᬼ𝒄𝒆✦",
-    "level": 41,
-    "gold": 1652538,
-    "xp": 0,
-    "hp": 1125,
+    "level": 36,
+    "gold": 147384,
+    "xp": 48,
+    "hp": 1000,
     "maxHp": 100,
     "atk": 517235,
     "def": 5,
-    "defense": 863345,
+    "defense": 811345,
     "inventory": [],
     "pets": [],
     "currentPet": "الْمُطَوِّرِ سُونغ 👑",
@@ -20,7 +20,7 @@
       "gold": true,
       "itemId": false
     },
-    "huntCount": 5,
+    "huntCount": 4,
     "boughtLongBow": false,
     "archerReq": {
       "hunts": false,
@@ -53,23 +53,10 @@
       "150": true,
       "300": true
     },
-    "lastHunt": 1789242612674,
-    "lastSpin": 1789242937109,
-    "lastMonsterBattle": 1789242843914,
-    "lastSteal": 1785202732779,
-    "raceWins": 5,
-    "investment": {
-      "amount": 50000,
-      "startedAt": 1789237846540,
-      "maturesAt": 1789259446540
-    },
-    "achievements": [
-      "first_marriage",
-      "level_10",
-      "level_25",
-      "gold_10k",
-      "gold_100k"
-    ]
+    "lastHunt": 1786025563691,
+    "lastSpin": 1785267466649,
+    "lastMonsterBattle": 1788905324374,
+    "lastSteal": 1785202732779
   },
   "217523366699114@lid": {
     "name": "✧❄𝐓𝐀𝐄𝐇𝐀❄✧",
@@ -192,10 +179,6 @@
       "السلام عليكم": "وعليكم السلام ورحمه الله وبركاته",
       "سونغ": "سونغ عمك",
       "تست": "تستين"
-    },
-    "120363410499557638@g.us": {
-      "تست": "شغال يا عمو",
-      "سلام عليكم": "عليكم السلام منور يا حب"
     }
   },
   "puzzles": {
@@ -296,60 +279,30 @@
     "installEnabled": true,
     "dashboard": {
       "commandUsage": {
-        "مملكة": 6,
-        "احسب": 17,
-        "وحش": 29,
+        "مملكة": 4,
+        "احسب": 1,
+        "وحش": 7,
         "انشاء-عصابة": 1,
-        "عصابتي": 4,
-        "دعوة": 7,
-        "انضمام": 5,
+        "عصابتي": 2,
+        "دعوة": 4,
+        "انضمام": 3,
         "تنصيب-فتح": 1,
-        "اوامر": 20,
+        "اوامر": 4,
         "عدل-الاوامر": 1,
         "تبرع": 2,
-        "ترتيب": 4,
-        "تست": 8,
-        "تفعيل-ترحيب": 2,
+        "ترتيب": 2,
+        "تست": 2,
+        "تفعيل-ترحيب": 1,
         "ذهبي": 1,
         "شكوى": 2,
         "رد-شكوى": 1,
         "لاعب جديد": 1,
         "لقب": 1,
         "سرقة": 6,
-        "عجلة الحظ": 4,
-        "صيد": 5,
-        "شراء": 11,
-        "متجر": 2,
-        "سباق": 8,
-        "استثمار": 2,
-        "قروضي": 1,
-        "بوت": 2,
-        "الكلمات-الممنوعة": 1,
-        "تفعيل-فلتر": 1,
-        "اضف-كلمة": 1,
-        "تستو": 1,
-        "arise": 2,
-        "حماية-الادمن": 1,
-        "رد": 3,
-        "ايس": 2,
-        "كو": 4,
-        "تفعيل-وداع": 1,
-        "رسالة-وداع": 2,
-        "بوسه": 1,
-        "ايديت": 1,
-        "last": 2,
-        "محمد": 1,
-        "غباء": 1,
-        "كتم": 1,
-        "استقبال": 1,
-        "مجموعات": 1,
-        "ايسكو": 2,
-        "عدل-ترحيب": 1,
-        "تنمر": 2,
-        "اعتراف": 37,
-        "كت": 2,
-        "تزوج": 2,
-        "طلاق": 1
+        "عجلة الحظ": 1,
+        "صيد": 2,
+        "شراء": 3,
+        "متجر": 2
       },
       "commands": {},
       "shop": {},
@@ -1679,7 +1632,7 @@
     "212128719990987@lid": {
       "gangName": "卐 𝑪𝑼𝑹𝑺𝑬𝑫 卐",
       "from": "201010495644@s.whatsapp.net",
-      "time": 1789243690126
+      "time": 1789178057607
     }
   },
   "260920018239741@lid": {
@@ -3662,53 +3615,11 @@
     "lastHunt": 1784848493294,
     "lastMonsterBattle": 1784858526883,
     "activityTitles": {
-      "201010495644@s.whatsapp.net": "⭐ نجم الجروب",
-      "201141222928@s.whatsapp.net": "🔥 عضو نشيط",
-      "201118863334@s.whatsapp.net": "🔥 عضو نشيط",
-      "249962834274@s.whatsapp.net": "🔥 عضو نشيط"
+      "201010495644@s.whatsapp.net": "🔥 عضو نشيط"
     },
     "welcome": {
       "enabled": true,
-      "message": "*_نورت جروب بوت سونع_*\n\n\n*_القوانين_*\n\n\n1- *ممنوع البوتات غير بوت المؤسس ايس*\n\n2- *ممنوع السب*\n\n3- *ممنوع التكلم في مواضيع 18+*\n\n4- *ممنوع الدخول بنيه التخريب*\n\n5- *صنم = اخرجججججج*\n$user"
-    },
-    "filter": {
-      "enabled": true,
-      "words": [
-        "كسمك"
-      ]
-    },
-    "auditLog": [
-      {
-        "action": "ترقية أدمن",
-        "by": "232620008976456@lid",
-        "target": "51493117890754@lid",
-        "at": 1789240770127
-      }
-    ],
-    "adminGuard": {
-      "enabled": true
-    },
-    "farewell": {
-      "enabled": true,
-      "message": "باي باي $user"
-    },
-    "suspectedBots": {
-      "201010495644@s.whatsapp.net": {
-        "hits": 2,
-        "reasons": [
-          "إعادة إرسال نفس الرسالة بشكل متكرر"
-        ],
-        "notified": false,
-        "whitelisted": false
-      },
-      "249962834274@s.whatsapp.net": {
-        "hits": 3,
-        "reasons": [
-          "إعادة إرسال نفس الرسالة بشكل متكرر"
-        ],
-        "notified": true,
-        "whitelisted": false
-      }
+      "message": "🌟 أهلاً بيك يا $user في مملكة *$group*!\nيلا سجل معانا بـ .لاعب-جديد وابدأ مغامرتك ⚔️"
     }
   },
   "255808990351492@lid": {
@@ -4103,14 +4014,14 @@
   "subbots": {},
   "201010495644@s.whatsapp.net": {
     "name": "𝑲𝑶𝑼",
-    "level": 518,
-    "gold": 127076748,
+    "level": 505,
+    "gold": 105532160,
     "xp": 0,
-    "hp": 13050,
+    "hp": 12725,
     "maxHp": 100,
     "atk": 1061099,
     "def": 5,
-    "defense": 12827670,
+    "defense": 8927670,
     "inventory": [],
     "pets": [],
     "currentPet": "المبرمج 💻",
@@ -4158,7 +4069,7 @@
     },
     "lastHunt": 1788903236283,
     "lastSteal": 1789179647787,
-    "lastMonsterBattle": 1789265628301,
+    "lastMonsterBattle": 1789179677028,
     "successfulSteals": 1,
     "achievements": [
       "first_pvp_win",
@@ -4182,10 +4093,7 @@
     "defense": 5,
     "inventory": [],
     "pets": [],
-    "currentPet": "لا يوجد",
-    "achievements": [
-      "first_marriage"
-    ]
+    "currentPet": "لا يوجد"
   },
   "201141222928@s.whatsapp.net": {
     "name": "سوكونا",
@@ -4260,42 +4168,14 @@
     "195189754880090@lid": "923443512038@s.whatsapp.net",
     "170712786583628@lid": "201035580841@s.whatsapp.net",
     "1481797279929@lid": "201093358593@s.whatsapp.net",
-    "70609916694754@lid": "963997672349@s.whatsapp.net",
-    "220392841068591@lid": "212644657406@s.whatsapp.net",
-    "258360133849114@lid": "249921748047@s.whatsapp.net",
-    "212128719990987@lid": "201118863334@s.whatsapp.net",
-    "96323986583567@lid": "61412917435@s.whatsapp.net",
-    "26917214404747@lid": "212775110861@s.whatsapp.net",
-    "73814012645588@lid": "201105465127@s.whatsapp.net",
-    "136778266767502@lid": "967781995291@s.whatsapp.net",
-    "269016048349320@lid": "639650885047@s.whatsapp.net",
-    "93502260121715@lid": "201130178556@s.whatsapp.net",
-    "15230021193735@lid": "201156247697@s.whatsapp.net",
-    "74586821525697@lid": "962790826418@s.whatsapp.net",
-    "121604231196907@lid": "249962834274@s.whatsapp.net",
-    "271047534317799@lid": "201062638688@s.whatsapp.net",
-    "200377991458854@lid": "201204314047@s.whatsapp.net",
-    "152665149419590@lid": "201032294453@s.whatsapp.net",
-    "217523366699114@lid": "201223038677@s.whatsapp.net"
+    "70609916694754@lid": "963997672349@s.whatsapp.net"
   },
   "pendingMenu": {
     "232620008976456@lid": {
-      "at": 1789243942602
+      "at": 1789179865694
     },
     "201010495644@s.whatsapp.net": {
-      "at": 1789241616772
-    },
-    "249921748047@s.whatsapp.net": {
-      "at": 1789237518797
-    },
-    "201105465127@s.whatsapp.net": {
-      "at": 1789239030449
-    },
-    "639650885047@s.whatsapp.net": {
-      "at": 1789240739314
-    },
-    "962790826418@s.whatsapp.net": {
-      "at": 1789242230770
+      "at": 1789174007812
     }
   },
   "201019325181@s.whatsapp.net": {
@@ -4396,52 +4276,5 @@
   "inviteIntents": {},
   "gangWars": {},
   "gangAuctions": {},
-  "loans": [],
-  "201156247697@s.whatsapp.net": {
-    "gold": 2000,
-    "level": 1,
-    "xp": 138,
-    "name": "𝐀𝐫𝐭𝐡𝐮𝐫",
-    "class": "محارب",
-    "atk": 10,
-    "defense": 5,
-    "hp": 100,
-    "pvpWins": 0,
-    "boughtPoisonDagger": false,
-    "assassinReq": {
-      "wins": false,
-      "gold": false,
-      "itemId": false
-    },
-    "huntCount": 1,
-    "boughtLongBow": false,
-    "archerReq": {
-      "hunts": false,
-      "gold": false,
-      "itemId": false
-    },
-    "registeredAt": 0,
-    "ambushWins": 0,
-    "revealed": false,
-    "deflectActive": false,
-    "deflectExpiresAt": 0,
-    "lastDeflectUsed": null,
-    "lastRevealAttempt": null,
-    "recentlyAmbushedUntil": 0,
-    "dailyAmbushLog": {
-      "date": "2026-09-12",
-      "targets": {}
-    },
-    "weeklyAmbush": {
-      "week": "2026-W37",
-      "count": 0,
-      "claimed": false
-    },
-    "allyJid": null,
-    "lastAmbushTarget": null,
-    "weakenedUntil": 0,
-    "lastVolley": null,
-    "defMilestones": {},
-    "lastHunt": 1789241235640
-  }
+  "loans": []
 }
