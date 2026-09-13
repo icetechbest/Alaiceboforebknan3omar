@@ -4,7 +4,7 @@ const axios = require('axios');
 // غيّر القيمة دي هنا لرابط السيرفر بعد ما ترفعه، أو سيبها زي ما هي وحط
 // المتغير API_BASE_URL في متغيرات البيئة (Environment Variables) بتاعة
 // استضافة البوت — أسهل وأأمن، وميحتاجش تعدل الكود تاني لو الرابط اتغير.
-const API_BASE_URL = (process.env.API_BASE_URL || 'https://alaiceboforebknan3omar-production.up.railway.app').replace(/\/+$/, '');
+const API_BASE_URL = (process.env.API_BASE_URL || 'api-production-8186.up.railway.app').replace(/\/+$/, '');
 
 const client = axios.create({ timeout: 30000 });
 
