@@ -1,60 +1,100 @@
 const axios = require('axios');
-const yt = require('youtube-search-without-api-key');
+const fs = require('fs');
+const path = require('path');
+const os = require('os');
 
 const sentVideos = new Set();
 
+const STARLIGHT_API =
+    'https://apis-starlights-team.koyeb.app/starlight/youtube-search';
+
+const ALLDL_API =
+    'https://ahm7xmakki.com/api/alldl';
+
 async function searchYouTube(searchText) {
-    const results = await yt.search(searchText, {
-        duration: 'under'
+    const response = await axios.get(STARLIGHT_API, {
+        params: {
+            text: searchText
+        },
+        timeout: 20000
     });
+
+    const results = response.data?.results;
 
     if (!Array.isArray(results) || results.length === 0) {
         return null;
     }
 
-    // نختار أول نتيجة لم يتم إرسالها قبل كده
-    const fresh = results.filter(v => {
-        const url = v?.url;
-        return url && !sentVideos.has(url);
-    });
+    const fresh = results.filter(v =>
+        v?.url && !sentVideos.has(v.url)
+    );
 
     const video = fresh[0] || results[0];
 
-    if (!video?.url) return null;
+    if (!video?.url) {
+        return null;
+    }
 
     sentVideos.add(video.url);
 
-    return {
-        url: video.url,
-        title: video.title || 'YouTube Video'
-    };
+    return video;
 }
 
-async function downloadVideo(videoUrl) {
-    const apiUrl =
-        `https://ahm7xmakki.com/api/alldl?url=${encodeURIComponent(videoUrl)}`;
-
-    const response = await axios.get(apiUrl, {
-        timeout: 30000,
-        maxContentLength: 100 * 1024 * 1024,
-        maxBodyLength: 100 * 1024 * 1024
+async function getDownloadUrl(videoUrl) {
+    const response = await axios.get(ALLDL_API, {
+        params: {
+            url: videoUrl
+        },
+        timeout: 60000
     });
 
     const data = response.data;
 
-    // AllDL حسب التوثيق يرجع data.mediaInfo.videoUrl
-    const directUrl =
-        data?.data?.mediaInfo?.videoUrl ||
-        data?.mediaInfo?.videoUrl ||
-        data?.videoUrl ||
-        data?.downloadUrl ||
-        data?.url;
+    if (!data?.success) {
+        throw new Error(
+            data?.message || 'AllDL لم يستطع معالجة الفيديو'
+        );
+    }
 
-    if (!directUrl || typeof directUrl !== 'string') {
-        throw new Error('AllDL لم يرجع رابط فيديو صالح');
+    const directUrl =
+        data?.mediaInfo?.videoUrl ||
+        data?.data?.mediaInfo?.videoUrl;
+
+    if (!directUrl) {
+        throw new Error('AllDL لم يرجع رابط الفيديو');
     }
 
     return directUrl;
+}
+
+async function downloadToFile(videoUrl) {
+    const tmpDir = fs.mkdtempSync(
+        path.join(os.tmpdir(), 'song-edit-')
+    );
+
+    const filePath = path.join(tmpDir, 'video.mp4');
+
+    const response = await axios.get(videoUrl, {
+        responseType: 'stream',
+        timeout: 120000,
+        maxContentLength: 100 * 1024 * 1024,
+        maxBodyLength: 100 * 1024 * 1024
+    });
+
+    const writer = fs.createWriteStream(filePath);
+
+    response.data.pipe(writer);
+
+    await new Promise((resolve, reject) => {
+        writer.on('finish', resolve);
+        writer.on('error', reject);
+        response.data.on('error', reject);
+    });
+
+    return {
+        tmpDir,
+        filePath
+    };
 }
 
 module.exports = {
@@ -89,44 +129,59 @@ module.exports = {
             { quoted: m }
         );
 
-        try {
-            console.log(`[ايديت] البحث عن: ${searchText}`);
+        let tmpDir = null;
 
-            // 1️⃣ البحث في YouTube
+        try {
+            console.log(`[ايديت] البحث: ${searchText}`);
+
+            // 1️⃣ البحث عن الفيديو
             const video = await searchYouTube(searchText);
 
             if (!video) {
-                throw new Error('لم يتم العثور على نتائج في YouTube');
+                throw new Error(
+                    'Starlight YouTube Search لم يرجع نتائج'
+                );
             }
 
-            console.log(`[ايديت] النتيجة: ${video.title}`);
-            console.log(`[ايديت] الرابط: ${video.url}`);
+            console.log(`[ايديت] 🎬 ${video.title}`);
+            console.log(`[ايديت] 🔗 ${video.url}`);
 
-            // 2️⃣ تحويل رابط YouTube إلى رابط فيديو مباشر
-            const directUrl = await downloadVideo(video.url);
+            // 2️⃣ تحويل رابط YouTube إلى MP4
+            console.log('[ايديت] ⬇️ جاري طلب الفيديو من AllDL...');
 
-            console.log('[ايديت] تم الحصول على رابط الفيديو');
+            const directUrl = await getDownloadUrl(video.url);
 
-            // 3️⃣ إرسال الفيديو
+            console.log('[ايديت] ✅ تم الحصول على رابط MP4');
+
+            // 3️⃣ تحميل الفيديو فعليًا للسيرفر
+            const downloaded = await downloadToFile(directUrl);
+
+            tmpDir = downloaded.tmpDir;
+
+            console.log('[ايديت] 📥 تم تحميل الفيديو');
+
+            // 4️⃣ إرسال الفيديو نفسه إلى واتساب
             await sock.sendMessage(
                 chatId,
                 {
-                    video: {
-                        url: directUrl
-                    },
-
+                    video: fs.readFileSync(downloaded.filePath),
+                    mimetype: 'video/mp4',
+                    fileName: 'anime-edit.mp4',
                     caption:
 `╔═══•『 𝐀𝐍𝐈𝐌𝐄 𝐄𝐃𝐈𝐓 』•══╗
 🎬 *ايديت:* *${query || 'عشوائي'}*
 📺 المصدر: YouTube
+✨ ${video.title}
 ╚════•『 𝐒𝐎𝐍𝐆 𝐁𝐎𝐓 』•═══╝`
                 },
                 { quoted: m }
             );
 
+            console.log('[ايديت] ✅ تم إرسال الفيديو');
+
         } catch (err) {
             console.error(
-                '[ايديت] خطأ:',
+                '[ايديت] ❌ خطأ:',
                 err?.response?.data || err.message
             );
 
@@ -134,15 +189,31 @@ module.exports = {
                 chatId,
                 {
                     text:
-`❌ حصلت مشكلة وأنا بحاول أجيب الإيديت.
+`❌ حصلت مشكلة أثناء جلب الإيديت.
 
 🔎 البحث:
 *${searchText}*
 
-جرب اسم إيديت تاني.`
+حاول مرة تانية بعد شوية.`
                 },
                 { quoted: m }
             );
+
+        } finally {
+            // حذف الفيديو المؤقت
+            if (tmpDir) {
+                try {
+                    fs.rmSync(tmpDir, {
+                        recursive: true,
+                        force: true
+                    });
+                } catch (e) {
+                    console.error(
+                        '[ايديت] خطأ حذف الملف المؤقت:',
+                        e.message
+                    );
+                }
+            }
         }
     }
 };
