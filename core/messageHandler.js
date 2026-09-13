@@ -91,6 +91,10 @@ const MEDIA_TYPE_LABELS = {
     audioMessage: "صوت"
 };
 
+// 📇 أنواع رسائل بطاقة/بطاقات جهات الاتصال في Baileys — واحدة (contactMessage)
+// أو أكتر من جهة دفعة واحدة (contactsArrayMessage)
+const CONTACT_MESSAGE_TYPES = ["contactMessage", "contactsArrayMessage"];
+
 // 🏅 رتب التفاعل الافتراضية (لو الجروب معندوش رتب مخصصة) — بناءً على إجمالي عدد
 // رسائل العضو المسجلة في stats.json لنفس الجروب
 const DEFAULT_ACTIVITY_RANKS = [
@@ -417,6 +421,36 @@ function createMessageHandler(sock, { db, stats, commands, ownerIds, masterOwner
                     text: `🔒📎 @${sender.split("@")[0]} إرسال الوسائط مقفول حاليًا في هذا الجروب، الكتابة العادية شغالة.`,
                     mentions: [sender]
                 }).catch(() => {});
+                return;
+            }
+        }
+
+        // 0.17 حماية الجهات: أي عضو (غير أدمن) يبعت جهة اتصال (فردية أو أكتر من جهة دفعة
+        // واحدة) بيتحذف اتصاله فورًا ويتطرد من الجروب على طول، من غير تحذير قبلها —
+        // ده غالبًا سلوك سبام/فيروسات جهات اتصال منتشر في جروبات الواتساب.
+        if (
+            groupID.endsWith("@g.us") &&
+            !isOwner &&
+            db[groupID]?.contactProtection?.enabled &&
+            CONTACT_MESSAGE_TYPES.includes(messageType)
+        ) {
+            const groupMetaForContacts = await sock.groupMetadata(groupID).catch(() => null);
+            const senderIsAdminForContacts = isParticipantAdmin(groupMetaForContacts, sender, db);
+
+            if (!senderIsAdminForContacts) {
+                try {
+                    await sock.sendMessage(groupID, { delete: m.key });
+                } catch (e) { console.error("❌ تعذر حذف رسالة جهة اتصال:", e.message); }
+
+                logAudit(db, groupID, "طرد (إرسال جهة اتصال)", "النظام", sender);
+                await sock.sendMessage(groupID, {
+                    text: `📵🚫 @${sender.split("@")[0]} اتطرد من الجروب لإرساله جهة اتصال (ممنوع نهائيًا هنا).`,
+                    mentions: [sender]
+                }).catch(() => {});
+
+                try {
+                    await sock.groupParticipantsUpdate(groupID, [sender], "remove");
+                } catch (e) { console.error("❌ تعذر طرد مرسل جهة الاتصال:", e.message); }
                 return;
             }
         }
