@@ -2,8 +2,8 @@
   "232620008976456@lid": {
     "name": "✦𝑰ـᬼ❄️⑅⃝ـᬼ𝒄𝒆✦",
     "level": 41,
-    "gold": 1652538,
-    "xp": 0,
+    "gold": 1597359,
+    "xp": 40,
     "hp": 1125,
     "maxHp": 100,
     "atk": 517235,
@@ -55,9 +55,9 @@
     },
     "lastHunt": 1789242612674,
     "lastSpin": 1789242937109,
-    "lastMonsterBattle": 1789242843914,
+    "lastMonsterBattle": 1789389400011,
     "lastSteal": 1785202732779,
-    "raceWins": 5,
+    "raceWins": 7,
     "investment": {
       "amount": 50000,
       "startedAt": 1789237846540,
@@ -296,31 +296,31 @@
     "installEnabled": true,
     "dashboard": {
       "commandUsage": {
-        "مملكة": 6,
-        "احسب": 17,
-        "وحش": 29,
-        "انشاء-عصابة": 1,
-        "عصابتي": 4,
-        "دعوة": 7,
-        "انضمام": 5,
+        "مملكة": 60,
+        "احسب": 89,
+        "وحش": 208,
+        "انشاء-عصابة": 3,
+        "عصابتي": 7,
+        "دعوة": 15,
+        "انضمام": 19,
         "تنصيب-فتح": 1,
-        "اوامر": 20,
+        "اوامر": 41,
         "عدل-الاوامر": 1,
-        "تبرع": 2,
-        "ترتيب": 4,
-        "تست": 8,
+        "تبرع": 5,
+        "ترتيب": 7,
+        "تست": 11,
         "تفعيل-ترحيب": 2,
-        "ذهبي": 1,
+        "ذهبي": 9,
         "شكوى": 2,
         "رد-شكوى": 1,
-        "لاعب جديد": 1,
+        "لاعب جديد": 7,
         "لقب": 1,
-        "سرقة": 6,
-        "عجلة الحظ": 4,
-        "صيد": 5,
-        "شراء": 11,
-        "متجر": 2,
-        "سباق": 8,
+        "سرقة": 14,
+        "عجلة الحظ": 43,
+        "صيد": 151,
+        "شراء": 152,
+        "متجر": 13,
+        "سباق": 11,
         "استثمار": 2,
         "قروضي": 1,
         "بوت": 2,
@@ -336,7 +336,7 @@
         "تفعيل-وداع": 1,
         "رسالة-وداع": 2,
         "بوسه": 1,
-        "ايديت": 1,
+        "ايديت": 12,
         "last": 2,
         "محمد": 1,
         "غباء": 1,
@@ -349,10 +349,757 @@
         "اعتراف": 37,
         "كت": 2,
         "تزوج": 2,
-        "طلاق": 1
+        "طلاق": 1,
+        "تفعيل-حماية-الجهات": 1,
+        "منشن": 2,
+        "مغتال": 5,
+        "اغنيه": 3,
+        "تطور": 32,
+        "مملكتي": 4,
+        "زرف": 2,
+        "زرفف": 1,
+        "بوم": 2,
+        "توب": 1,
+        "تحالف": 2,
+        "تفاصيل": 4,
+        "تحويل": 12,
+        "متجر حيوانات": 2,
+        "اعضاء": 1,
+        "خروج": 1,
+        "مواجهة": 2,
+        "رشق": 1,
+        "سحب-خزنة": 2,
+        "علم": 2
       },
       "commands": {},
-      "shop": {},
+      "shop": {
+        "1": {
+          "name": "جرعة دم صغيرة 🧪",
+          "cost": 50,
+          "hp": 20,
+          "type": "use"
+        },
+        "2": {
+          "name": "جرعة دم متوسطة 🧪",
+          "cost": 150,
+          "hp": 60,
+          "type": "use"
+        },
+        "3": {
+          "name": "جرعة الملك ✨",
+          "cost": 5000,
+          "hp": 400,
+          "type": "use"
+        },
+        "4": {
+          "name": "ترياق الطاقة ⚡",
+          "cost": 300,
+          "hp": 80,
+          "type": "use"
+        },
+        "5": {
+          "name": "عشبة الشفاء 🌿",
+          "cost": 20,
+          "hp": 10,
+          "type": "use"
+        },
+        "6": {
+          "name": "كرة النار 🔥",
+          "cost": 400,
+          "atk": 8,
+          "type": "stack"
+        },
+        "7": {
+          "name": "صاعقة البرق ⚡",
+          "cost": 800,
+          "atk": 15,
+          "type": "stack"
+        },
+        "8": {
+          "name": "درع الماء 💧",
+          "cost": 500,
+          "def": 10,
+          "type": "stack"
+        },
+        "9": {
+          "name": "غضب الأرض 🌍",
+          "cost": 1000,
+          "atk": 25,
+          "type": "stack"
+        },
+        "10": {
+          "name": "ريح الشمال 🌬️",
+          "cost": 600,
+          "def": 15,
+          "type": "stack"
+        },
+        "11": {
+          "name": "لعنة الضعف 💀",
+          "cost": 1000,
+          "atk": 22,
+          "type": "stack"
+        },
+        "12": {
+          "name": "نور الفجر 🌅",
+          "cost": 500,
+          "hp": 70,
+          "type": "use"
+        },
+        "13": {
+          "name": "استدعاء النيازك 🌠",
+          "cost": 2000,
+          "atk": 50,
+          "type": "stack"
+        },
+        "14": {
+          "name": "حقل المانا 🔮",
+          "cost": 1500,
+          "def": 35,
+          "type": "stack"
+        },
+        "15": {
+          "name": "سحر السرعة 🏹",
+          "cost": 300,
+          "atk": 5,
+          "type": "stack"
+        },
+        "16": {
+          "name": "سيف برونزي ⚔️",
+          "cost": 200,
+          "atk": 10,
+          "type": "stack"
+        },
+        "17": {
+          "name": "سيف فولاذي ⚔️",
+          "cost": 800,
+          "atk": 25,
+          "type": "stack"
+        },
+        "18": {
+          "name": "نصل الجليد ❄️",
+          "cost": 2000,
+          "atk": 60,
+          "type": "stack"
+        },
+        "19": {
+          "name": "خنجر مسموم 🗡️",
+          "cost": 600,
+          "atk": 20,
+          "type": "stack"
+        },
+        "20": {
+          "name": "فأس الدمار 🪓",
+          "cost": 4000,
+          "atk": 120,
+          "type": "stack"
+        },
+        "21": {
+          "name": "رمح سماوي 🔱",
+          "cost": 3000,
+          "atk": 90,
+          "type": "stack"
+        },
+        "22": {
+          "name": "قوس السحاب 🏹",
+          "cost": 1000,
+          "atk": 35,
+          "type": "stack"
+        },
+        "23": {
+          "name": "درع جلدي 🧥",
+          "cost": 150,
+          "def": 5,
+          "type": "stack"
+        },
+        "24": {
+          "name": "درع حديدي 🛡️",
+          "cost": 500,
+          "def": 18,
+          "type": "stack"
+        },
+        "25": {
+          "name": "درع الفارس 🛡️",
+          "cost": 1500,
+          "def": 45,
+          "type": "stack"
+        },
+        "26": {
+          "name": "درع التنين 🐲",
+          "cost": 5000,
+          "def": 130,
+          "type": "stack"
+        },
+        "27": {
+          "name": "خوذة الملك 👑",
+          "cost": 2500,
+          "def": 65,
+          "type": "stack"
+        },
+        "28": {
+          "name": "قفازات القوة 💪",
+          "cost": 1000,
+          "atk": 30,
+          "type": "stack"
+        },
+        "29": {
+          "name": "حذاء الريح 👟",
+          "cost": 500,
+          "def": 15,
+          "type": "stack"
+        },
+        "30": {
+          "name": "سيف الضوء ✨",
+          "cost": 10000,
+          "atk": 300,
+          "type": "stack"
+        },
+        "31": {
+          "name": "قطة 🐱",
+          "cost": 300,
+          "atk": 10,
+          "def": 10,
+          "type": "pet"
+        },
+        "32": {
+          "name": "كلب 🐶",
+          "cost": 600,
+          "atk": 25,
+          "def": 25,
+          "type": "pet"
+        },
+        "33": {
+          "name": "بومة 🦉",
+          "cost": 1000,
+          "atk": 50,
+          "def": 50,
+          "type": "pet"
+        },
+        "34": {
+          "name": "ذئب 🐺",
+          "cost": 2500,
+          "atk": 150,
+          "def": 150,
+          "type": "pet"
+        },
+        "35": {
+          "name": "نمر 🐯",
+          "cost": 5000,
+          "atk": 300,
+          "def": 300,
+          "type": "pet"
+        },
+        "36": {
+          "name": "أسد 🦁",
+          "cost": 10000,
+          "atk": 600,
+          "def": 600,
+          "type": "pet"
+        },
+        "37": {
+          "name": "دب 🐻",
+          "cost": 15000,
+          "atk": 900,
+          "def": 900,
+          "type": "pet"
+        },
+        "38": {
+          "name": "صقر 🦅",
+          "cost": 25000,
+          "atk": 1500,
+          "def": 1500,
+          "type": "pet"
+        },
+        "39": {
+          "name": "وحيد قرن 🦄",
+          "cost": 40000,
+          "atk": 2200,
+          "def": 2200,
+          "type": "pet"
+        },
+        "40": {
+          "name": "عنقاء 🔥",
+          "cost": 60000,
+          "atk": 3000,
+          "def": 3000,
+          "type": "pet"
+        },
+        "41": {
+          "name": "قرش 🦈",
+          "cost": 80000,
+          "atk": 3800,
+          "def": 3800,
+          "type": "pet"
+        },
+        "42": {
+          "name": "تنين 🐉",
+          "cost": 100000,
+          "atk": 5000,
+          "def": 5000,
+          "type": "pet"
+        },
+        "43": {
+          "name": "غول 👹",
+          "cost": 130000,
+          "atk": 6500,
+          "def": 6500,
+          "type": "pet"
+        },
+        "44": {
+          "name": "آلي 🤖",
+          "cost": 180000,
+          "atk": 8000,
+          "def": 8000,
+          "type": "pet"
+        },
+        "45": {
+          "name": "شيطان 👿",
+          "cost": 220000,
+          "atk": 10000,
+          "def": 10000,
+          "type": "pet"
+        },
+        "46": {
+          "name": "ملاك ✨",
+          "cost": 280000,
+          "atk": 12000,
+          "def": 12000,
+          "type": "pet"
+        },
+        "47": {
+          "name": "فضائي 👽",
+          "cost": 350000,
+          "atk": 15000,
+          "def": 15000,
+          "type": "pet"
+        },
+        "48": {
+          "name": "كراكن 🐙",
+          "cost": 450000,
+          "atk": 18000,
+          "def": 18000,
+          "type": "pet"
+        },
+        "49": {
+          "name": "رفيق أسطوري 🔮",
+          "cost": 600000,
+          "atk": 25000,
+          "def": 25000,
+          "type": "pet"
+        },
+        "50": {
+          "name": "حاكم الممالك 👑",
+          "cost": 900000,
+          "atk": 35000,
+          "def": 35000,
+          "type": "pet"
+        },
+        "51": {
+          "name": "غوليم 🗿",
+          "cost": 25000,
+          "atk": 1000,
+          "def": 2500,
+          "type": "pet"
+        },
+        "52": {
+          "name": "حارس الرعد 🌩️",
+          "cost": 40000,
+          "atk": 2500,
+          "def": 1000,
+          "type": "pet"
+        },
+        "53": {
+          "name": "كلب الجحيم 🐕‍🦺",
+          "cost": 50000,
+          "atk": 3000,
+          "def": 1500,
+          "type": "pet"
+        },
+        "54": {
+          "name": "حصان أبيض 🐎",
+          "cost": 15000,
+          "atk": 500,
+          "def": 800,
+          "type": "pet"
+        },
+        "55": {
+          "name": "نينجا الظل 👤",
+          "cost": 70000,
+          "atk": 4000,
+          "def": 2000,
+          "type": "pet"
+        },
+        "56": {
+          "name": "فينيكس الجليد 🧊",
+          "cost": 90000,
+          "atk": 4500,
+          "def": 2500,
+          "type": "pet"
+        },
+        "57": {
+          "name": "جني الأرض 🧚",
+          "cost": 35000,
+          "atk": 1500,
+          "def": 1800,
+          "type": "pet"
+        },
+        "58": {
+          "name": "ملك القراصنة 🏴‍☠️",
+          "cost": 110000,
+          "atk": 6000,
+          "def": 4000,
+          "type": "pet"
+        },
+        "59": {
+          "name": "حارس أبدي 🛡️",
+          "cost": 140000,
+          "atk": 5000,
+          "def": 7500,
+          "type": "pet"
+        },
+        "60": {
+          "name": "إله الرعد ⚡",
+          "cost": 1200000,
+          "atk": 45000,
+          "def": 45000,
+          "type": "pet"
+        },
+        "61": {
+          "name": "ملك الجحيم 🔥",
+          "cost": 1800000,
+          "atk": 60000,
+          "def": 60000,
+          "type": "pet"
+        },
+        "62": {
+          "name": "تنين ذهبي ✨",
+          "cost": 2500000,
+          "atk": 80000,
+          "def": 80000,
+          "type": "pet"
+        },
+        "63": {
+          "name": "سيد الوقت ⏳",
+          "cost": 4000000,
+          "atk": 120000,
+          "def": 120000,
+          "type": "pet"
+        },
+        "64": {
+          "name": "كولوسوس 🏗️",
+          "cost": 2000000,
+          "atk": 70000,
+          "def": 70000,
+          "type": "pet"
+        },
+        "65": {
+          "name": "قناص المحيط 🏹",
+          "cost": 700000,
+          "atk": 28000,
+          "def": 22000,
+          "type": "pet"
+        },
+        "66": {
+          "name": "شينوبي 🥷",
+          "cost": 1100000,
+          "atk": 45000,
+          "def": 35000,
+          "type": "pet"
+        },
+        "67": {
+          "name": "فارس مظلم 🖤",
+          "cost": 1600000,
+          "atk": 65000,
+          "def": 65000,
+          "type": "pet"
+        },
+        "68": {
+          "name": "حاكم الأبعاد 🌀",
+          "cost": 5000000,
+          "atk": 150000,
+          "def": 150000,
+          "type": "pet"
+        },
+        "69": {
+          "name": "نجم متفجر 💥",
+          "cost": 8000000,
+          "atk": 200000,
+          "def": 200000,
+          "type": "pet"
+        },
+        "70": {
+          "name": "الْمُطَوِّرِ سُونغ 👑",
+          "cost": 15000000,
+          "atk": 300000,
+          "def": 300000,
+          "type": "pet"
+        },
+        "71": {
+          "name": "ملك الأساطير 👑",
+          "cost": 50000000,
+          "atk": 400000,
+          "def": 400000,
+          "type": "pet"
+        },
+        "72": {
+          "name": "المبرمج 💻",
+          "cost": 100000000,
+          "atk": 500000,
+          "def": 500000,
+          "type": "pet"
+        },
+        "73": {
+          "name": "مهندس السيرفر ⚙️",
+          "cost": 120000000,
+          "atk": 550000,
+          "def": 550000,
+          "type": "pet"
+        },
+        "74": {
+          "name": "صائد الثغرات 🐞",
+          "cost": 150000000,
+          "atk": 580000,
+          "def": 580000,
+          "type": "pet"
+        },
+        "75": {
+          "name": "جنرال الحرب 🎖️",
+          "cost": 200000000,
+          "atk": 600000,
+          "def": 600000,
+          "type": "pet"
+        },
+        "76": {
+          "name": "تنين الأكوان 🌌",
+          "cost": 220000000,
+          "atk": 620000,
+          "def": 620000,
+          "type": "pet"
+        },
+        "77": {
+          "name": "كراكن الأبعاد 🐙",
+          "cost": 250000000,
+          "atk": 650000,
+          "def": 650000,
+          "type": "pet"
+        },
+        "78": {
+          "name": "شيطان الفراغ 🌑",
+          "cost": 280000000,
+          "atk": 680000,
+          "def": 680000,
+          "type": "pet"
+        },
+        "79": {
+          "name": "ملاك الموت 👼",
+          "cost": 300000000,
+          "atk": 700000,
+          "def": 700000,
+          "type": "pet"
+        },
+        "80": {
+          "name": "وحش الصفر 👾",
+          "cost": 250000000,
+          "atk": 700000,
+          "def": 700000,
+          "type": "pet"
+        },
+        "81": {
+          "name": "مدمر العوالم ☄️",
+          "cost": 350000000,
+          "atk": 720000,
+          "def": 720000,
+          "type": "pet"
+        },
+        "82": {
+          "name": "خالق النجوم 🌟",
+          "cost": 400000000,
+          "atk": 750000,
+          "def": 750000,
+          "type": "pet"
+        },
+        "83": {
+          "name": "حاكم الوقت ⏳",
+          "cost": 450000000,
+          "atk": 780000,
+          "def": 780000,
+          "type": "pet"
+        },
+        "84": {
+          "name": "سيد العناصر 🌀",
+          "cost": 500000000,
+          "atk": 800000,
+          "def": 800000,
+          "type": "pet"
+        },
+        "85": {
+          "name": "الكيان المظلم 👤",
+          "cost": 550000000,
+          "atk": 820000,
+          "def": 820000,
+          "type": "pet"
+        },
+        "86": {
+          "name": "روح الغابة 🌳",
+          "cost": 300000,
+          "atk": 100,
+          "def": 100,
+          "type": "pet"
+        },
+        "87": {
+          "name": "شبح القصر 👻",
+          "cost": 200000,
+          "atk": 70,
+          "def": 70,
+          "type": "pet"
+        },
+        "88": {
+          "name": "مستدعي الأرواح 🔮",
+          "cost": 1000000,
+          "atk": 1000,
+          "def": 1000,
+          "type": "pet"
+        },
+        "89": {
+          "name": "ملك العمالقة 🗿",
+          "cost": 8000000,
+          "atk": 8000,
+          "def": 8000,
+          "type": "pet"
+        },
+        "90": {
+          "name": "فارس الفوضى 🌪️",
+          "cost": 12000000,
+          "atk": 12000,
+          "def": 12000,
+          "type": "pet"
+        },
+        "91": {
+          "name": "مطرقة الرعد 🔨",
+          "cost": 100000000,
+          "atk": 600000,
+          "type": "stack"
+        },
+        "92": {
+          "name": "درع الخلود 🛡️",
+          "cost": 30000000,
+          "def": 80000,
+          "type": "stack"
+        },
+        "93": {
+          "name": "سيف القدر 🗡️",
+          "cost": 20000000,
+          "atk": 20000,
+          "type": "stack"
+        },
+        "94": {
+          "name": "تاج الإمبراطور 👑",
+          "cost": 60000000,
+          "def": 70000,
+          "type": "stack"
+        },
+        "95": {
+          "name": "خاتم الطاقة 💍",
+          "cost": 4000000,
+          "atk": 4000,
+          "type": "stack"
+        },
+        "96": {
+          "name": "وشاح الريح 🧣",
+          "cost": 1500000,
+          "def": 1500,
+          "type": "stack"
+        },
+        "97": {
+          "name": "قوس البرق 🏹",
+          "cost": 90000000,
+          "atk": 100000,
+          "type": "stack"
+        },
+        "98": {
+          "name": "رمح النار 🔥",
+          "cost": 110000000,
+          "atk": 130000,
+          "type": "stack"
+        },
+        "99": {
+          "name": "سيد الأكوان 🌌",
+          "cost": 500000000,
+          "atk": 850000,
+          "def": 850000,
+          "type": "pet"
+        },
+        "100": {
+          "name": "نهاية اللعبة ♾️",
+          "cost": 1000000000,
+          "atk": 950000,
+          "def": 950000,
+          "type": "pet"
+        },
+        "101": {
+          "name": "رداء الظل 🖤",
+          "cost": 3000,
+          "def": 20,
+          "type": "stack",
+          "classOnly": "مغتال"
+        },
+        "102": {
+          "name": "سم الأفعى 🐍",
+          "cost": 1500,
+          "atk": 40,
+          "type": "stack",
+          "classOnly": "مغتال"
+        },
+        "103": {
+          "name": "قناع الغدر 🎭",
+          "cost": 2500,
+          "atk": 15,
+          "def": 15,
+          "type": "stack",
+          "classOnly": "مغتال"
+        },
+        "104": {
+          "name": "درع الفرسان الثقيل 🛡️",
+          "cost": 3000,
+          "def": 40,
+          "type": "stack",
+          "classOnly": "محارب"
+        },
+        "105": {
+          "name": "بلطة الحرب 🪓",
+          "cost": 3500,
+          "atk": 45,
+          "type": "stack",
+          "classOnly": "محارب"
+        },
+        "106": {
+          "name": "قوس الصياد الطويل 🏹",
+          "cost": 900,
+          "atk": 22,
+          "type": "stack"
+        },
+        "107": {
+          "name": "سهام مسمومة 🎯",
+          "cost": 1800,
+          "atk": 35,
+          "type": "stack",
+          "classOnly": "رامي"
+        },
+        "108": {
+          "name": "درع جلدي خفيف 🥾",
+          "cost": 1200,
+          "def": 25,
+          "type": "stack",
+          "classOnly": "رامي"
+        },
+        "109": {
+          "name": "عين الصقر 👁️",
+          "cost": 2600,
+          "atk": 10,
+          "def": 15,
+          "type": "stack",
+          "classOnly": "رامي"
+        }
+      },
       "maintenance": {
         "enabled": false,
         "message": ""
@@ -1623,9 +2370,11 @@
       "members": [
         "201010495644@s.whatsapp.net",
         "232620008976456@lid",
-        "201141222928@s.whatsapp.net"
+        "201032294453@s.whatsapp.net",
+        "201223038677@s.whatsapp.net",
+        "201018074081@s.whatsapp.net"
       ],
-      "gold": 92000000,
+      "gold": 109600920,
       "level": 1,
       "time": 1789173821129
     }
@@ -1680,6 +2429,16 @@
       "gangName": "卐 𝑪𝑼𝑹𝑺𝑬𝑫 卐",
       "from": "201010495644@s.whatsapp.net",
       "time": 1789243690126
+    },
+    "10119647641674@lid": {
+      "gangName": "卐 𝑪𝑼𝑹𝑺𝑬𝑫 卐",
+      "from": "201010495644@s.whatsapp.net",
+      "time": 1789398010734
+    },
+    "217523366699114@lid": {
+      "gangName": "卐 𝑪𝑼𝑹𝑺𝑬𝑫 卐",
+      "from": "201010495644@s.whatsapp.net",
+      "time": 1789398035149
     }
   },
   "260920018239741@lid": {
@@ -3013,7 +3772,7 @@
       "time": 1784756428712
     }
   },
-  "treasury": 290202275140,
+  "treasury": 290211642442,
   "67393053278310@lid": {
     "name": "qtq",
     "level": 1,
@@ -3665,7 +4424,11 @@
       "201010495644@s.whatsapp.net": "⭐ نجم الجروب",
       "201141222928@s.whatsapp.net": "🔥 عضو نشيط",
       "201118863334@s.whatsapp.net": "🔥 عضو نشيط",
-      "249962834274@s.whatsapp.net": "🔥 عضو نشيط"
+      "249962834274@s.whatsapp.net": "🔥 عضو نشيط",
+      "201018074081@s.whatsapp.net": "⭐ نجم الجروب",
+      "201032294453@s.whatsapp.net": "🏆 إمبراطور التفاعل",
+      "201107249826@s.whatsapp.net": "🔥 عضو نشيط",
+      "183524640440432@lid": "🔥 عضو نشيط"
     },
     "welcome": {
       "enabled": true,
@@ -3694,7 +4457,7 @@
     },
     "suspectedBots": {
       "201010495644@s.whatsapp.net": {
-        "hits": 2,
+        "hits": 1,
         "reasons": [
           "إعادة إرسال نفس الرسالة بشكل متكرر"
         ],
@@ -3708,6 +4471,30 @@
         ],
         "notified": true,
         "whitelisted": false
+      },
+      "201018074081@s.whatsapp.net": {
+        "hits": 4,
+        "reasons": [
+          "إعادة إرسال نفس الرسالة بشكل متكرر"
+        ],
+        "notified": true,
+        "whitelisted": false
+      },
+      "201032294453@s.whatsapp.net": {
+        "hits": 6,
+        "reasons": [
+          "إعادة إرسال نفس الرسالة بشكل متكرر"
+        ],
+        "notified": true,
+        "whitelisted": false
+      }
+    },
+    "contactProtection": {
+      "enabled": true
+    },
+    "pvpWeekly": {
+      "2026-W38": {
+        "201010495644@s.whatsapp.net": 1
       }
     }
   },
@@ -4103,27 +4890,27 @@
   "subbots": {},
   "201010495644@s.whatsapp.net": {
     "name": "𝑲𝑶𝑼",
-    "level": 518,
-    "gold": 127076748,
+    "level": 550,
+    "gold": 112638737,
     "xp": 0,
-    "hp": 13050,
+    "hp": 13850,
     "maxHp": 100,
-    "atk": 1061099,
+    "atk": 1181099,
     "def": 5,
-    "defense": 12827670,
+    "defense": 23380170,
     "inventory": [],
     "pets": [],
-    "currentPet": "المبرمج 💻",
-    "lastSpin": 1788903245911,
+    "currentPet": "تنين الأكوان 🌌",
+    "lastSpin": 1789399236726,
     "class": "رامي",
-    "pvpWins": 5,
+    "pvpWins": 6,
     "boughtPoisonDagger": false,
     "assassinReq": {
-      "wins": false,
+      "wins": true,
       "gold": true,
       "itemId": false
     },
-    "huntCount": 78,
+    "huntCount": 81,
     "boughtLongBow": true,
     "archerReq": {
       "hunts": true,
@@ -4150,15 +4937,15 @@
     "allyJid": null,
     "lastAmbushTarget": null,
     "weakenedUntil": 0,
-    "lastVolley": 1785778830863,
+    "lastVolley": 1789404063986,
     "defMilestones": {
       "50": true,
       "150": true,
       "300": true
     },
-    "lastHunt": 1788903236283,
-    "lastSteal": 1789179647787,
-    "lastMonsterBattle": 1789265628301,
+    "lastHunt": 1789399231952,
+    "lastSteal": 1789404082622,
+    "lastMonsterBattle": 1789408438714,
     "successfulSteals": 1,
     "achievements": [
       "first_pvp_win",
@@ -4190,7 +4977,7 @@
   "201141222928@s.whatsapp.net": {
     "name": "سوكونا",
     "level": 1,
-    "gold": 289,
+    "gold": 0,
     "xp": 28,
     "hp": 0,
     "maxHp": 100,
@@ -4276,26 +5063,50 @@
     "271047534317799@lid": "201062638688@s.whatsapp.net",
     "200377991458854@lid": "201204314047@s.whatsapp.net",
     "152665149419590@lid": "201032294453@s.whatsapp.net",
-    "217523366699114@lid": "201223038677@s.whatsapp.net"
+    "217523366699114@lid": "201223038677@s.whatsapp.net",
+    "259975108636678@lid": "213540568494@s.whatsapp.net",
+    "193579276361899@lid": "201120331954@s.whatsapp.net",
+    "24507670622401@lid": "967717234011@s.whatsapp.net",
+    "10119647641674@lid": "201018074081@s.whatsapp.net",
+    "213718260531278@lid": "201107249826@s.whatsapp.net",
+    "250375756058703@lid": "966540582577@s.whatsapp.net"
   },
   "pendingMenu": {
     "232620008976456@lid": {
-      "at": 1789243942602
+      "at": 1789364613345
     },
     "201010495644@s.whatsapp.net": {
-      "at": 1789241616772
+      "at": 1789403282389
     },
     "249921748047@s.whatsapp.net": {
       "at": 1789237518797
     },
     "201105465127@s.whatsapp.net": {
-      "at": 1789239030449
+      "at": 1789371673315
     },
     "639650885047@s.whatsapp.net": {
       "at": 1789240739314
     },
     "962790826418@s.whatsapp.net": {
-      "at": 1789242230770
+      "at": 1789339961414
+    },
+    "183524640440432@lid": {
+      "at": 1789397493569
+    },
+    "201018074081@s.whatsapp.net": {
+      "at": 1789394806218
+    },
+    "201032294453@s.whatsapp.net": {
+      "at": 1789391397280
+    },
+    "923443512038@s.whatsapp.net": {
+      "at": 1789393338324
+    },
+    "201141222928@s.whatsapp.net": {
+      "at": 1789403188532
+    },
+    "213540568494@s.whatsapp.net": {
+      "at": 1789407551930
     }
   },
   "201019325181@s.whatsapp.net": {
@@ -4345,12 +5156,12 @@
   },
   "923443512038@s.whatsapp.net": {
     "name": "توكيتو",
-    "level": 1,
-    "gold": 2022,
-    "hp": 100,
-    "atk": 30,
+    "level": 2,
+    "gold": 1492,
+    "hp": 61,
+    "atk": 47,
     "defense": 5,
-    "xp": 18,
+    "xp": 171,
     "class": "محارب",
     "pvpWins": 0,
     "boughtPoisonDagger": true,
@@ -4359,7 +5170,7 @@
       "gold": false,
       "itemId": true
     },
-    "huntCount": 1,
+    "huntCount": 3,
     "boughtLongBow": false,
     "archerReq": {
       "hunts": false,
@@ -4390,7 +5201,11 @@
     "defMilestones": {},
     "lastSteal": 1789179691384,
     "lastSpin": 1789179775731,
-    "lastHunt": 1789179787314
+    "lastHunt": 1789399869438,
+    "lastMonsterBattle": 1789399849163,
+    "lastUpgrade": 1789393425591,
+    "def": 15,
+    "achievements": []
   },
   "marketplace": [],
   "inviteIntents": {},
@@ -4443,5 +5258,316 @@
     "lastVolley": null,
     "defMilestones": {},
     "lastHunt": 1789241235640
+  },
+  "183524640440432@lid": {
+    "name": "𝒜𝒷𝒹𝓊𝓁𝓁𝒶𝒽 𝒩𝒶𝑔𝒶𝒽",
+    "level": 3,
+    "gold": 329,
+    "hp": 0,
+    "atk": 20,
+    "defense": 5,
+    "xp": 120,
+    "class": "محارب",
+    "pvpWins": 0,
+    "boughtPoisonDagger": false,
+    "assassinReq": {
+      "wins": false,
+      "gold": false,
+      "itemId": false
+    },
+    "huntCount": 5,
+    "boughtLongBow": false,
+    "archerReq": {
+      "hunts": false,
+      "gold": false,
+      "itemId": false
+    },
+    "registeredAt": 1789329231988,
+    "ambushWins": 0,
+    "revealed": false,
+    "deflectActive": false,
+    "deflectExpiresAt": 0,
+    "lastDeflectUsed": null,
+    "lastRevealAttempt": null,
+    "recentlyAmbushedUntil": 0,
+    "dailyAmbushLog": {
+      "date": "2026-09-13",
+      "targets": {}
+    },
+    "weeklyAmbush": {
+      "week": null,
+      "count": 0,
+      "claimed": false
+    },
+    "allyJid": null,
+    "lastAmbushTarget": null,
+    "weakenedUntil": 0,
+    "lastVolley": null,
+    "defMilestones": {},
+    "lastSpin": 1789394405443,
+    "lastHunt": 1789397294651,
+    "lastUpgrade": 1789394439597,
+    "def": 18,
+    "achievements": [],
+    "lastMonsterBattle": 1789404597935
+  },
+  "962790826418@s.whatsapp.net": {
+    "name": "ايانو ال إسبانيول",
+    "level": 1,
+    "gold": 500,
+    "hp": 100,
+    "atk": 10,
+    "defense": 5,
+    "xp": 0,
+    "class": "محارب",
+    "pvpWins": 0,
+    "boughtPoisonDagger": false,
+    "assassinReq": {
+      "wins": false,
+      "gold": false,
+      "itemId": false
+    },
+    "huntCount": 0,
+    "boughtLongBow": false,
+    "archerReq": {
+      "hunts": false,
+      "gold": false,
+      "itemId": false
+    },
+    "registeredAt": 1789329244814,
+    "ambushWins": 0,
+    "revealed": false,
+    "deflectActive": false,
+    "deflectExpiresAt": 0,
+    "lastDeflectUsed": null,
+    "lastRevealAttempt": null,
+    "recentlyAmbushedUntil": 0,
+    "dailyAmbushLog": {
+      "date": "2026-09-13",
+      "targets": {}
+    },
+    "weeklyAmbush": {
+      "week": null,
+      "count": 0,
+      "claimed": false
+    },
+    "allyJid": null,
+    "lastAmbushTarget": null,
+    "weakenedUntil": 0,
+    "lastVolley": null,
+    "defMilestones": {}
+  },
+  "201018074081@s.whatsapp.net": {
+    "name": "𝐕𝐄𝐍𝐎𝐌⦕𝐗⦖𝐀𝐋𝐇𝐀𝐊𝐄𝐌",
+    "level": 23,
+    "gold": 37644,
+    "hp": 675,
+    "atk": 3127,
+    "defense": 30555,
+    "xp": 0,
+    "class": "محارب",
+    "pvpWins": 0,
+    "boughtPoisonDagger": false,
+    "assassinReq": {
+      "wins": false,
+      "gold": true,
+      "itemId": false
+    },
+    "huntCount": 25,
+    "boughtLongBow": false,
+    "archerReq": {
+      "hunts": true,
+      "gold": true,
+      "itemId": false
+    },
+    "registeredAt": 1789366185419,
+    "ambushWins": 0,
+    "revealed": false,
+    "deflectActive": false,
+    "deflectExpiresAt": 0,
+    "lastDeflectUsed": null,
+    "lastRevealAttempt": null,
+    "recentlyAmbushedUntil": 0,
+    "dailyAmbushLog": {
+      "date": "2026-09-14",
+      "targets": {}
+    },
+    "weeklyAmbush": {
+      "week": null,
+      "count": 0,
+      "claimed": false
+    },
+    "allyJid": null,
+    "lastAmbushTarget": null,
+    "weakenedUntil": 0,
+    "lastVolley": null,
+    "defMilestones": {
+      "50": true,
+      "150": true,
+      "300": true
+    },
+    "lastMonsterBattle": 1789401325432,
+    "lastHunt": 1789401011548,
+    "lastUpgrade": 1789397675749,
+    "def": 26,
+    "achievements": [
+      "gold_10k"
+    ],
+    "lastSpin": 1789401016252
+  },
+  "201032294453@s.whatsapp.net": {
+    "gold": 9531438,
+    "level": 44,
+    "xp": 13,
+    "name": "𝑨𝒍𝒔𝒅𝒆𝒆𝒌 𝑯𝒂𝒏𝒚 🦅☝",
+    "class": "محارب",
+    "atk": 61681,
+    "defense": 868145,
+    "hp": 1200,
+    "pvpWins": 0,
+    "boughtPoisonDagger": false,
+    "assassinReq": {
+      "wins": false,
+      "gold": true,
+      "itemId": false
+    },
+    "huntCount": 73,
+    "boughtLongBow": false,
+    "archerReq": {
+      "hunts": true,
+      "gold": true,
+      "itemId": false
+    },
+    "registeredAt": 0,
+    "ambushWins": 0,
+    "revealed": false,
+    "deflectActive": false,
+    "deflectExpiresAt": 0,
+    "lastDeflectUsed": null,
+    "lastRevealAttempt": null,
+    "recentlyAmbushedUntil": 0,
+    "dailyAmbushLog": {
+      "date": "2026-09-14",
+      "targets": {}
+    },
+    "weeklyAmbush": {
+      "week": "2026-W38",
+      "count": 0,
+      "claimed": false
+    },
+    "allyJid": null,
+    "lastAmbushTarget": null,
+    "weakenedUntil": 0,
+    "lastVolley": null,
+    "defMilestones": {
+      "50": true,
+      "150": true,
+      "300": true
+    },
+    "lastHunt": 1789408358669,
+    "lastMonsterBattle": 1789408327504,
+    "lastUpgrade": 1789397686929,
+    "def": 36,
+    "achievements": [
+      "gold_10k",
+      "gold_100k"
+    ],
+    "lastSpin": 1789408377888,
+    "currentPet": "حارس الرعد 🌩️",
+    "raceWins": 1
+  },
+  "201105465127@s.whatsapp.net": {
+    "gold": 2000,
+    "level": 1,
+    "xp": 138,
+    "name": "𝒁𝑾𝑨𝑭𝑨𝑵_ الـ فينرو",
+    "class": "محارب",
+    "atk": 10,
+    "defense": 5,
+    "hp": 100,
+    "pvpWins": 0,
+    "boughtPoisonDagger": false,
+    "assassinReq": {
+      "wins": false,
+      "gold": false,
+      "itemId": false
+    },
+    "huntCount": 1,
+    "boughtLongBow": false,
+    "archerReq": {
+      "hunts": false,
+      "gold": false,
+      "itemId": false
+    },
+    "registeredAt": 0,
+    "ambushWins": 0,
+    "revealed": false,
+    "deflectActive": false,
+    "deflectExpiresAt": 0,
+    "lastDeflectUsed": null,
+    "lastRevealAttempt": null,
+    "recentlyAmbushedUntil": 0,
+    "dailyAmbushLog": {
+      "date": "2026-09-14",
+      "targets": {}
+    },
+    "weeklyAmbush": {
+      "week": "2026-W38",
+      "count": 0,
+      "claimed": false
+    },
+    "allyJid": null,
+    "lastAmbushTarget": null,
+    "weakenedUntil": 0,
+    "lastVolley": null,
+    "defMilestones": {},
+    "lastHunt": 1789371588799
+  },
+  "10119647641674@lid": {
+    "gold": 520,
+    "level": 1,
+    "xp": 49,
+    "name": "𝐕𝐄𝐍𝐎𝐌⦕𝐗⦖𝐀𝐋𝐇𝐀𝐊𝐄𝐌",
+    "class": "محارب",
+    "atk": 10,
+    "defense": 5,
+    "hp": 100,
+    "pvpWins": 0,
+    "boughtPoisonDagger": false,
+    "assassinReq": {
+      "wins": false,
+      "gold": false,
+      "itemId": false
+    },
+    "huntCount": 3,
+    "boughtLongBow": false,
+    "archerReq": {
+      "hunts": false,
+      "gold": false,
+      "itemId": false
+    },
+    "registeredAt": 0,
+    "ambushWins": 0,
+    "revealed": false,
+    "deflectActive": false,
+    "deflectExpiresAt": 0,
+    "lastDeflectUsed": null,
+    "lastRevealAttempt": null,
+    "recentlyAmbushedUntil": 0,
+    "dailyAmbushLog": {
+      "date": "2026-09-14",
+      "targets": {}
+    },
+    "weeklyAmbush": {
+      "week": "2026-W38",
+      "count": 0,
+      "claimed": false
+    },
+    "allyJid": null,
+    "lastAmbushTarget": null,
+    "weakenedUntil": 0,
+    "lastVolley": null,
+    "defMilestones": {},
+    "lastHunt": 1789394471132
   }
 }
