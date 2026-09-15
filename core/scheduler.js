@@ -97,26 +97,34 @@ async function tickWeeklyStats(db, stats) {
 let started = false;
 
 // 💾 [ 1.5 نسخ احتياطي تلقائي لقاعدة البيانات ] ---------------------------------
-// كل 24 ساعة، بنعمل نسخة من database.json و stats.json بتاريخ في اسم الملف،
-// وبنحتفظ بآخر 7 نسخ بس (بنمسح الأقدم). لو فيه مالك متسجل (owner JID) وsock
-// متاح لأي جروب، بنحاول نبعتله النسخة كملف في الخاص (اختياري، ومفيش مشكلة لو فشل).
+// كل ساعة، بنعمل نسخة من database.json و stats.json بتاريخ+ساعة في اسم الملف،
+// وبنحتفظ بآخر 48 نسخة بس (يومين تقريبًا، بنمسح الأقدم). لو فيه مالك متسجل
+// (owner JID) وsock متاح لأي جروب، بنحاول نبعتله النسخة كملف في الخاص
+// (اختياري، ومفيش مشكلة لو فشل).
 const BACKUP_DIR = path.join(process.cwd(), "backups");
-const MAX_BACKUPS = 7;
+const MAX_BACKUPS = 48;
 
 function dateStamp(d = new Date()) {
     const pad = (n) => String(n).padStart(2, "0");
     return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
 }
 
+// نفس dateStamp بس بالساعة كمان، عشان كل تيك (كل ساعة) ياخد اسم ملف مختلف
+// بدل ما يتوقف بعد أول مرة في اليوم (كان بيتفحص هل ملف النهاردة موجود أصلاً).
+function hourStamp(d = new Date()) {
+    const pad = (n) => String(n).padStart(2, "0");
+    return `${dateStamp(d)}_${pad(d.getHours())}h`;
+}
+
 async function tickBackup(db, stats, { ownerJid } = {}) {
     try {
         if (!fs.existsSync(BACKUP_DIR)) fs.mkdirSync(BACKUP_DIR, { recursive: true });
 
-        const stamp = dateStamp();
+        const stamp = hourStamp();
         const dbBackupPath = path.join(BACKUP_DIR, `database-${stamp}.json`);
         const statsBackupPath = path.join(BACKUP_DIR, `stats-${stamp}.json`);
 
-        // متعملش نسخة تانية لو خدنا نسخة النهاردة أصلاً
+        // متعملش نسخة تانية لو خدنا نسخة الساعة دي أصلاً
         if (fs.existsSync(dbBackupPath)) return;
 
         fs.writeFileSync(dbBackupPath, JSON.stringify(db, null, 2));
@@ -411,11 +419,11 @@ function startScheduler(db, stats, options = {}) {
         tickBirthdays(db).catch(e => console.error("❌ خطأ في تيك أعياد الميلاد:", e.message));
     }, 60 * 60 * 1000);
 
-    // كل 24 ساعة: نسخة احتياطية من قاعدة البيانات
+    // كل ساعة: نسخة احتياطية من قاعدة البيانات (وبتتبعت للأونر في الخاص)
     setInterval(() => {
         tickBackup(db, stats, options).catch(e => console.error("❌ خطأ في تيك النسخ الاحتياطي:", e.message));
-    }, 24 * 60 * 60 * 1000);
-    // وناخد نسخة أول مرة بعد دقيقة من التشغيل (متستناش يوم كامل)
+    }, 60 * 60 * 1000);
+    // وناخد نسخة أول مرة بعد دقيقة من التشغيل (متستناش ساعة كاملة)
     setTimeout(() => {
         tickBackup(db, stats, options).catch(e => console.error("❌ خطأ في تيك النسخ الاحتياطي:", e.message));
     }, 60 * 1000);
