@@ -1,5 +1,3 @@
-// نفس رقم المالك المستخدم في index.js (OWNER_NUMBER)
-const OWNER_JID = "201220800288@s.whatsapp.net";
 const COOLDOWN_MS = 5 * 60 * 1000; // شكوى واحدة كل 5 دقايق لكل شخص، عشان نمنع السبام
 
 module.exports = {
@@ -44,19 +42,18 @@ module.exports = {
         db.complaints.cooldown[sender] = Date.now();
 
         try {
-            await sock.sendMessage(OWNER_JID, {
+            await sock.sendMessage(groupID, {
                 text: `🎫 *شكوى جديدة #${id}*\n━━━━━━━━━━━━━━\n` +
                       `👤 من: @${sender.split('@')[0]}\n` +
-                      `📍 الجروب: ${groupName}\n` +
                       `📝 النص:\n${text}`,
                 mentions: [sender]
             });
         } catch (e) {
-            console.error("❌ تعذر إرسال الشكوى للمالك:", e.message);
+            console.error("❌ تعذر إرسال الشكوى:", e.message);
         }
 
         await sock.sendMessage(groupID, {
-            text: `✅ تم إرسال شكواك رقم #${id} للمالك مباشرة، هيتم مراجعتها في أقرب وقت.`
+            text: `✅ تم تسجيل شكواك رقم #${id}، هيتم مراجعتها.`
         }, { quoted: m });
     }
 };

@@ -62,6 +62,20 @@ async function launchSubBot({ requesterNumber, db, stats, commands, ownerIds, ma
 
     sock.ev.on("creds.update", saveCreds);
 
+    // 📵 نفس منطق رفض المكالمات التلقائي بتاع البوت الأساسي (index.js)، عشان لو
+    // db.settings.rejectCalls مفعّل، البوتات الفرعية (تنصيب) ترفض المكالمات هي كمان.
+    sock.ev.on("call", async (calls) => {
+        if (!db.settings?.rejectCalls) return;
+        for (const call of calls) {
+            if (call.status !== "offer") continue;
+            try {
+                await sock.rejectCall(call.id, call.from);
+            } catch (e) {
+                console.error("❌ فشل رفض المكالمة (بوت فرعي):", e.message);
+            }
+        }
+    });
+
     if (!sock.authState.creds.registered) {
         // 🚫 لو ده استرجاع تلقائي (بعد إعادة تشغيل البوت الأساسي) ومفيش notify،
         // معنى كده إن البوت الفرعي ده فعليًا مش مرتبط (اتلغى ربطه أو الداتا اتفقدت).

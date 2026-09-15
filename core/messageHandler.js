@@ -18,6 +18,24 @@ const { getWeekKey } = require("./utils.js");
 const { recordGroupSock } = require("./scheduler.js");
 const { checkAchievements } = require("../data/achievements.js");
 const { buildCategoryListText, findSection, buildSectionText, isBackToMenuRequest } = require("../data/menuSections.js");
+// proto لازم نستورده عشان نتعرف على نوع رسايل البروتوكول (زي الحذف/الـ REVOKE) بدقة
+// بدل ما نستخدم رقم سحري (0) من غير توضيح مصدره.
+const { proto } = require("@whiskeysockets/baileys");
+
+// 📥 [ كاش الحالات (Status/Stories) ] --------------------------------------------
+// بيتخزن هنا (في الميموري، مش الداتا بيس) آخر رسالة حالة استقبلها البوت من كل جهة
+// اتصال، عشان أمر .تحميل-حاله (commands/whatsapp-tools) يقدر يرجعها لاحقًا حتى لو
+// صاحبها مسحها أو انتهت مدتها الطبيعية (24 ساعة) على واتساب نفسه. الكاش ده بيتصفر
+// كل ما البوت يعيد التشغيل، وده مقصود (مفيش داعي نخزن ميديا الحالات دايمًا في الداتا بيس).
+const statusCache = new Map(); // senderJid -> { message: <raw baileys msg>, at: <timestamp> }
+const STATUS_CACHE_MAX = 500; // حد أقصى لعدد الحالات المحفوظة في نفس الوقت (حماية من تضخم الميموري)
+
+// 🗑️ [ كاش رسايل الجروب لكشف المحذوف ] --------------------------------------------
+// بيتخزن هنا آخر رسايل كل جروب (نص أو ميديا) عشان أمر .كاشف-المحذوف (commands/whatsapp-tools)
+// يقدر يرجع الرسالة تاني لو حد مسحها "للجميع". برضو في الميموري بس، وبيتصفر مع أي
+// إعادة تشغيل للبوت.
+const recentMessagesStore = new Map(); // "groupID:messageId" -> { message: <raw msg>, sender, at }
+const RECENT_MESSAGES_MAX = 3000;
 
 // 📜 [ سجل الأحداث (Audit Log) ] -----------------------------------------------
 // بيسجل أي عملية إدارية حساسة (حذف رسالة، كتم، طرد، تفعيل/تعطيل ميزة) في
@@ -290,7 +308,21 @@ function createMessageHandler(sock, { db, stats, commands, ownerIds, masterOwner
 
     return async ({ messages }) => {
         const m = messages[0];
-        if (!m.message || m.key.remoteJid === "status@broadcast") return;
+        if (!m.message) return;
+
+        // 📥 كاش الحالات: قبل ما كنا بنتجاهل رسايل status@broadcast بالكامل، دلوقتي بنحفظ
+        // آخر حالة لكل جهة اتصال في statusCache عشان .تحميل-حاله يقدر يستخدمها.
+        if (m.key.remoteJid === "status@broadcast") {
+            const statusOwner = m.key.participant;
+            if (statusOwner) {
+                statusCache.set(statusOwner, { message: m, at: Date.now() });
+                // تنضيف بسيط لو الكاش كبر أكتر من اللازم: بنشيل أقدم دخول (أول مفتاح في الـ Map)
+                if (statusCache.size > STATUS_CACHE_MAX) {
+                    statusCache.delete(statusCache.keys().next().value);
+                }
+            }
+            return;
+        }
 
         const groupID = m.key.remoteJid;
 
@@ -336,6 +368,62 @@ function createMessageHandler(sock, { db, stats, commands, ownerIds, masterOwner
             }
         }
         const messageType = Object.keys(m.message)[0];
+
+        // 🗑️ [ كشف الرسائل المحذوفة ] -------------------------------------------------
+        // خطوتين: (أ) نخزن كل رسالة عادية جاية من جروب في recentMessagesStore، (ب) لو
+        // الرسالة الحالية هي نفسها إشعار حذف (protocolMessage من نوع REVOKE)، نجيب
+        // النسخة المخزنة بتاعة الرسالة الأصلية (لو لسه موجودة) ونعيد إرسالها مع اسم
+        // اللي مسحها، بس لو أمر .كاشف-المحذوف مفعّل في الجروب ده (db[groupID].antiDelete.enabled).
+        if (groupID.endsWith("@g.us")) {
+            if (messageType === "protocolMessage" && m.message.protocolMessage?.type === proto.Message.ProtocolMessage.Type.REVOKE) {
+                const revokedKey = m.message.protocolMessage.key;
+                const cacheKey = `${groupID}:${revokedKey?.id}`;
+                const cached = recentMessagesStore.get(cacheKey);
+                recentMessagesStore.delete(cacheKey); // مفيش داعي نحتفظ بيها تاني بعد ما اتمسحت
+
+                if (cached && db[groupID]?.antiDelete?.enabled) {
+                    const deleterJid = m.key.participant || m.participant || sender;
+                    try {
+                        await sock.sendMessage(groupID, {
+                            text: `🗑️ *تم حذف رسالة!*\n👤 المرسل الأصلي: @${cached.sender.split("@")[0]}\n🚮 حذفها: @${deleterJid.split("@")[0]}`,
+                            mentions: [cached.sender, deleterJid]
+                        }).catch(() => {});
+
+                        const cachedType = Object.keys(cached.message.message)[0];
+                        if (["imageMessage", "videoMessage", "audioMessage", "documentMessage", "stickerMessage"].includes(cachedType)) {
+                            // بنعيد تنزيل الميديا من الرسالة الأصلية المخزنة (لسه شغالة طول ما لينك
+                            // الميديا بتاع واتساب متأخرش، غالبًا لفترة قصيرة بعد الإرسال).
+                            const { downloadMediaMessage } = require("@whiskeysockets/baileys");
+                            const buffer = await downloadMediaMessage(cached.message, "buffer", {}, {
+                                logger: console,
+                                reuploadRequest: sock.updateMediaMessage
+                            });
+                            const mediaKey = cachedType.replace("Message", ""); // imageMessage -> image
+                            const mediaPayload = { [mediaKey]: buffer, quoted: m };
+                            if (cachedType === "documentMessage") {
+                                mediaPayload.fileName = cached.message.message.documentMessage?.fileName || "ملف";
+                                mediaPayload.mimetype = cached.message.message.documentMessage?.mimetype;
+                            }
+                            await sock.sendMessage(groupID, mediaPayload).catch(() => {});
+                        } else if (cachedType === "conversation" || cachedType === "extendedTextMessage") {
+                            const originalText = cached.message.message.conversation || cached.message.message.extendedTextMessage?.text || "";
+                            if (originalText) {
+                                await sock.sendMessage(groupID, { text: `📝 نص الرسالة المحذوفة:\n${originalText}` }).catch(() => {});
+                            }
+                        }
+                    } catch (e) {
+                        console.error("❌ خطأ في إعادة إرسال رسالة محذوفة (كاشف-المحذوف):", e.message);
+                    }
+                }
+                return; // إشعار الحذف مش رسالة مستخدم حقيقية، منكملش باقي المعالجة
+            } else if (messageType !== "protocolMessage") {
+                recentMessagesStore.set(`${groupID}:${m.key.id}`, { message: m, sender, at: Date.now() });
+                if (recentMessagesStore.size > RECENT_MESSAGES_MAX) {
+                    recentMessagesStore.delete(recentMessagesStore.keys().next().value);
+                }
+            }
+        }
+
         // 📜 دعم اختيار قسم من القائمة التفاعلية (listMessage): لو المستخدم ضغط على
         // صف في القائمة بدل ما يكتب رقم، واتساب بيرجّع الرد في listResponseMessage
         // مش كنص عادي، فبنستخرج rowId/title منه ونعامله زي أي نص عادي مكتوب باليد.
@@ -1029,5 +1117,8 @@ module.exports = {
     DEFAULT_FAREWELL_MESSAGE,
     DEFAULT_ACTIVITY_RANKS,
     MEDIA_TYPE_LABELS,
-    logAudit
+    logAudit,
+    // 📥 بيستخدمها أمر .تحميل-حاله (commands/whatsapp-tools/downloadStatus.js) عشان
+    // يجيب آخر حالة محفوظة لجهة اتصال معينة من الكاش الداخلي.
+    getCachedStatus: (jid) => statusCache.get(jid)
 };

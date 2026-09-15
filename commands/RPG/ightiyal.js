@@ -131,23 +131,11 @@ module.exports = {
                         `${classTitle(attacker)} @${sender.split('@')[0]} باغت الـ${classTitle(targetUser)} @${target.split('@')[0]} من الظل!\n` +
                         `💰 غنيمة صافية: ${net.toLocaleString()} ذهب (بعد خصم ${tax.toLocaleString()} ضريبة للخزينة)` +
                         (allied ? `\n🤝 تحالف الظل ساعدك في الضربة دي!` : '') +
+                        `\n🛡️ يا @${target.split('@')[0]}: زوّد دفاعك أو استخدم *.صد* عشان تقلل فرص نجاح أي كمين عليك مستقبلاً.` +
+                        (questCompleted ? `\n🏆 @${sender.split('@')[0]} كمّل مهمة الأسبوع (3 اغتيالات ناجحة)! مكافأة إضافية: +${WEEKLY_QUEST_REWARD.toLocaleString()} ذهب!` : '') +
                         `\n━━━━━━━━━━━━━━━━━━━━`;
 
             await sock.sendMessage(id, { text: msg, mentions: [sender, target] }, { quoted: m });
-
-            try {
-                await sock.sendMessage(target, {
-                    text: `🚨 *تعرضت لكمين!* 🚨\nحد ما سرق منك ${stolenTotal.toLocaleString()} ذهب في الظلام.\n⚠️ هتفضل هدف سهل نسبياً لأي كمين تاني لمدة ساعة.\n🛡️ زوّد دفاعك أو استخدم *.صد* عشان تقلل فرص نجاح أي كمين عليك مستقبلاً.\n🕵️ لو مشكوك في حد معين، جرب *.كشف-مغتال* (منشن) للتأكد.`
-                });
-            } catch (e) { /* تجاهل لو تعذر الإرسال الخاص */ }
-
-            if (questCompleted) {
-                try {
-                    await sock.sendMessage(sender, {
-                        text: `🏆 *مهمة الأسبوع اكتملت!* 🏆\nحققت 3 اغتيالات ناجحة الأسبوع ده.\n💰 مكافأة إضافية: +${WEEKLY_QUEST_REWARD.toLocaleString()} ذهب!`
-                    });
-                } catch (e) { /* تجاهل */ }
-            }
 
         } else {
             const penalty = Math.floor((attacker.gold || 0) * AMBUSH_FAIL_PENALTY_PCT);

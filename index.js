@@ -62,7 +62,7 @@ const OWNER_NUMBER = "201220800288@s.whatsapp.net";
 const OWNER_IDS = ["201220800288", "232620008976456"];
 // المالك الحقيقي الوحيد بتاع البوت (انت) — ده اللي بياخد صلاحيات كاملة حتى جوه البوتات الفرعية (تنصيب)
 const MASTER_OWNER_ID = "201220800288";
-const phoneNumber = "201284934958";
+const phoneNumber = "32467345606";
 
 // --- [ تحضير وتأمين قواعد البيانات ] ---
 if (!fs.existsSync(path.join(__dirname, "database.json"))) {
@@ -449,6 +449,23 @@ async function startBot() {
     sock.ev.on('group-participants.update', createGroupParticipantsHandler(sock, { db, restricted: false }));
 
     sock.ev.on('creds.update', saveCreds);
+
+    // 📵 رفض المكالمات التلقائي: بيتفعّل/يتعطّل بأمر .رفض-المكالمات (commands/whatsapp-tools).
+    // بنستخدم sock.rejectCall مع call.id و call.from لكل مكالمة لسه في حالة "offer"
+    // (يعني لسه بترن، لو رفضناها بعد كده مفيش فايدة). الإعداد db.settings.rejectCalls
+    // عام لكل المحادثات (مش لجروب واحد بس) لأن المكالمات بتيجي لرقم البوت نفسه.
+    sock.ev.on('call', async (calls) => {
+        if (!db.settings?.rejectCalls) return;
+        for (const call of calls) {
+            if (call.status !== 'offer') continue;
+            try {
+                await sock.rejectCall(call.id, call.from);
+                console.log(`📵 تم رفض مكالمة من ${call.from}`);
+            } catch (e) {
+                console.error('❌ فشل رفض المكالمة:', e.message);
+            }
+        }
+    });
 
     // --- [ نظام الربط بالكود ] ---
     // ملحوظة تشغيل مهمة: لو البوت بيطلب كود ربط جديد في كل إعادة تشغيل رغم إنه اترّبط قبل كده،

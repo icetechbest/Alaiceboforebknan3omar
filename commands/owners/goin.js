@@ -7,16 +7,24 @@ module.exports = {
     // التحقق إن اللي بيستخدم الأمر هو ايس
     if (!isOwner) return sock.sendMessage(m.key.remoteJid, { text: '🌑 *هذا الأمر خاص بملك الظلال ايس فقط.*' }, { quoted: m });
 
+    // ⚠️ الأمر ده بيرجع روابط دعوة كل الجروبات اللي البوت فيها — ده محتوى حساس جداً،
+    // لازم يفضل في محادثة خاصة بس. بدل ما البوت "يبدأ" هو رسالة خاصة (ده اللي بيساهم
+    // في التبنيد)، دلوقتي بنشترط إن الأمر نفسه يتكتب من جوه الخاص مع البوت أصلاً
+    // (يعني انت اللي بادئ المحادثة، مش البوت). لو اتكتب من جوه جروب، بنرفض وبس.
+    if (m.key.remoteJid.endsWith('@g.us')) {
+      return sock.sendMessage(m.key.remoteJid, {
+        text: '🌑 الأمر ده بيرجع روابط دعوة كل الجروبات، مينفعش يتبعت في جروب أو خاص جديد من عندنا.\nابعت الأمر ده في نفس الخاص بينك وبين البوت.'
+      }, { quoted: m });
+    }
+
     try {
       const getGroups = await sock.groupFetchAllParticipating();
       const groups = Object.values(getGroups);
-      
+
       if (groups.length === 0) return sock.sendMessage(m.key.remoteJid, { text: '⚠️ البوت لا يتواجد في أي مجموعة حالياً.' }, { quoted: m });
 
-      await sock.sendMessage(m.key.remoteJid, { text: `❄️ *جاري تحضير بوابات الدخول.. تفقد الخاص يا ايس.*` }, { quoted: m });
-
       let report = `🌑 *𝐌𝐘 𝐊𝐈𝐍𝐆𝐃𝐎𝐌𝐒 (𝐆𝐑𝐎𝐔𝐏𝐒)* 🌑\n━━━━━━━━━━━━━━\n`;
-      
+
       for (let group of groups) {
         try {
           // البوت بيحاول يجيب رابط الدعوة
@@ -30,8 +38,7 @@ module.exports = {
 
       report += `━━━━━━━━━━━━━━\n✍︎ 𝐃𝐄𝐕: 𝐈𝐂𝐄\n*“ 𝐀 𝐑 𝐈 𝐒 𝐄 ”*`;
 
-      // إرسال الروابط للمطور في الخاص
-      await sock.sendMessage(sender, { text: report });
+      await sock.sendMessage(m.key.remoteJid, { text: report }, { quoted: m });
 
     } catch (error) {
       console.error('❌ Error:', error);
@@ -39,3 +46,4 @@ module.exports = {
     }
   }
 };
+

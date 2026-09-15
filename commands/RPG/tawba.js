@@ -27,9 +27,10 @@ module.exports = {
         }
 
         if ((user.gold || 0) < REPENT_COST) {
-            return sock.sendMessage(sender, {
-                text: `💰 التوبة محتاجة ${REPENT_COST.toLocaleString()} ذهب، ومعاك حالياً ${((user.gold || 0)).toLocaleString()} بس.`
-            });
+            return sock.sendMessage(id, {
+                text: `💰 التوبة محتاجة ${REPENT_COST.toLocaleString()} ذهب، ومعاك حالياً ${((user.gold || 0)).toLocaleString()} بس.`,
+                mentions: [sender]
+            }, { quoted: m });
         }
 
         user.gold -= REPENT_COST;
@@ -53,10 +54,11 @@ module.exports = {
             ? `\n🗡️ الخنجر المسموم لسه معاك، لو حبيت ترجع مغتال تاني محتاج بس تحقق شرطي الانتصارات والذهب من جديد.`
             : `\n🏹 القوس لسه معاك، لو حبيت ترجع رامي تاني محتاج بس تحقق شرطي الصيد والذهب من جديد.`;
 
-        await sock.sendMessage(sender, {
+        await sock.sendMessage(id, {
             text: `🕊️ *تمت التوبة* 🕊️\n━━━━━━━━━━━━━━━━━━━━\n` +
-                  `رجعت *محارب* عادي، وقواك اتعدّلت زي ما كانت تقريباً.${dagger}\n` +
-                  `━━━━━━━━━━━━━━━━━━━━`
-        });
+                  `@${sender.split('@')[0]} رجع *محارب* عادي، وقواه اتعدّلت زي ما كانت تقريباً.${dagger}\n` +
+                  `━━━━━━━━━━━━━━━━━━━━`,
+            mentions: [sender]
+        }, { quoted: m });
     }
 };
