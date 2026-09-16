@@ -68,7 +68,7 @@ module.exports = {
 
         // إشعار لو الدفاع الجديد تخطى عتبة مهمة (يفيد المحارب ضد الاغتيال)
         const { notifyDefenseMilestones } = require('../../data/classSystem.js');
-        await notifyDefenseMilestones(sock, sender, db[sender]);
+        await notifyDefenseMilestones(sock, sender, db[sender], id);
 
         const { checkAchievements } = require('../../data/achievements.js');
         await checkAchievements(db, sender, sock, id);

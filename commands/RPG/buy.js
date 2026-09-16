@@ -108,9 +108,9 @@ module.exports = {
         await sock.sendMessage(id, { text: log + status }, { quoted: m });
 
         // إشعارات خاصة لو الشراء ده حقق تقدم في أي من مسارات التحول
-        await notifyIfProgressed(sock, db, sender);
-        await notifyArcherIfProgressed(sock, db, sender);
+        await notifyIfProgressed(sock, db, sender, id);
+        await notifyArcherIfProgressed(sock, db, sender, id);
         // إشعار لو الدفاع الجديد تخطى عتبة مهمة (يفيد المحارب ضد الاغتيال)
-        await notifyDefenseMilestones(sock, sender, user);
+        await notifyDefenseMilestones(sock, sender, user, id);
     }
 };

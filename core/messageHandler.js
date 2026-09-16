@@ -890,7 +890,7 @@ function createMessageHandler(sock, { db, stats, commands, ownerIds, masterOwner
             await sock.sendMessage(groupID, { text: resultMsg, mentions: [winner, loser] }, { quoted: m });
 
             // إشعار خاص لو تقدم اللاعب الفائز في شروط التحول لمغتال
-            await notifyIfProgressed(sock, db, winner);
+            await notifyIfProgressed(sock, db, winner, groupID);
             await checkAchievements(db, winner, sock, groupID);
             return;
         }

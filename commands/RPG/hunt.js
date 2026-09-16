@@ -90,7 +90,7 @@ module.exports = {
 
         // إشعار خاص لو الصيد ده حقق تقدم في شروط التحول لرامي
         const { notifyArcherIfProgressed } = require('../../data/classSystem.js');
-        await notifyArcherIfProgressed(sock, db, sender);
+        await notifyArcherIfProgressed(sock, db, sender, id);
     }
 };
 

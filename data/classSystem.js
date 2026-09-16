@@ -218,14 +218,14 @@ function buildRequirementsMessage(user) {
     return msg;
 }
 
-async function notifyIfProgressed(sock, db, jid) {
+async function notifyIfProgressed(sock, db, jid, chatId) {
     try {
         const user = db[jid];
         if (!user || isAssassin(user)) return;
         const newly = checkAssassinProgress(db, jid);
         if (newly.length === 0) return;
 
-        let msg = `🥷 *تحديث تقدمك نحو المغتال* 🥷\n━━━━━━━━━━━━━━━━━━━━\n`;
+        let msg = `🥷 *تحديث تقدم @${jid.split("@")[0]} نحو المغتال* 🥷\n━━━━━━━━━━━━━━━━━━━━\n`;
         newly.forEach(key => { msg += `✅ تم الانتهاء من مهمة: ${REQ_LABELS[key]}\n`; });
         const req = user.assassinReq;
         const remaining = ['wins', 'gold', 'itemId'].filter(k => !req[k]);
@@ -235,7 +235,7 @@ async function notifyIfProgressed(sock, db, jid) {
         } else {
             msg += `\n🎉 استوفيت كل الشروط! ابعت *.مغتال* دلوقتي عشان تتحول فورًا.`;
         }
-        await sock.sendMessage(jid, { text: msg });
+        await sock.sendMessage(chatId || jid, { text: msg, mentions: [jid] });
     } catch (e) {
         console.error('❌ تعذر إرسال إشعار تقدم المغتال:', e.message);
     }
@@ -336,14 +336,14 @@ function buildArcherRequirementsMessage(user) {
     return msg;
 }
 
-async function notifyArcherIfProgressed(sock, db, jid) {
+async function notifyArcherIfProgressed(sock, db, jid, chatId) {
     try {
         const user = db[jid];
         if (!user || isArcher(user) || isAssassin(user)) return;
         const newly = checkArcherProgress(db, jid);
         if (newly.length === 0) return;
 
-        let msg = `🏹 *تحديث تقدمك نحو الرامي* 🏹\n━━━━━━━━━━━━━━━━━━━━\n`;
+        let msg = `🏹 *تحديث تقدم @${jid.split("@")[0]} نحو الرامي* 🏹\n━━━━━━━━━━━━━━━━━━━━\n`;
         newly.forEach(key => { msg += `✅ تم الانتهاء من مهمة: ${ARCHER_REQ_LABELS[key]}\n`; });
         const req = user.archerReq;
         const remaining = ['hunts', 'gold', 'itemId'].filter(k => !req[k]);
@@ -353,7 +353,7 @@ async function notifyArcherIfProgressed(sock, db, jid) {
         } else {
             msg += `\n🎉 استوفيت كل الشروط! ابعت *.رامي* دلوقتي عشان تتحول فورًا.`;
         }
-        await sock.sendMessage(jid, { text: msg });
+        await sock.sendMessage(chatId || jid, { text: msg, mentions: [jid] });
     } catch (e) {
         console.error('❌ تعذر إرسال إشعار تقدم الرامي:', e.message);
     }
@@ -527,14 +527,15 @@ function checkDefenseMilestones(user) {
     return newlyReached;
 }
 
-async function notifyDefenseMilestones(sock, jid, user) {
+async function notifyDefenseMilestones(sock, jid, user, chatId) {
     try {
         const reached = checkDefenseMilestones(user);
         if (reached.length === 0) return;
         for (const milestone of reached) {
             const successAtBase = Math.round(AMBUSH_BASE_CHANCE * (1 - getDefenseResistance(milestone)) * 100);
-            await sock.sendMessage(jid, {
-                text: `🛡️ *تطور دفاعي!* 🛡️\nدفاعك بقى ${milestone}+، وده قلل فرصة نجاح أي كمين عليك لحوالي ${successAtBase}% تقريباً.\nكمّل تطور دفاعك عشان تبقى أصعب هدف في المملكة!`
+            await sock.sendMessage(chatId || jid, {
+                text: `🛡️ *تطور دفاعي!* 🛡️\n@${jid.split("@")[0]} دفاعه بقى ${milestone}+، وده قلل فرصة نجاح أي كمين عليه لحوالي ${successAtBase}% تقريباً.\nكمّل تطور دفاعك عشان تبقى أصعب هدف في المملكة!`,
+                mentions: [jid]
             });
         }
     } catch (e) {
