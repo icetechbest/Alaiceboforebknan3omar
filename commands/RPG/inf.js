@@ -1,4 +1,4 @@
-const { ITEMS } = require('../../data/shopItems.js');
+const { getShopItems } = require('../../core/shopCatalog.js');
 
 module.exports = {
     name: 'تفاصيل',
@@ -9,7 +9,7 @@ module.exports = {
 
         if (!itemID) return sock.sendMessage(id, { text: "⚠️ اكتب رقم العنصر بعد الأمر، مثال: *.تفاصيل 30*" }, { quoted: m });
 
-        const item = ITEMS[itemID];
+        const item = getShopItems(db)[itemID];
         if (!item) return sock.sendMessage(id, { text: "❌ هذا الرقم غير موجود في قائمة المتجر حالياً." }, { quoted: m });
 
         let typeName, effect, note;
@@ -26,12 +26,18 @@ module.exports = {
             typeName = "🐾 رفيق (حيوان/كائن)";
             effect = `⚔️ هجوم الرفيق: *+${item.atk.toLocaleString()}*\n🛡️ دفاع الرفيق: *+${item.def.toLocaleString()}*`;
             note = "🔄 نظام الاستبدال: عند شراء رفيق جديد يتم حذف ميزات الرفيق القديم تلقائياً.";
+        } else {
+            typeName = "📦 عنصر";
+            effect = "—";
+            note = "—";
         }
 
         let detailMsg = `✦━━━━━『 *𝐒𝐔𝐍𝐆 𝐈𝐍𝐅𝐎* 』━━━━━✦\n\n`;
         detailMsg += `📦 *الاسـم:* ${item.name}\n`;
         detailMsg += `💰 *السـعر:* ${item.cost.toLocaleString()} ذهب\n`;
-        detailMsg += `🏷️ *النوع:* ${typeName}\n\n`;
+        detailMsg += `🏷️ *النوع:* ${typeName}\n`;
+        if (item.desc) detailMsg += `📜 *الوصف:* ${item.desc}\n`;
+        detailMsg += `\n`;
         detailMsg += `✨ *الميزات:* \n${effect}\n\n`;
         detailMsg += `📝 *مـلاحظة:* ${note}\n\n`;
         detailMsg += `✦━━━━━━━━━━━━━━━━━━━✦`;

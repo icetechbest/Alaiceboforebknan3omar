@@ -1,4 +1,4 @@
-const { ITEMS } = require('../../data/shopItems.js');
+const { getShopItems } = require('../../core/shopCatalog.js');
 const { classTitle } = require('../../data/classSystem.js');
 
 module.exports = {
@@ -10,7 +10,7 @@ module.exports = {
         // ⚠️ الكتالوج بيتعرض كامل لكل الناس (بما فيهم العناصر الحصرية لفئة
         // معينة) - عشان عرض المتجر نفسه ميبقاش وسيلة لمعرفة فئة حد سرية.
         // القيد الفعلي بيتطبق وقت الشراء بس (.شراء)، برسالة عامة مش بتفضح حد.
-        const entries = Object.entries(ITEMS).filter(([, item]) => item.type !== "pet");
+        const entries = Object.entries(getShopItems(db)).filter(([, item]) => item.type !== "pet");
 
         let shopMsg = `🏛️ *مَتْجَرُ الْعَنَاصِرِ - أَدَوَاتٌ وَعَتَادٌ* 🏛️\n`;
         shopMsg += `فِئَتُكَ الحَالِيَّة: ${classTitle(db[sender])}\n`;

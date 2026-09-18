@@ -252,17 +252,18 @@ function createDashboardServer(options = {}) {
         };
     }
 
-    function dashboardShop() {
-        const settings = ensureDashboardSettings(db);
-        if (Object.keys(settings.shop).length === 0) {
-            try {
-                const { ITEMS } = require(path.join(rootDir, "data", "shopItems.js"));
-                settings.shop = clone(ITEMS) || {};
-            } catch (_) {
-                settings.shop = {};
-            }
-        }
-        return settings.shop;
+    // المتجر (العناصر + الحيوانات) بيتدار من core/shopCatalog.js، وهو نفس المصدر
+    // اللي أوامر .متجر / .متجر حيوانات / .شراء / .تفاصيل بتقرا منه، فأي تعديل
+    // من الموقع بيظهر في اللعبة فورًا.
+    function shopCatalog() {
+        return require(path.join(rootDir, "core", "shopCatalog.js"));
+    }
+
+    function shopResult(res, result, status = 200) {
+        if (!result.ok) return sendError(res, result.status || 400, result.error);
+        persistDb();
+        const item = shopCatalog().listForDashboard(db).find((row) => row.id === result.id);
+        return res.status(status).json(item || { id: result.id });
     }
 
     function commandResponse(command) {
@@ -609,32 +610,29 @@ function createDashboardServer(options = {}) {
         res.json({ balance: db.treasury, targetId, amount });
     });
     app.get("/api/economy/shop", (req, res) => {
-        res.json(Object.entries(dashboardShop()).map(([id, item]) => ({ id, ...clone(item) })));
-    });
-    app.patch("/api/economy/shop/:itemId", (req, res) => {
-        const shop = dashboardShop();
-        const id = decodeURIComponent(req.params.itemId);
-        if (!shop[id]) return sendError(res, 404, "Shop item not found");
-        shop[id] = { ...shop[id], ...(req.body || {}) };
-        persistDb();
-        res.json({ id, ...clone(shop[id]) });
+        try { res.json(shopCatalog().listForDashboard(db)); }
+        catch (error) { sendError(res, 500, `تعذر تحميل المتجر: ${error.message}`); }
     });
     app.post("/api/economy/shop", (req, res) => {
-        const shop = dashboardShop();
-        const id = String(req.body?.id || (Math.max(0, ...Object.keys(shop).map(Number).filter(Number.isFinite)) + 1));
-        if (!req.body?.name) return sendError(res, 400, "name is required");
-        shop[id] = { ...req.body };
-        delete shop[id].id;
-        persistDb();
-        res.status(201).json({ id, ...clone(shop[id]) });
+        try { shopResult(res, shopCatalog().addItem(db, req.body || {}), 201); }
+        catch (error) { sendError(res, 500, error.message); }
     });
+    app.patch("/api/economy/shop/:itemId", (req, res) => {
+        try { shopResult(res, shopCatalog().updateItem(db, req.params.itemId, req.body || {})); }
+        catch (error) { sendError(res, 500, error.message); }
+    });
+    // "حذف" = إخفاء من المتجر (العنصر يفضل معروف للنظام عشان اللاعبين اللي معاهم الرفيق ده).
     app.delete("/api/economy/shop/:itemId", (req, res) => {
-        const shop = dashboardShop();
-        const id = decodeURIComponent(req.params.itemId);
-        if (!shop[id]) return sendError(res, 404, "Shop item not found");
-        delete shop[id];
-        persistDb();
-        res.json({ ok: true, id });
+        try {
+            const result = shopCatalog().removeItem(db, req.params.itemId);
+            if (!result.ok) return sendError(res, result.status || 400, result.error);
+            persistDb();
+            res.json({ ok: true, id: result.id });
+        } catch (error) { sendError(res, 500, error.message); }
+    });
+    app.post("/api/economy/shop/:itemId/restore", (req, res) => {
+        try { shopResult(res, shopCatalog().restoreItem(db, req.params.itemId)); }
+        catch (error) { sendError(res, 500, error.message); }
     });
 
     app.get("/api/logs/errors", (req, res) => {

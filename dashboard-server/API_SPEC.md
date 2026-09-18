@@ -314,45 +314,49 @@ Response:
 {"balance":290194190140,"targetId":"123@s.whatsapp.net","amount":5000}
 ```
 
+### المتجر (العناصر + الحيوانات)
+
+المصدر الوحيد للمتجر هو `core/shopCatalog.js` (الأساس من `data/shopItems.js` + تعديلات
+محفوظة في `db.settings.shopCatalog`). أوامر `.متجر` و `.متجر حيوانات` و `.شراء` و `.تفاصيل`
+بتقرا منه، فأي تعديل من الموقع بيظهر في اللعبة فورًا.
+
+الأنواع: `use` (جرعة، حقل `hp`) — `stack` (عتاد، `atk`/`def`) — `pet` (حيوان، `atk`/`def`).
+`desc` اختياري وبيظهر في `.تفاصيل`.
+
 ### `GET /api/economy/shop`
 
-Response:
+كل العناصر بما فيها المخفي منها. `shop` = `items` أو `pets`.
 
 ```json
-[{"id":"1","name":"Sword","cost":1000,"atk":20,"type":"stack"}]
+[{"id":"101","name":"قط","cost":100000,"type":"pet","atk":50,"def":20,"shop":"pets","removed":false,"custom":false}]
 ```
-
-### `PATCH /api/economy/shop/:itemId`
-
-Request:
-
-```json
-{"cost":1200,"name":"Better sword"}
-```
-
-Response: the updated item, including `id`.
 
 ### `POST /api/economy/shop`
 
-Request:
+الرقم (`id`) اختياري وبيتولّد تلقائيًا (أكبر رقم + 1). الاسم لازم يكون فريد.
 
 ```json
-{"name":"Shield","cost":1500,"def":30,"type":"stack"}
+{"name":"ثعلب","cost":123456,"type":"pet","atk":80,"def":40,"desc":"ذكي وسريع"}
 ```
 
-Response:
+Response `201`: العنصر كاملًا. الأخطاء `400` (بيانات غير صالحة) أو `409` (رقم مستخدم) بصيغة `{"error":"..."}`.
 
-```json
-{"id":"110","name":"Shield","cost":1500,"def":30,"type":"stack"}
-```
+### `PATCH /api/economy/shop/:itemId`
+
+يعدّل `name` / `cost` / `atk` / `def` / `hp` / `desc`. النوع مينفعش يتغيّر. لو الحيوان معاه لاعبين،
+قوتهم واسم الرفيق عندهم بيتعدّلوا بنفس الفرق.
 
 ### `DELETE /api/economy/shop/:itemId`
 
-Response:
+بيشيل العنصر من المتجر (إخفاء، مش مسح نهائي عشان اللاعبين اللي معاهم الرفيق ده).
 
 ```json
 {"ok":true,"id":"110"}
 ```
+
+### `POST /api/economy/shop/:itemId/restore`
+
+بيرجّع عنصر مخفي للمتجر. Response: العنصر كاملًا.
 
 ## اللوج
 

@@ -1,4 +1,4 @@
-const { ITEMS } = require('../../data/shopItems.js');
+const { getShopItems } = require('../../core/shopCatalog.js');
 
 module.exports = {
     name: 'متجر حيوانات',
@@ -7,7 +7,7 @@ module.exports = {
         const id = m.key.remoteJid;
 
         // متجر الحيوانات/الرفقاء فقط - بنفس الأرقام الأصلية في المتجر العام
-        const entries = Object.entries(ITEMS).filter(([, item]) => item.type === "pet");
+        const entries = Object.entries(getShopItems(db)).filter(([, item]) => item.type === "pet");
 
         let shopMsg = `🐾 *مَتْجَرُ الْحَيَوَانَاتِ - الرُّفَقَاء* 🐾\n`;
         shopMsg += `━━━━━━━━━━━━━━━━━━━━\n\n`;

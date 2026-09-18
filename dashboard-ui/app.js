@@ -209,8 +209,15 @@
 
   async function renderEconomy() {
     const [treasury, shop] = await Promise.all([safeApi(API.treasury, {}, {}), safeApi(API.shop, {}, [])]);
-    const rows = listOf(shop, ["items", "shop"]);
-    return `${intro("الاقتصاد", "إدارة خزينة المملكة وعناصر المتجر.", `<button class="btn primary" data-action="withdraw">سحب من الخزينة</button><button class="btn secondary" data-action="add-item">＋ إضافة عنصر</button>`)}<div class="grid grid-4">${stat("رصيد الخزينة", fmt(first(treasury, ["balance", "treasury"], treasury || 0)), "◈", "var(--warning)")}${stat("عناصر المتجر", fmt(rows.length), "▦", "var(--info)")}${stat("مبيعات اليوم", fmt(first(treasury, ["salesToday"], 0)), "↗", "var(--success)")}${stat("ضريبة اليوم", fmt(first(treasury, ["taxToday"], 0)), "△", "var(--primary)")}</div><div class="card" style="margin-top:16px">${cardHead("عناصر المتجر", "أضف العناصر وعدّل الأسعار أو احذف العناصر غير المتاحة.")}<div class="table-wrap"><table><thead><tr><th>#</th><th>العنصر</th><th>النوع</th><th>السعر</th><th>الاستخدام</th><th>الإجراءات</th></tr></thead><tbody>${rows.length ? rows.map((row) => `<tr><td>${esc(first(row, ["id", "key"], "—"))}</td><td><b>${esc(first(row, ["name", "title"], "عنصر"))}</b></td><td><span class="badge">${esc(first(row, ["type", "category"], "عام"))}</span></td><td>${fmt(first(row, ["cost", "price"], 0))}</td><td>${fmt(first(row, ["purchases", "sales"], 0))}</td><td>${actionButtons(first(row, ["id", "key"]), [["تعديل", "secondary", "edit-item"], ["حذف", "danger", "delete-item"]])}</td></tr>`).join("") : `<tr><td colspan="6">${empty("المتجر فارغ")}</td></tr>`}</tbody></table></div></div>`;
+    const rows = listOf(shop, ["items", "shop"]).map((row) => ({ ...row, shop: row.shop || (row.type === "pet" ? "pets" : "items") }));
+    state.shopRows = rows;
+    const itemRows = rows.filter((row) => row.shop === "items");
+    const petRows = rows.filter((row) => row.shop === "pets");
+    const live = (list) => list.filter((row) => !row.removed).length;
+    const shopStats = (row) => [row.atk ? `⚔️ ${fmt(row.atk)}` : "", row.def ? `🛡️ ${fmt(row.def)}` : "", row.hp ? `❤️ ${fmt(row.hp)}` : ""].filter(Boolean).join("  ") || "—";
+    const shopTable = (list, emptyText) => `<div class="table-wrap"><table><thead><tr><th>#</th><th>الاسم</th><th>السعر</th><th>القوة</th><th>الإجراءات</th></tr></thead><tbody>${list.length ? list.map((row) => `<tr${row.removed ? ' style="opacity:.55"' : ""}><td>${esc(row.id)}</td><td><b>${esc(row.name)}</b>${row.removed ? ' <span class="badge warning">مخفي</span>' : ""}${row.custom ? ' <span class="badge info">مضاف</span>' : ""}</td><td>${fmt(row.cost)}</td><td>${shopStats(row)}</td><td>${actionButtons(row.id, row.removed ? [["تعديل", "secondary", "edit-item"], ["استرجاع", "secondary", "restore-item"]] : [["تعديل", "secondary", "edit-item"], ["حذف", "danger", "delete-item"]])}</td></tr>`).join("") : `<tr><td colspan="5">${empty(emptyText)}</td></tr>`}</tbody></table></div>`;
+    const shopCard = (title, description, addLabel, kind, list, emptyText) => `<div class="card" style="margin-top:16px">${cardHead(title, description, `<button class="btn secondary sm" data-action="add-item" data-kind="${kind}">${addLabel}</button>`)}<div class="toolbar"><input class="search shop-search" placeholder="ابحث بالاسم أو الرقم..." /></div>${shopTable(list, emptyText)}</div>`;
+    return `${intro("الاقتصاد", "إدارة خزينة المملكة ومتجر العناصر ومتجر الحيوانات. أي تعديل بيظهر في اللعبة فورًا.", `<button class="btn primary" data-action="withdraw">سحب من الخزينة</button><button class="btn secondary" data-action="add-item" data-kind="items">＋ إضافة عنصر</button><button class="btn secondary" data-action="add-item" data-kind="pets">＋ إضافة حيوان</button>`)}<div class="grid grid-4">${stat("رصيد الخزينة", fmt(first(treasury, ["balance", "treasury"], treasury || 0)), "◈", "var(--warning)")}${stat("محتويات المتجر", `${fmt(live(itemRows))} عنصر · ${fmt(live(petRows))} حيوان`, "▦", "var(--info)")}${stat("مبيعات اليوم", fmt(first(treasury, ["salesToday"], 0)), "↗", "var(--success)")}${stat("ضريبة اليوم", fmt(first(treasury, ["taxToday"], 0)), "△", "var(--primary)")}</div>${shopCard("🏛️ متجر العناصر", "الجرعات والعتاد. الحذف بيشيل العنصر من المتجر وتقدر ترجعه بعدين.", "＋ إضافة عنصر", "items", itemRows, "متجر العناصر فارغ")}${shopCard("🐾 متجر الحيوانات", "الرفقاء (حيوانات). اللاعب بيمتلك رفيق واحد بس، والشراء الجديد بيستبدله.", "＋ إضافة حيوان", "pets", petRows, "متجر الحيوانات فارغ")}`;
   }
 
   async function renderLogs() {
@@ -282,6 +289,7 @@
     $("#database-file")?.addEventListener("change", (event) => { $("#file-name").textContent = event.target.files[0]?.name || "لم يتم اختيار ملف"; });
     $("#players-search")?.addEventListener("input", filterTable);
     $("#groups-search")?.addEventListener("input", filterTable);
+    $$(".shop-search").forEach((input) => input.addEventListener("input", filterTable));
     $("#log-filter")?.addEventListener("change", (event) => { const value = event.target.value; $$(".log-line", $("#console")).forEach((line) => { line.hidden = value !== "all" && !line.querySelector(`.log-level.${value}`); }); });
     $$("[data-action]").forEach((button) => button.addEventListener("click", () => handleAction(button.dataset.action, button)));
     $$("input[type=checkbox][data-group-id], input[type=checkbox][data-command]").forEach((input) => input.addEventListener("change", () => {
@@ -328,9 +336,10 @@
     if (action === "ban-player") return mutate(`${API.players}/${encodeURIComponent(id)}/ban`, "POST", {}, "تم حظر اللاعب.");
     if (action === "leave-group" && confirm("سيغادر البوت هذا الجروب. هل تريد المتابعة؟")) return mutate(`${API.groups}/${encodeURIComponent(id)}/leave`, "POST");
     if (action === "block-group") return mutate(`${API.groups}/${encodeURIComponent(id)}/block`, "POST");
-    if (action === "delete-item" && confirm("حذف العنصر من المتجر؟")) return mutate(`${API.shop}/${encodeURIComponent(id)}`, "DELETE");
+    if (action === "delete-item" && confirm("شيل العنصر ده من المتجر؟ تقدر ترجعه بعدين من نفس الصفحة.")) return mutate(`${API.shop}/${encodeURIComponent(id)}`, "DELETE", {}, "تم حذف العنصر من المتجر.");
+    if (action === "restore-item") return mutate(`${API.shop}/${encodeURIComponent(id)}/restore`, "POST", {}, "تم استرجاع العنصر للمتجر.");
     if (action === "withdraw") return openSimpleModal("سحب من الخزينة", "المبلغ", API.treasury + "/withdraw", "POST");
-    if (action === "add-item") return openItemModal();
+    if (action === "add-item") return openShopModal({ mode: "add", kind: button?.dataset.kind === "pets" ? "pets" : "items" });
     if (action === "download-logs") {
       try {
         const response = await fetch(`${API_BASE}${API.logDownload}`, { headers: { "x-dashboard-key": localStorage.getItem(STORAGE_KEY) } });
@@ -364,6 +373,10 @@
     $("#simple-modal-form").addEventListener("submit", (e) => { e.preventDefault(); const form = new FormData(e.currentTarget); closeModal(); mutate(path, method, treasury ? { amount: Number(form.get("value")), targetId: form.get("targetId") } : { amount: Number(form.get("value")) }); });
   }
   function openEditModal(type, id) {
+    if (type === "edit-item") {
+      const row = (state.shopRows || []).find((item) => String(item.id) === String(id));
+      if (row) return openShopModal({ mode: "edit", kind: row.shop, row });
+    }
     const title = type === "edit-player" ? "تعديل بيانات اللاعب" : type === "edit-command" ? "تعديل رد الأمر" : "تعديل عنصر المتجر";
     const fields = type === "edit-player" ? `<label class="field"><span>الاسم</span><input name="name"></label><label class="field"><span>الذهب</span><input name="gold" type="number"></label><label class="field"><span>المستوى</span><input name="level" type="number"></label><label class="field"><span>الفئة</span><input name="class"></label>` : type === "edit-command" ? `<label class="field"><span>نص الرد</span><textarea name="reply" required></textarea></label><label class="field"><span>تفعيل الأمر</span>${toggle("enabled", true)}</label>` : `<label class="field"><span>اسم العنصر</span><input name="name"></label><label class="field"><span>السعر</span><input name="cost" type="number"></label><label class="field"><span>النوع</span><input name="type"></label>`;
     const path = type === "edit-player" ? `${API.players}/${encodeURIComponent(id)}` : type === "edit-command" ? `${API.commands}/${encodeURIComponent(id)}` : `${API.shop}/${encodeURIComponent(id)}`;
@@ -371,10 +384,39 @@
     $$(".modal [data-close-modal]").forEach((el) => el.addEventListener("click", closeModal));
     $("#edit-modal-form").addEventListener("submit", (e) => { e.preventDefault(); const obj = Object.fromEntries(new FormData(e.currentTarget)); closeModal(); mutate(path, "PATCH", obj); });
   }
-  function openItemModal() {
-    $("#modal-root").innerHTML = `<div class="modal-backdrop"><div class="modal"><div class="card-head"><div><h3>إضافة عنصر للمتجر</h3><p>أدخل بيانات العنصر الجديد.</p></div><button class="icon-btn" data-close-modal>×</button></div><div class="modal-body"><form id="item-modal-form" class="form-grid"><label class="field"><span>اسم العنصر</span><input name="name" required></label><label class="field"><span>السعر</span><input name="cost" type="number" min="0" required></label><label class="field"><span>النوع</span><input name="type" value="use"></label><label class="field"><span>القوة / التأثير</span><input name="value" type="number" min="0"></label><div class="wide form-actions"><button class="btn primary">إضافة العنصر</button></div></form></div></div></div>`;
+  // نافذة إضافة/تعديل عنصر أو حيوان في المتجر
+  function openShopModal({ mode, kind, row = {} }) {
+    const pet = kind === "pets";
+    const editing = mode === "edit";
+    const val = (key) => (row[key] !== undefined && row[key] !== null ? esc(row[key]) : "");
+    const numField = (name, label, hint = "") => `<label class="field" data-for="${name}"><span>${label}${hint ? ` <small class="muted">${hint}</small>` : ""}</span><input name="${name}" type="number" min="0" value="${val(name)}"></label>`;
+    const typeField = pet || editing ? "" : `<label class="field"><span>النوع</span><select name="type" id="shop-type"><option value="use">🧪 جرعة (بتزود الصحة)</option><option value="stack">⚔️ عتاد (هجوم/دفاع تراكمي)</option></select></label>`;
+    const type = pet ? "pet" : (editing ? row.type : "use");
+    const title = editing ? `تعديل: ${esc(row.name || "")}` : (pet ? "إضافة حيوان للمتجر" : "إضافة عنصر للمتجر");
+    $("#modal-root").innerHTML = `<div class="modal-backdrop"><div class="modal"><div class="card-head"><div><h3>${title}</h3><p>${editing ? "عدّل الحقول اللي عايزها وانحفظ." : "أدخل بيانات العنصر الجديد."}</p></div><button class="icon-btn" data-close-modal>×</button></div><div class="modal-body"><form id="shop-modal-form" class="form-grid"><label class="field"><span>الاسم (مع إيموجي لو حابب)</span><input name="name" required maxlength="40" value="${val("name")}"></label><label class="field"><span>السعر (ذهب)</span><input name="cost" type="number" min="1" required value="${val("cost")}"></label>${typeField}${numField("hp", "زيادة الصحة", "للجرعات")}${numField("atk", "الهجوم", pet ? "" : "للعتاد")}${numField("def", "الدفاع", pet ? "" : "للعتاد")}<label class="field wide"><span>الوصف <small class="muted">بيظهر في .تفاصيل (اختياري)</small></span><textarea name="desc" maxlength="300">${val("desc")}</textarea></label><div class="wide form-actions"><button class="btn primary">${editing ? "حفظ التعديلات" : "إضافة"}</button><button type="button" class="btn ghost" data-close-modal>إلغاء</button></div></form></div></div></div>`;
     $$(".modal [data-close-modal]").forEach((el) => el.addEventListener("click", closeModal));
-    $("#item-modal-form").addEventListener("submit", (e) => { e.preventDefault(); const obj = Object.fromEntries(new FormData(e.currentTarget)); closeModal(); mutate(API.shop, "POST", obj, "تمت إضافة العنصر."); });
+    const form = $("#shop-modal-form");
+    const syncFields = () => {
+      const current = editing || pet ? type : ($("#shop-type")?.value || "use");
+      $$("[data-for]", form).forEach((el) => {
+        const name = el.dataset.for;
+        el.hidden = current === "use" ? name !== "hp" : name === "hp";
+      });
+    };
+    $("#shop-type")?.addEventListener("change", syncFields);
+    syncFields();
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form));
+      const payload = { name: data.name, cost: data.cost, desc: data.desc || "" };
+      const current = editing || pet ? type : (data.type || "use");
+      if (!editing) payload.type = current;
+      if (current === "use") payload.hp = data.hp;
+      else { payload.atk = data.atk; payload.def = data.def; }
+      closeModal();
+      if (editing) mutate(`${API.shop}/${encodeURIComponent(row.id)}`, "PATCH", payload, "تم حفظ التعديلات.");
+      else mutate(API.shop, "POST", payload, pet ? "تمت إضافة الحيوان." : "تمت إضافة العنصر.");
+    });
   }
   function openSecurityModal(list) {
     $("#modal-root").innerHTML = `<div class="modal-backdrop"><div class="modal"><div class="card-head"><h3>إضافة إلى القائمة</h3><button class="icon-btn" data-close-modal>×</button></div><div class="modal-body"><form id="security-form"><label class="field"><span>الرقم أو المعرّف</span><input name="value" dir="ltr" required placeholder="2012...@s.whatsapp.net"></label><div class="form-actions"><button class="btn primary">إضافة</button></div></form></div></div></div>`;

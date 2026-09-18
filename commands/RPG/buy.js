@@ -1,4 +1,5 @@
-const { ITEMS, getMaxHP } = require('../../data/shopItems.js');
+const { getMaxHP } = require('../../data/shopItems.js');
+const { getShopItems, getAllItems } = require('../../core/shopCatalog.js');
 const {
     getUserClass,
     notifyIfProgressed,
@@ -19,7 +20,7 @@ module.exports = {
 
         if (!user) return sock.sendMessage(id, { text: "⚠️ سجل أولاً بـ .لاعب جديد" }, { quoted: m });
 
-        const item = ITEMS[itemID];
+        const item = getShopItems(db)[itemID];
         if (!item) return sock.sendMessage(id, { text: "❌ هذا العنصر غير موجود في المتجر." }, { quoted: m });
 
         // عناصر حصرية على فئة معينة (محارب/مغتال) - الرسالة مقصود تكون عامة
@@ -71,7 +72,8 @@ module.exports = {
             log = `✅ تم شراء وتطوير عتادك بـ [${count}] من *${item.name}*!`;
         } else if (item.type === "pet") {
             // حذف قوة الرفيق القديم قبل إضافة الجديد
-            let oldPet = Object.values(ITEMS).find(i => i.name === user.currentPet);
+            // بندوّر في كل العناصر المعروفة (حتى لو الرفيق القديم اتشال من المتجر) عشان قوته تتشال صح
+            let oldPet = Object.values(getAllItems(db)).find(i => i.name === user.currentPet);
             if (oldPet) {
                 user.atk = Math.max(0, (user.atk || 0) - (oldPet.atk || 0));
                 let oldDefValue = oldPet.def || 0;
